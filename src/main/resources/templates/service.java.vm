@@ -1,0 +1,19 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+
+/**
+ * @ClassName: ${table.serviceName}
+ * @Author: ${author}
+ * @Date: ${date}
+ * @Version: V1.0
+ * @Description: ${entity} 服务接口
+ */
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+}
+#end

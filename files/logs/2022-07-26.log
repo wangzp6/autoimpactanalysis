@@ -1,0 +1,689 @@
+2022-07-26 15:37:59.926 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit does not contain a setter for field modificationTime
+2022-07-26 15:37:59.929 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor Class class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2022-07-26 15:38:00.145 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.e.LocalStreamEnvironment Running job on local embedded Flink mini cluster
+2022-07-26 15:38:00.155 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Flink Mini Cluster
+2022-07-26 15:38:00.358 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Metrics Registry
+2022-07-26 15:38:00.373 > INFO   springAppName_IS_UNDEFINED o.a.f.r.metrics.MetricRegistryImpl No metrics reporter configured, no metrics will be exposed/reported.
+2022-07-26 15:38:00.373 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting RPC Service(s)
+2022-07-26 15:38:00.774 > INFO   springAppName_IS_UNDEFINED akka.event.slf4j.Slf4jLogger Slf4jLogger started
+2022-07-26 15:38:00.797 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting high-availability services
+2022-07-26 15:38:01.689 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Created BLOB server storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-9a511838-7b58-4be6-bfaa-9a3176cce147
+2022-07-26 15:38:01.698 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Started BLOB server at 0.0.0.0:49341 - max concurrent requests: 50 - max backlog: 1000
+2022-07-26 15:38:01.699 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting ResourceManger
+2022-07-26 15:38:01.733 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.StandaloneResourceManager at akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e .
+2022-07-26 15:38:01.753 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.resourcemanager.StandaloneResourceManager@51850751 @ akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e
+2022-07-26 15:38:01.756 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager ResourceManager akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e was granted leadership with fencing token a15c6bcdb99d52265a3589a610bc4349
+2022-07-26 15:38:01.757 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Starting the SlotManager.
+2022-07-26 15:38:01.758 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e , session=5a3589a6-10bc-4349-a15c-6bcdb99d5226
+2022-07-26 15:38:01.767 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-41ca5b4a-82de-486a-8b23-d2edcc773d87
+2022-07-26 15:38:01.769 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-d5a2ef93-9821-498b-89ad-c28f81ca5307
+2022-07-26 15:38:01.769 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting 1 TaskManger(s)
+2022-07-26 15:38:01.773 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerRunner Starting TaskManager with ResourceID: 2491f1d1-ca1a-4bcb-b048-5305c450a074
+2022-07-26 15:38:01.824 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Temporary file directory 'C:\Users\Mechrevo\AppData\Local\Temp': total 340 GB, usable 263 GB (77.35% usable)
+2022-07-26 15:38:02.006 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.b.NetworkBufferPool Allocated 401 MB for network buffer pool (number of memory segments: 12839, bytes per segment: 32768).
+2022-07-26 15:38:02.012 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Client Proxy. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:38:02.013 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Server. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:38:02.014 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Starting the network environment and its components.
+2022-07-26 15:38:02.017 > WARN   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerLocation No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2022-07-26 15:38:02.017 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Limiting managed memory to 0.7 of the currently free heap space (2523 MB), memory will be allocated lazily.
+2022-07-26 15:38:02.022 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-c9bf53ae-7be1-4904-b68a-d03d7b60eb30 for spill files.
+2022-07-26 15:38:02.075 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerConfiguration Messages have a max timeout of 10000 ms
+2022-07-26 15:38:02.082 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/taskmanager_0 .
+2022-07-26 15:38:02.090 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Start job leader service.
+2022-07-26 15:38:02.091 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Connecting to ResourceManager akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e(a15c6bcdb99d52265a3589a610bc4349).
+2022-07-26 15:38:02.091 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.filecache.FileCache User file cache uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-dist-cache-2cfa2896-0abc-4080-9fd9-c2ffecad31fe
+2022-07-26 15:38:02.092 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting dispatcher rest endpoint.
+2022-07-26 15:38:02.110 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Resolved ResourceManager address, beginning registration
+2022-07-26 15:38:02.110 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:02.117 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering TaskManager with ResourceID 2491f1d1-ca1a-4bcb-b048-5305c450a074 (akka://flink/user/taskmanager_0) at ResourceManager
+2022-07-26 15:38:02.119 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Successful registration at resource manager akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e under registration id e804caa3b9abdd8f87a967036024616f.
+2022-07-26 15:38:02.121 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Registering TaskManager 2491f1d1-ca1a-4bcb-b048-5305c450a074 under e804caa3b9abdd8f87a967036024616f at the SlotManager.
+2022-07-26 15:38:02.130 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Starting rest endpoint.
+2022-07-26 15:38:02.358 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils Log file environment variable 'log.file' is not set.
+2022-07-26 15:38:02.358 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'Key: 'web.log.path' , default: null (deprecated keys: [jobmanager.web.log.path])'.
+2022-07-26 15:38:04.142 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Rest endpoint listening at localhost:49393
+2022-07-26 15:38:04.142 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.DispatcherRestEndpoint@392a04e7 @ http://localhost:49393
+2022-07-26 15:38:04.142 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Web frontend listening at http://localhost:49393.
+2022-07-26 15:38:04.142 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting job dispatcher(s) for JobManger
+2022-07-26 15:38:04.142 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint http://localhost:49393 was granted leadership with leaderSessionID=c1bcc69b-ad1e-4a5c-a9f1-43c2d77d6a04
+2022-07-26 15:38:04.143 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader http://localhost:49393 , session=c1bcc69b-ad1e-4a5c-a9f1-43c2d77d6a04
+2022-07-26 15:38:04.151 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49 .
+2022-07-26 15:38:04.160 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.StandaloneDispatcher@2dbd803f @ akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49
+2022-07-26 15:38:04.160 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Flink Mini Cluster started successfully
+2022-07-26 15:38:04.161 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Dispatcher akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49 was granted leadership with fencing token 89941f82-7142-4b1a-b211-033eac932a00
+2022-07-26 15:38:04.163 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Recovering all persisted jobs.
+2022-07-26 15:38:04.165 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49 , session=89941f82-7142-4b1a-b211-033eac932a00
+2022-07-26 15:38:04.172 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Submitting job 651d45b8edc9561abe95c12655ade082 (Socket Window Count).
+2022-07-26 15:38:04.196 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.JobMaster at akka://flink/user/jobmanager_1 .
+2022-07-26 15:38:04.203 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Initializing job Socket Window Count (651d45b8edc9561abe95c12655ade082).
+2022-07-26 15:38:04.209 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Using restart strategy NoRestartStrategy for Socket Window Count (651d45b8edc9561abe95c12655ade082).
+2022-07-26 15:38:04.213 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.slotpool.SlotPool at akka://flink/user/0693a1f7-ccd0-46bb-bd3b-0cbbfd7e5695 .
+2022-07-26 15:38:04.231 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job recovers via failover strategy: full graph restart
+2022-07-26 15:38:04.253 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Running initialization on master for job Socket Window Count (651d45b8edc9561abe95c12655ade082).
+2022-07-26 15:38:04.253 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Successfully ran initialization on master in 0 ms.
+2022-07-26 15:38:04.271 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:04.281 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.jobmaster.JobManagerRunner@7a1fc051 @ akka://flink/user/jobmanager_1
+2022-07-26 15:38:04.281 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.JobManagerRunner JobManager runner for job Socket Window Count (651d45b8edc9561abe95c12655ade082) was granted leadership with session id 3effc08e-8ca9-4494-9adf-0414d9f39aa9 at akka://flink/user/jobmanager_1.
+2022-07-26 15:38:04.283 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Starting execution of job Socket Window Count (651d45b8edc9561abe95c12655ade082)
+2022-07-26 15:38:04.283 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (651d45b8edc9561abe95c12655ade082) switched from state CREATED to RUNNING.
+2022-07-26 15:38:04.286 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:04.289 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:04.289 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:04.291 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/jobmanager_1 , session=3effc08e-8ca9-4494-9adf-0414d9f39aa9
+2022-07-26 15:38:04.291 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Connecting to ResourceManager akka://flink/user/resourcemanager_291abeab-09a4-4b9d-b74d-85d6750a284e(a15c6bcdb99d52265a3589a610bc4349)
+2022-07-26 15:38:04.292 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Resolved ResourceManager address, beginning registration
+2022-07-26 15:38:04.292 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:04.294 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering job manager 9adf0414d9f39aa93effc08e8ca94494@akka://flink/user/jobmanager_1 for job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.295 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Cannot serve slot request, no ResourceManager connected. Adding as pending request [SlotRequestId{3beb2d610569a5ed054140b4d91b6456}]
+2022-07-26 15:38:04.297 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registered job manager 9adf0414d9f39aa93effc08e8ca94494@akka://flink/user/jobmanager_1 for job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.298 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster JobManager successfully registered at ResourceManager, leader id: a15c6bcdb99d52265a3589a610bc4349.
+2022-07-26 15:38:04.299 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Requesting new slot [SlotRequestId{3beb2d610569a5ed054140b4d91b6456}] and profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} from resource manager.
+2022-07-26 15:38:04.300 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Request slot with profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} for job 651d45b8edc9561abe95c12655ade082 with allocation id AllocationID{8230c5efaf6c737e93d8555dc2c0704b}.
+2022-07-26 15:38:04.301 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Receive slot request AllocationID{8230c5efaf6c737e93d8555dc2c0704b} for job 651d45b8edc9561abe95c12655ade082 from resource manager with leader id a15c6bcdb99d52265a3589a610bc4349.
+2022-07-26 15:38:04.301 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Allocated slot for AllocationID{8230c5efaf6c737e93d8555dc2c0704b}.
+2022-07-26 15:38:04.301 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Add job 651d45b8edc9561abe95c12655ade082 for job leader monitoring.
+2022-07-26 15:38:04.303 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Try to register at job manager akka://flink/user/jobmanager_1 with leader id 3effc08e-8ca9-4494-9adf-0414d9f39aa9.
+2022-07-26 15:38:04.303 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Resolved JobManager address, beginning registration
+2022-07-26 15:38:04.304 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Registration at JobManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:04.305 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Successful registration at job manager akka://flink/user/jobmanager_1 for job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.305 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Establish JobManager connection for job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.308 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Offer reserved slots to the leader of job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.308 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.slot.TaskSlotTable Activate slot AllocationID{8230c5efaf6c737e93d8555dc2c0704b}.
+2022-07-26 15:38:04.315 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:04.316 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Source: Custom File Source (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:04.318 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:04.318 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Split Reader: Custom File Source -> Flat Map (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:04.320 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:04.320 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Keyed Aggregation -> Sink: Print to Std. Out (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:04.337 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Source: Custom File Source (1/1).
+2022-07-26 15:38:04.338 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:04.338 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) [DEPLOYING]
+2022-07-26 15:38:04.341 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) [DEPLOYING].
+2022-07-26 15:38:04.342 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) [DEPLOYING].
+2022-07-26 15:38:04.342 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Split Reader: Custom File Source -> Flat Map (1/1).
+2022-07-26 15:38:04.343 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:04.343 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) [DEPLOYING]
+2022-07-26 15:38:04.343 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) [DEPLOYING].
+2022-07-26 15:38:04.344 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Keyed Aggregation -> Sink: Print to Std. Out (1/1).
+2022-07-26 15:38:04.344 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) [DEPLOYING].
+2022-07-26 15:38:04.345 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:04.345 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) [DEPLOYING]
+2022-07-26 15:38:04.345 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) [DEPLOYING].
+2022-07-26 15:38:04.346 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) [DEPLOYING].
+2022-07-26 15:38:04.365 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.365 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.368 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:04.370 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.370 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.371 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.371 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:04.371 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:04.371 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:04.406 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileReaderOperator No state to restore for the ContinuousFileReaderOperator (taskIdx=0).
+2022-07-26 15:38:04.406 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction No state to restore for the ContinuousFileMonitoringFunction.
+2022-07-26 15:38:04.413 > INFO   springAppName_IS_UNDEFINED org.apache.flink.core.fs.FileSystem Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2022-07-26 15:38:04.419 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.h.HeapKeyedStateBackend Initializing heap keyed state backend with stream factory.
+2022-07-26 15:38:04.422 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction Forwarding split: [0] file:/D:/work/workspace/work_workspace/autoimpactanalysis/src/main/resources/data.txt mod@ 1658108489187 : 0 + 23
+2022-07-26 15:38:04.633 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.634 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a).
+2022-07-26 15:38:04.634 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) [FINISHED]
+2022-07-26 15:38:04.635 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Source: Custom File Source ce56094882a6d4548b9e444fd332296a.
+2022-07-26 15:38:04.640 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (ce56094882a6d4548b9e444fd332296a) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.699 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.699 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75).
+2022-07-26 15:38:04.699 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) [FINISHED]
+2022-07-26 15:38:04.699 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Split Reader: Custom File Source -> Flat Map a397d96e0dbf1400203e2c4fc76e7d75.
+2022-07-26 15:38:04.700 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.700 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69).
+2022-07-26 15:38:04.700 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a397d96e0dbf1400203e2c4fc76e7d75) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.701 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) [FINISHED]
+2022-07-26 15:38:04.701 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Keyed Aggregation -> Sink: Print to Std. Out c9dfaffff09fcbc6bf605694b305eb69.
+2022-07-26 15:38:04.703 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (c9dfaffff09fcbc6bf605694b305eb69) switched from RUNNING to FINISHED.
+2022-07-26 15:38:04.704 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (651d45b8edc9561abe95c12655ade082) switched from state RUNNING to FINISHED.
+2022-07-26 15:38:04.704 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.CheckpointCoordinator Stopping checkpoint coordinator for job 651d45b8edc9561abe95c12655ade082.
+2022-07-26 15:38:04.704 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.StandaloneCompletedCheckpointStore Shutting down
+2022-07-26 15:38:04.711 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Job 651d45b8edc9561abe95c12655ade082 reached globally terminal state FINISHED.
+2022-07-26 15:38:04.712 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Shutting down Flink Mini Cluster
+2022-07-26 15:38:04.712 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Shutting down rest endpoint.
+2022-07-26 15:38:04.714 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping dispatcher akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49.
+2022-07-26 15:38:04.714 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Stopping the JobMaster for job Socket Window Count(651d45b8edc9561abe95c12655ade082).
+2022-07-26 15:38:04.714 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopping TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:38:04.714 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping all currently running jobs of dispatcher akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49.
+2022-07-26 15:38:04.715 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.TaskExecutorLocalStateStoresManager Shutting down TaskExecutorLocalStateStoresManager.
+2022-07-26 15:38:04.715 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Close ResourceManager connection d76f3673933a6ae141de625082440d3c: JobManager is shutting down..
+2022-07-26 15:38:04.715 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Suspending SlotPool.
+2022-07-26 15:38:04.717 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Stopping SlotPool.
+2022-07-26 15:38:04.726 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Disconnect job manager 9adf0414d9f39aa93effc08e8ca94494@akka://flink/user/jobmanager_1 for job 651d45b8edc9561abe95c12655ade082 from the resource manager.
+2022-07-26 15:38:04.726 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor JobManager for job 651d45b8edc9561abe95c12655ade082 with leader id 9adf0414d9f39aa93effc08e8ca94494 lost leadership.
+2022-07-26 15:38:04.726 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Removing cache directory C:\Users\Mechrevo\AppData\Local\Temp\flink-web-ui
+2022-07-26 15:38:04.727 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Closing the SlotManager.
+2022-07-26 15:38:04.727 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager removed spill file directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-c9bf53ae-7be1-4904-b68a-d03d7b60eb30
+2022-07-26 15:38:04.727 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Suspending the SlotManager.
+2022-07-26 15:38:04.727 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Shutting down the network environment and its components.
+2022-07-26 15:38:04.727 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Unregister TaskManager e804caa3b9abdd8f87a967036024616f from the SlotManager.
+2022-07-26 15:38:04.728 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.h.l.b.StackTraceSampleCoordinator Shutting down stack trace sample coordinator.
+2022-07-26 15:38:04.731 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopped dispatcher akka://flink/user/dispatcher6ad0c255-d581-4e65-aad8-c999bf034d49.
+2022-07-26 15:38:04.740 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Stop job leader service.
+2022-07-26 15:38:04.742 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopped TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:38:04.747 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopping Akka RPC service.
+2022-07-26 15:38:04.770 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Shutting down BLOB cache
+2022-07-26 15:38:04.772 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Shutting down BLOB cache
+2022-07-26 15:38:04.775 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Stopped BLOB server at 0.0.0.0:49341
+2022-07-26 15:38:04.775 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopped Akka RPC service.
+2022-07-26 15:38:32.921 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit does not contain a setter for field modificationTime
+2022-07-26 15:38:32.924 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor Class class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2022-07-26 15:38:33.140 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.e.LocalStreamEnvironment Running job on local embedded Flink mini cluster
+2022-07-26 15:38:33.149 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Flink Mini Cluster
+2022-07-26 15:38:33.339 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Metrics Registry
+2022-07-26 15:38:33.353 > INFO   springAppName_IS_UNDEFINED o.a.f.r.metrics.MetricRegistryImpl No metrics reporter configured, no metrics will be exposed/reported.
+2022-07-26 15:38:33.353 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting RPC Service(s)
+2022-07-26 15:38:33.707 > INFO   springAppName_IS_UNDEFINED akka.event.slf4j.Slf4jLogger Slf4jLogger started
+2022-07-26 15:38:33.725 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting high-availability services
+2022-07-26 15:38:34.568 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Created BLOB server storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-96820d92-ac7f-4993-95ab-16f01c18a389
+2022-07-26 15:38:34.576 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Started BLOB server at 0.0.0.0:49421 - max concurrent requests: 50 - max backlog: 1000
+2022-07-26 15:38:34.578 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting ResourceManger
+2022-07-26 15:38:34.614 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.StandaloneResourceManager at akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03 .
+2022-07-26 15:38:34.634 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.resourcemanager.StandaloneResourceManager@51850751 @ akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03
+2022-07-26 15:38:34.637 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager ResourceManager akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03 was granted leadership with fencing token a62e232aff5b2dec75865edb16864da1
+2022-07-26 15:38:34.637 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Starting the SlotManager.
+2022-07-26 15:38:34.639 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03 , session=75865edb-1686-4da1-a62e-232aff5b2dec
+2022-07-26 15:38:34.648 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-f10702cf-d97a-4116-92b8-35478f6cdb46
+2022-07-26 15:38:34.650 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-71964147-c9fc-404c-82ea-8453de3ebb59
+2022-07-26 15:38:34.650 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting 1 TaskManger(s)
+2022-07-26 15:38:34.654 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerRunner Starting TaskManager with ResourceID: 2b8613fd-53dd-4f0a-a7a5-0e19ab48e1c5
+2022-07-26 15:38:34.701 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Temporary file directory 'C:\Users\Mechrevo\AppData\Local\Temp': total 340 GB, usable 263 GB (77.35% usable)
+2022-07-26 15:38:34.882 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.b.NetworkBufferPool Allocated 401 MB for network buffer pool (number of memory segments: 12839, bytes per segment: 32768).
+2022-07-26 15:38:34.887 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Client Proxy. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:38:34.888 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Server. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:38:34.889 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Starting the network environment and its components.
+2022-07-26 15:38:34.891 > WARN   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerLocation No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2022-07-26 15:38:34.891 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Limiting managed memory to 0.7 of the currently free heap space (2523 MB), memory will be allocated lazily.
+2022-07-26 15:38:34.897 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-b5a54793-f3b3-47d5-bf8c-a2e6e1df2c69 for spill files.
+2022-07-26 15:38:34.949 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerConfiguration Messages have a max timeout of 10000 ms
+2022-07-26 15:38:34.956 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/taskmanager_0 .
+2022-07-26 15:38:34.963 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Start job leader service.
+2022-07-26 15:38:34.964 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Connecting to ResourceManager akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03(a62e232aff5b2dec75865edb16864da1).
+2022-07-26 15:38:34.965 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.filecache.FileCache User file cache uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-dist-cache-f8b800b7-1a6d-42f4-87f3-b914d7a323d4
+2022-07-26 15:38:34.965 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting dispatcher rest endpoint.
+2022-07-26 15:38:34.984 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Resolved ResourceManager address, beginning registration
+2022-07-26 15:38:34.984 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:34.990 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering TaskManager with ResourceID 2b8613fd-53dd-4f0a-a7a5-0e19ab48e1c5 (akka://flink/user/taskmanager_0) at ResourceManager
+2022-07-26 15:38:34.992 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Successful registration at resource manager akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03 under registration id a2c29b914950d6b7361d23ad08ebdf7a.
+2022-07-26 15:38:34.994 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Registering TaskManager 2b8613fd-53dd-4f0a-a7a5-0e19ab48e1c5 under a2c29b914950d6b7361d23ad08ebdf7a at the SlotManager.
+2022-07-26 15:38:35.005 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Starting rest endpoint.
+2022-07-26 15:38:35.248 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils Log file environment variable 'log.file' is not set.
+2022-07-26 15:38:35.248 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'Key: 'web.log.path' , default: null (deprecated keys: [jobmanager.web.log.path])'.
+2022-07-26 15:38:37.051 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Rest endpoint listening at localhost:49474
+2022-07-26 15:38:37.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.DispatcherRestEndpoint@392a04e7 @ http://localhost:49474
+2022-07-26 15:38:37.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Web frontend listening at http://localhost:49474.
+2022-07-26 15:38:37.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting job dispatcher(s) for JobManger
+2022-07-26 15:38:37.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint http://localhost:49474 was granted leadership with leaderSessionID=d2eafa9a-8723-49c0-ac0c-2c3c75235330
+2022-07-26 15:38:37.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader http://localhost:49474 , session=d2eafa9a-8723-49c0-ac0c-2c3c75235330
+2022-07-26 15:38:37.059 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9 .
+2022-07-26 15:38:37.068 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.StandaloneDispatcher@2dbd803f @ akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9
+2022-07-26 15:38:37.069 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Flink Mini Cluster started successfully
+2022-07-26 15:38:37.069 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Dispatcher akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9 was granted leadership with fencing token 604a45d3-8a94-4c76-9051-c5d78281c273
+2022-07-26 15:38:37.070 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Recovering all persisted jobs.
+2022-07-26 15:38:37.072 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9 , session=604a45d3-8a94-4c76-9051-c5d78281c273
+2022-07-26 15:38:37.079 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Submitting job 520b5d0265583c603aa3beeba06c570a (Socket Window Count).
+2022-07-26 15:38:37.095 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.JobMaster at akka://flink/user/jobmanager_1 .
+2022-07-26 15:38:37.102 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Initializing job Socket Window Count (520b5d0265583c603aa3beeba06c570a).
+2022-07-26 15:38:37.107 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Using restart strategy NoRestartStrategy for Socket Window Count (520b5d0265583c603aa3beeba06c570a).
+2022-07-26 15:38:37.112 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.slotpool.SlotPool at akka://flink/user/97a41646-4dcc-4af4-af7e-9d81c9386a39 .
+2022-07-26 15:38:37.129 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job recovers via failover strategy: full graph restart
+2022-07-26 15:38:37.151 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Running initialization on master for job Socket Window Count (520b5d0265583c603aa3beeba06c570a).
+2022-07-26 15:38:37.151 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Successfully ran initialization on master in 0 ms.
+2022-07-26 15:38:37.169 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:37.178 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.jobmaster.JobManagerRunner@a8547e3 @ akka://flink/user/jobmanager_1
+2022-07-26 15:38:37.179 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.JobManagerRunner JobManager runner for job Socket Window Count (520b5d0265583c603aa3beeba06c570a) was granted leadership with session id 702931ee-fd7e-4535-9570-e7a3949b6a45 at akka://flink/user/jobmanager_1.
+2022-07-26 15:38:37.181 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Starting execution of job Socket Window Count (520b5d0265583c603aa3beeba06c570a)
+2022-07-26 15:38:37.181 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (520b5d0265583c603aa3beeba06c570a) switched from state CREATED to RUNNING.
+2022-07-26 15:38:37.183 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:37.186 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:37.187 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from CREATED to SCHEDULED.
+2022-07-26 15:38:37.188 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/jobmanager_1 , session=702931ee-fd7e-4535-9570-e7a3949b6a45
+2022-07-26 15:38:37.188 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Connecting to ResourceManager akka://flink/user/resourcemanager_f158ec6d-170f-49be-be5b-e04226a2fb03(a62e232aff5b2dec75865edb16864da1)
+2022-07-26 15:38:37.190 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Resolved ResourceManager address, beginning registration
+2022-07-26 15:38:37.190 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:37.192 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering job manager 9570e7a3949b6a45702931eefd7e4535@akka://flink/user/jobmanager_1 for job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.193 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Cannot serve slot request, no ResourceManager connected. Adding as pending request [SlotRequestId{963fb116e30cda5d85f18b86ebffe31d}]
+2022-07-26 15:38:37.195 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registered job manager 9570e7a3949b6a45702931eefd7e4535@akka://flink/user/jobmanager_1 for job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.196 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster JobManager successfully registered at ResourceManager, leader id: a62e232aff5b2dec75865edb16864da1.
+2022-07-26 15:38:37.197 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Requesting new slot [SlotRequestId{963fb116e30cda5d85f18b86ebffe31d}] and profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} from resource manager.
+2022-07-26 15:38:37.198 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Request slot with profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} for job 520b5d0265583c603aa3beeba06c570a with allocation id AllocationID{66a53b9f839e257c51748688243653da}.
+2022-07-26 15:38:37.199 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Receive slot request AllocationID{66a53b9f839e257c51748688243653da} for job 520b5d0265583c603aa3beeba06c570a from resource manager with leader id a62e232aff5b2dec75865edb16864da1.
+2022-07-26 15:38:37.199 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Allocated slot for AllocationID{66a53b9f839e257c51748688243653da}.
+2022-07-26 15:38:37.200 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Add job 520b5d0265583c603aa3beeba06c570a for job leader monitoring.
+2022-07-26 15:38:37.201 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Try to register at job manager akka://flink/user/jobmanager_1 with leader id 702931ee-fd7e-4535-9570-e7a3949b6a45.
+2022-07-26 15:38:37.202 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Resolved JobManager address, beginning registration
+2022-07-26 15:38:37.202 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Registration at JobManager attempt 1 (timeout=100ms)
+2022-07-26 15:38:37.203 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Successful registration at job manager akka://flink/user/jobmanager_1 for job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.204 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Establish JobManager connection for job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.206 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Offer reserved slots to the leader of job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.207 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.slot.TaskSlotTable Activate slot AllocationID{66a53b9f839e257c51748688243653da}.
+2022-07-26 15:38:37.214 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:37.214 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Source: Custom File Source (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:37.216 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:37.217 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Split Reader: Custom File Source -> Flat Map (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:37.219 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:38:37.219 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Keyed Aggregation -> Sink: Print to Std. Out (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:38:37.234 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Source: Custom File Source (1/1).
+2022-07-26 15:38:37.234 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:37.235 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) [DEPLOYING]
+2022-07-26 15:38:37.238 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) [DEPLOYING].
+2022-07-26 15:38:37.238 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) [DEPLOYING].
+2022-07-26 15:38:37.239 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Split Reader: Custom File Source -> Flat Map (1/1).
+2022-07-26 15:38:37.240 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:37.240 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) [DEPLOYING]
+2022-07-26 15:38:37.240 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) [DEPLOYING].
+2022-07-26 15:38:37.242 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Keyed Aggregation -> Sink: Print to Std. Out (1/1).
+2022-07-26 15:38:37.242 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) [DEPLOYING].
+2022-07-26 15:38:37.242 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from CREATED to DEPLOYING.
+2022-07-26 15:38:37.242 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) [DEPLOYING]
+2022-07-26 15:38:37.242 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) [DEPLOYING].
+2022-07-26 15:38:37.243 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) [DEPLOYING].
+2022-07-26 15:38:37.263 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.264 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.267 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:37.270 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.270 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.270 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:37.270 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.270 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:38:37.271 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from DEPLOYING to RUNNING.
+2022-07-26 15:38:37.318 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction No state to restore for the ContinuousFileMonitoringFunction.
+2022-07-26 15:38:37.318 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileReaderOperator No state to restore for the ContinuousFileReaderOperator (taskIdx=0).
+2022-07-26 15:38:37.326 > INFO   springAppName_IS_UNDEFINED org.apache.flink.core.fs.FileSystem Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2022-07-26 15:38:37.334 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.h.HeapKeyedStateBackend Initializing heap keyed state backend with stream factory.
+2022-07-26 15:38:37.337 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction Forwarding split: [0] file:/D:/work/workspace/work_workspace/autoimpactanalysis/src/main/resources/data.txt mod@ 1658108489187 : 0 + 23
+2022-07-26 15:38:37.533 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.533 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4).
+2022-07-26 15:38:37.534 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) [FINISHED]
+2022-07-26 15:38:37.535 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Source: Custom File Source 56e7be85e923b57f9b8b13faabdaf4d4.
+2022-07-26 15:38:37.539 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (56e7be85e923b57f9b8b13faabdaf4d4) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.560 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.561 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9).
+2022-07-26 15:38:37.561 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) [FINISHED]
+2022-07-26 15:38:37.561 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Split Reader: Custom File Source -> Flat Map 5de587b61e724fc1bcea7058159aabc9.
+2022-07-26 15:38:37.562 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.562 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3).
+2022-07-26 15:38:37.562 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (5de587b61e724fc1bcea7058159aabc9) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.562 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) [FINISHED]
+2022-07-26 15:38:37.562 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Keyed Aggregation -> Sink: Print to Std. Out ab3b385cd058b44d5af848fca96d69a3.
+2022-07-26 15:38:37.564 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (ab3b385cd058b44d5af848fca96d69a3) switched from RUNNING to FINISHED.
+2022-07-26 15:38:37.564 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (520b5d0265583c603aa3beeba06c570a) switched from state RUNNING to FINISHED.
+2022-07-26 15:38:37.564 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.CheckpointCoordinator Stopping checkpoint coordinator for job 520b5d0265583c603aa3beeba06c570a.
+2022-07-26 15:38:37.564 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.StandaloneCompletedCheckpointStore Shutting down
+2022-07-26 15:38:37.572 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Job 520b5d0265583c603aa3beeba06c570a reached globally terminal state FINISHED.
+2022-07-26 15:38:37.572 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Shutting down Flink Mini Cluster
+2022-07-26 15:38:37.572 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Shutting down rest endpoint.
+2022-07-26 15:38:37.574 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Stopping the JobMaster for job Socket Window Count(520b5d0265583c603aa3beeba06c570a).
+2022-07-26 15:38:37.574 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping dispatcher akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9.
+2022-07-26 15:38:37.574 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopping TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:38:37.575 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping all currently running jobs of dispatcher akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9.
+2022-07-26 15:38:37.575 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.TaskExecutorLocalStateStoresManager Shutting down TaskExecutorLocalStateStoresManager.
+2022-07-26 15:38:37.575 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Close ResourceManager connection 756ad714681efc97aa6ad894b940f4c8: JobManager is shutting down..
+2022-07-26 15:38:37.577 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Suspending SlotPool.
+2022-07-26 15:38:37.578 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Stopping SlotPool.
+2022-07-26 15:38:37.586 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Disconnect job manager 9570e7a3949b6a45702931eefd7e4535@akka://flink/user/jobmanager_1 for job 520b5d0265583c603aa3beeba06c570a from the resource manager.
+2022-07-26 15:38:37.586 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor JobManager for job 520b5d0265583c603aa3beeba06c570a with leader id 9570e7a3949b6a45702931eefd7e4535 lost leadership.
+2022-07-26 15:38:37.590 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager removed spill file directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-b5a54793-f3b3-47d5-bf8c-a2e6e1df2c69
+2022-07-26 15:38:37.590 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Shutting down the network environment and its components.
+2022-07-26 15:38:37.591 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Removing cache directory C:\Users\Mechrevo\AppData\Local\Temp\flink-web-ui
+2022-07-26 15:38:37.591 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.h.l.b.StackTraceSampleCoordinator Shutting down stack trace sample coordinator.
+2022-07-26 15:38:37.595 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopped dispatcher akka://flink/user/dispatcher5e8bdd87-0b95-4c5a-9f19-92b84369f6e9.
+2022-07-26 15:38:37.596 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Closing the SlotManager.
+2022-07-26 15:38:37.596 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Suspending the SlotManager.
+2022-07-26 15:38:37.596 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Unregister TaskManager a2c29b914950d6b7361d23ad08ebdf7a from the SlotManager.
+2022-07-26 15:38:37.604 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Stop job leader service.
+2022-07-26 15:38:37.605 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopped TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:38:37.609 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopping Akka RPC service.
+2022-07-26 15:38:37.635 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Shutting down BLOB cache
+2022-07-26 15:38:37.636 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Shutting down BLOB cache
+2022-07-26 15:38:37.638 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Stopped BLOB server at 0.0.0.0:49421
+2022-07-26 15:38:37.639 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopped Akka RPC service.
+2022-07-26 15:42:31.783 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit does not contain a setter for field modificationTime
+2022-07-26 15:42:31.786 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor Class class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2022-07-26 15:42:31.993 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.e.LocalStreamEnvironment Running job on local embedded Flink mini cluster
+2022-07-26 15:42:32.001 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Flink Mini Cluster
+2022-07-26 15:42:32.200 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Metrics Registry
+2022-07-26 15:42:32.213 > INFO   springAppName_IS_UNDEFINED o.a.f.r.metrics.MetricRegistryImpl No metrics reporter configured, no metrics will be exposed/reported.
+2022-07-26 15:42:32.213 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting RPC Service(s)
+2022-07-26 15:42:32.559 > INFO   springAppName_IS_UNDEFINED akka.event.slf4j.Slf4jLogger Slf4jLogger started
+2022-07-26 15:42:32.578 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting high-availability services
+2022-07-26 15:42:33.423 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Created BLOB server storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-3fc921a1-fb4f-41ac-9fee-f20f237b9762
+2022-07-26 15:42:33.431 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Started BLOB server at 0.0.0.0:49575 - max concurrent requests: 50 - max backlog: 1000
+2022-07-26 15:42:33.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting ResourceManger
+2022-07-26 15:42:33.468 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.StandaloneResourceManager at akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3 .
+2022-07-26 15:42:33.487 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.resourcemanager.StandaloneResourceManager@51850751 @ akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3
+2022-07-26 15:42:33.490 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager ResourceManager akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3 was granted leadership with fencing token 9576889b92818c46db21d01a1cb3498b
+2022-07-26 15:42:33.490 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Starting the SlotManager.
+2022-07-26 15:42:33.491 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3 , session=db21d01a-1cb3-498b-9576-889b92818c46
+2022-07-26 15:42:33.502 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-2918c094-4f5b-4225-a9fd-afcd56efa8e3
+2022-07-26 15:42:33.503 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-e87ced83-e1a6-4025-b7e1-17402a5ddf37
+2022-07-26 15:42:33.504 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting 1 TaskManger(s)
+2022-07-26 15:42:33.507 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerRunner Starting TaskManager with ResourceID: 361054aa-00dd-427a-8bd1-6b0053a6634f
+2022-07-26 15:42:33.557 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Temporary file directory 'C:\Users\Mechrevo\AppData\Local\Temp': total 340 GB, usable 263 GB (77.35% usable)
+2022-07-26 15:42:33.744 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.b.NetworkBufferPool Allocated 401 MB for network buffer pool (number of memory segments: 12839, bytes per segment: 32768).
+2022-07-26 15:42:33.749 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Client Proxy. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:42:33.750 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Server. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:42:33.751 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Starting the network environment and its components.
+2022-07-26 15:42:33.752 > WARN   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerLocation No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2022-07-26 15:42:33.753 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Limiting managed memory to 0.7 of the currently free heap space (2523 MB), memory will be allocated lazily.
+2022-07-26 15:42:33.758 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-f7ace65f-1bb6-42b7-b728-f605237e855a for spill files.
+2022-07-26 15:42:33.811 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerConfiguration Messages have a max timeout of 10000 ms
+2022-07-26 15:42:33.818 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/taskmanager_0 .
+2022-07-26 15:42:33.826 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Start job leader service.
+2022-07-26 15:42:33.827 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Connecting to ResourceManager akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3(9576889b92818c46db21d01a1cb3498b).
+2022-07-26 15:42:33.827 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.filecache.FileCache User file cache uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-dist-cache-b5dae977-8205-4214-a351-bc2f623266de
+2022-07-26 15:42:33.828 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting dispatcher rest endpoint.
+2022-07-26 15:42:33.848 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Resolved ResourceManager address, beginning registration
+2022-07-26 15:42:33.848 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:42:33.853 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering TaskManager with ResourceID 361054aa-00dd-427a-8bd1-6b0053a6634f (akka://flink/user/taskmanager_0) at ResourceManager
+2022-07-26 15:42:33.855 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Successful registration at resource manager akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3 under registration id ff912da015ee9ab32599831f2c24c425.
+2022-07-26 15:42:33.857 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Registering TaskManager 361054aa-00dd-427a-8bd1-6b0053a6634f under ff912da015ee9ab32599831f2c24c425 at the SlotManager.
+2022-07-26 15:42:33.871 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Starting rest endpoint.
+2022-07-26 15:42:34.117 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils Log file environment variable 'log.file' is not set.
+2022-07-26 15:42:34.117 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'Key: 'web.log.path' , default: null (deprecated keys: [jobmanager.web.log.path])'.
+2022-07-26 15:42:35.900 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Rest endpoint listening at localhost:49626
+2022-07-26 15:42:35.900 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.DispatcherRestEndpoint@392a04e7 @ http://localhost:49626
+2022-07-26 15:42:35.900 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Web frontend listening at http://localhost:49626.
+2022-07-26 15:42:35.901 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting job dispatcher(s) for JobManger
+2022-07-26 15:42:35.901 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint http://localhost:49626 was granted leadership with leaderSessionID=756f0537-23df-4bb7-b0d9-7a224799f573
+2022-07-26 15:42:35.901 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader http://localhost:49626 , session=756f0537-23df-4bb7-b0d9-7a224799f573
+2022-07-26 15:42:35.907 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701 .
+2022-07-26 15:42:35.916 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.StandaloneDispatcher@2dbd803f @ akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701
+2022-07-26 15:42:35.917 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Flink Mini Cluster started successfully
+2022-07-26 15:42:35.917 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Dispatcher akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701 was granted leadership with fencing token 924995de-7451-4802-a727-74e0e2b76a5d
+2022-07-26 15:42:35.919 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Recovering all persisted jobs.
+2022-07-26 15:42:35.920 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701 , session=924995de-7451-4802-a727-74e0e2b76a5d
+2022-07-26 15:42:35.927 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Submitting job 8fcb6486ee22f0f53b54fa451251b665 (Socket Window Count).
+2022-07-26 15:42:35.942 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.JobMaster at akka://flink/user/jobmanager_1 .
+2022-07-26 15:42:35.949 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Initializing job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665).
+2022-07-26 15:42:35.954 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Using restart strategy NoRestartStrategy for Socket Window Count (8fcb6486ee22f0f53b54fa451251b665).
+2022-07-26 15:42:35.958 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.slotpool.SlotPool at akka://flink/user/c95699b4-fb5d-4290-a703-72f14aa5657f .
+2022-07-26 15:42:35.976 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job recovers via failover strategy: full graph restart
+2022-07-26 15:42:35.997 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Running initialization on master for job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665).
+2022-07-26 15:42:35.997 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Successfully ran initialization on master in 0 ms.
+2022-07-26 15:42:36.015 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:42:36.024 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.jobmaster.JobManagerRunner@64df512e @ akka://flink/user/jobmanager_1
+2022-07-26 15:42:36.025 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.JobManagerRunner JobManager runner for job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665) was granted leadership with session id c2faac36-a9c2-4d4e-82fb-52338f375ce1 at akka://flink/user/jobmanager_1.
+2022-07-26 15:42:36.026 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Starting execution of job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665)
+2022-07-26 15:42:36.027 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665) switched from state CREATED to RUNNING.
+2022-07-26 15:42:36.029 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from CREATED to SCHEDULED.
+2022-07-26 15:42:36.032 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from CREATED to SCHEDULED.
+2022-07-26 15:42:36.033 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from CREATED to SCHEDULED.
+2022-07-26 15:42:36.034 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/jobmanager_1 , session=c2faac36-a9c2-4d4e-82fb-52338f375ce1
+2022-07-26 15:42:36.035 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Connecting to ResourceManager akka://flink/user/resourcemanager_cd3963f1-c394-4897-8c5c-2b9f8207aad3(9576889b92818c46db21d01a1cb3498b)
+2022-07-26 15:42:36.036 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Resolved ResourceManager address, beginning registration
+2022-07-26 15:42:36.036 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:42:36.038 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering job manager 82fb52338f375ce1c2faac36a9c24d4e@akka://flink/user/jobmanager_1 for job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.040 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Cannot serve slot request, no ResourceManager connected. Adding as pending request [SlotRequestId{b75d68f411c2678e9df5570b2253c18a}]
+2022-07-26 15:42:36.041 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registered job manager 82fb52338f375ce1c2faac36a9c24d4e@akka://flink/user/jobmanager_1 for job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.042 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster JobManager successfully registered at ResourceManager, leader id: 9576889b92818c46db21d01a1cb3498b.
+2022-07-26 15:42:36.043 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Requesting new slot [SlotRequestId{b75d68f411c2678e9df5570b2253c18a}] and profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} from resource manager.
+2022-07-26 15:42:36.044 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Request slot with profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} for job 8fcb6486ee22f0f53b54fa451251b665 with allocation id AllocationID{c903da6cda3202f96ed1ce1b7d55f859}.
+2022-07-26 15:42:36.045 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Receive slot request AllocationID{c903da6cda3202f96ed1ce1b7d55f859} for job 8fcb6486ee22f0f53b54fa451251b665 from resource manager with leader id 9576889b92818c46db21d01a1cb3498b.
+2022-07-26 15:42:36.045 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Allocated slot for AllocationID{c903da6cda3202f96ed1ce1b7d55f859}.
+2022-07-26 15:42:36.046 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Add job 8fcb6486ee22f0f53b54fa451251b665 for job leader monitoring.
+2022-07-26 15:42:36.047 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Try to register at job manager akka://flink/user/jobmanager_1 with leader id c2faac36-a9c2-4d4e-82fb-52338f375ce1.
+2022-07-26 15:42:36.048 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Resolved JobManager address, beginning registration
+2022-07-26 15:42:36.048 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Registration at JobManager attempt 1 (timeout=100ms)
+2022-07-26 15:42:36.049 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Successful registration at job manager akka://flink/user/jobmanager_1 for job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.050 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Establish JobManager connection for job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.052 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Offer reserved slots to the leader of job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.053 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.slot.TaskSlotTable Activate slot AllocationID{c903da6cda3202f96ed1ce1b7d55f859}.
+2022-07-26 15:42:36.059 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:42:36.059 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Source: Custom File Source (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:42:36.062 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:42:36.062 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Split Reader: Custom File Source -> Flat Map (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:42:36.064 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:42:36.064 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Keyed Aggregation -> Sink: Print to Std. Out (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:42:36.079 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Source: Custom File Source (1/1).
+2022-07-26 15:42:36.080 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from CREATED to DEPLOYING.
+2022-07-26 15:42:36.080 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) [DEPLOYING]
+2022-07-26 15:42:36.083 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) [DEPLOYING].
+2022-07-26 15:42:36.083 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) [DEPLOYING].
+2022-07-26 15:42:36.085 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Split Reader: Custom File Source -> Flat Map (1/1).
+2022-07-26 15:42:36.085 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from CREATED to DEPLOYING.
+2022-07-26 15:42:36.085 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) [DEPLOYING]
+2022-07-26 15:42:36.086 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) [DEPLOYING].
+2022-07-26 15:42:36.087 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Keyed Aggregation -> Sink: Print to Std. Out (1/1).
+2022-07-26 15:42:36.087 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) [DEPLOYING].
+2022-07-26 15:42:36.087 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from CREATED to DEPLOYING.
+2022-07-26 15:42:36.088 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) [DEPLOYING]
+2022-07-26 15:42:36.088 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) [DEPLOYING].
+2022-07-26 15:42:36.088 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) [DEPLOYING].
+2022-07-26 15:42:36.108 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.109 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.112 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:42:36.114 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.114 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.114 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:42:36.114 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:42:36.115 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.115 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from DEPLOYING to RUNNING.
+2022-07-26 15:42:36.161 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileReaderOperator No state to restore for the ContinuousFileReaderOperator (taskIdx=0).
+2022-07-26 15:42:36.161 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction No state to restore for the ContinuousFileMonitoringFunction.
+2022-07-26 15:42:36.167 > INFO   springAppName_IS_UNDEFINED org.apache.flink.core.fs.FileSystem Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2022-07-26 15:42:36.174 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.h.HeapKeyedStateBackend Initializing heap keyed state backend with stream factory.
+2022-07-26 15:42:36.178 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction Forwarding split: [0] file:/D:/work/workspace/work_workspace/autoimpactanalysis/src/main/resources/data.txt mod@ 1658108489187 : 0 + 23
+2022-07-26 15:42:36.377 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.378 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d).
+2022-07-26 15:42:36.378 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) [FINISHED]
+2022-07-26 15:42:36.379 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Source: Custom File Source 580e530416f3c9afc643551c0cb8145d.
+2022-07-26 15:42:36.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (580e530416f3c9afc643551c0cb8145d) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.404 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.404 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5).
+2022-07-26 15:42:36.404 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) [FINISHED]
+2022-07-26 15:42:36.405 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Split Reader: Custom File Source -> Flat Map a3b857c7f3fde4779e164d731f2ca5a5.
+2022-07-26 15:42:36.405 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.405 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c).
+2022-07-26 15:42:36.405 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (a3b857c7f3fde4779e164d731f2ca5a5) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.406 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) [FINISHED]
+2022-07-26 15:42:36.406 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Keyed Aggregation -> Sink: Print to Std. Out 48bb7b3efa0af53e314e92a1338cb84c.
+2022-07-26 15:42:36.407 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (48bb7b3efa0af53e314e92a1338cb84c) switched from RUNNING to FINISHED.
+2022-07-26 15:42:36.408 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (8fcb6486ee22f0f53b54fa451251b665) switched from state RUNNING to FINISHED.
+2022-07-26 15:42:36.408 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.CheckpointCoordinator Stopping checkpoint coordinator for job 8fcb6486ee22f0f53b54fa451251b665.
+2022-07-26 15:42:36.408 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.StandaloneCompletedCheckpointStore Shutting down
+2022-07-26 15:42:36.416 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Job 8fcb6486ee22f0f53b54fa451251b665 reached globally terminal state FINISHED.
+2022-07-26 15:42:36.416 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Shutting down Flink Mini Cluster
+2022-07-26 15:42:36.417 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Shutting down rest endpoint.
+2022-07-26 15:42:36.419 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Stopping the JobMaster for job Socket Window Count(8fcb6486ee22f0f53b54fa451251b665).
+2022-07-26 15:42:36.419 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopping TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:42:36.419 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping dispatcher akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701.
+2022-07-26 15:42:36.419 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping all currently running jobs of dispatcher akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701.
+2022-07-26 15:42:36.420 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.TaskExecutorLocalStateStoresManager Shutting down TaskExecutorLocalStateStoresManager.
+2022-07-26 15:42:36.420 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Close ResourceManager connection a7eba3a514e56aaf20821d4702703edd: JobManager is shutting down..
+2022-07-26 15:42:36.420 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Suspending SlotPool.
+2022-07-26 15:42:36.422 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Stopping SlotPool.
+2022-07-26 15:42:36.431 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Removing cache directory C:\Users\Mechrevo\AppData\Local\Temp\flink-web-ui
+2022-07-26 15:42:36.431 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Disconnect job manager 82fb52338f375ce1c2faac36a9c24d4e@akka://flink/user/jobmanager_1 for job 8fcb6486ee22f0f53b54fa451251b665 from the resource manager.
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Closing the SlotManager.
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Suspending the SlotManager.
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager removed spill file directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-f7ace65f-1bb6-42b7-b728-f605237e855a
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Shutting down the network environment and its components.
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Unregister TaskManager ff912da015ee9ab32599831f2c24c425 from the SlotManager.
+2022-07-26 15:42:36.432 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor JobManager for job 8fcb6486ee22f0f53b54fa451251b665 with leader id 82fb52338f375ce1c2faac36a9c24d4e lost leadership.
+2022-07-26 15:42:36.433 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.h.l.b.StackTraceSampleCoordinator Shutting down stack trace sample coordinator.
+2022-07-26 15:42:36.436 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopped dispatcher akka://flink/user/dispatchere4570eef-afd4-4107-8eec-f2de33e96701.
+2022-07-26 15:42:36.443 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Stop job leader service.
+2022-07-26 15:42:36.445 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopped TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:42:36.450 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopping Akka RPC service.
+2022-07-26 15:42:36.477 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Shutting down BLOB cache
+2022-07-26 15:42:36.478 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Shutting down BLOB cache
+2022-07-26 15:42:36.481 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Stopped BLOB server at 0.0.0.0:49575
+2022-07-26 15:42:36.481 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopped Akka RPC service.
+2022-07-26 15:53:12.697 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit does not contain a setter for field modificationTime
+2022-07-26 15:53:12.700 > INFO   springAppName_IS_UNDEFINED o.a.f.a.j.typeutils.TypeExtractor Class class org.apache.flink.streaming.api.functions.source.TimestampedFileInputSplit cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2022-07-26 15:53:12.913 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.e.LocalStreamEnvironment Running job on local embedded Flink mini cluster
+2022-07-26 15:53:12.921 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Flink Mini Cluster
+2022-07-26 15:53:13.105 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting Metrics Registry
+2022-07-26 15:53:13.120 > INFO   springAppName_IS_UNDEFINED o.a.f.r.metrics.MetricRegistryImpl No metrics reporter configured, no metrics will be exposed/reported.
+2022-07-26 15:53:13.121 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting RPC Service(s)
+2022-07-26 15:53:13.493 > INFO   springAppName_IS_UNDEFINED akka.event.slf4j.Slf4jLogger Slf4jLogger started
+2022-07-26 15:53:13.510 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting high-availability services
+2022-07-26 15:53:14.360 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Created BLOB server storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-5135dd5d-b466-45f3-9831-6efff01f53cb
+2022-07-26 15:53:14.368 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Started BLOB server at 0.0.0.0:49795 - max concurrent requests: 50 - max backlog: 1000
+2022-07-26 15:53:14.369 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting ResourceManger
+2022-07-26 15:53:14.406 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.StandaloneResourceManager at akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f .
+2022-07-26 15:53:14.425 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.resourcemanager.StandaloneResourceManager@51850751 @ akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f
+2022-07-26 15:53:14.428 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager ResourceManager akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f was granted leadership with fencing token b9377df6c9d0b0d91ea5607061bb4d5a
+2022-07-26 15:53:14.429 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Starting the SlotManager.
+2022-07-26 15:53:14.430 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f , session=1ea56070-61bb-4d5a-b937-7df6c9d0b0d9
+2022-07-26 15:53:14.440 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-f956dad7-4c72-4cbd-94ca-6de766a1aa51
+2022-07-26 15:53:14.441 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Created BLOB cache storage directory C:\Users\Mechrevo\AppData\Local\Temp\blobStore-e422bd6c-ba4a-47e9-affd-368df7ebd9bf
+2022-07-26 15:53:14.442 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting 1 TaskManger(s)
+2022-07-26 15:53:14.445 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerRunner Starting TaskManager with ResourceID: 32cb1445-1c35-4113-b1d9-6e30d5f055e0
+2022-07-26 15:53:14.496 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Temporary file directory 'C:\Users\Mechrevo\AppData\Local\Temp': total 340 GB, usable 263 GB (77.35% usable)
+2022-07-26 15:53:14.679 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.b.NetworkBufferPool Allocated 401 MB for network buffer pool (number of memory segments: 12839, bytes per segment: 32768).
+2022-07-26 15:53:14.685 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Client Proxy. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:53:14.686 > INFO   springAppName_IS_UNDEFINED o.a.f.r.query.QueryableStateUtils Could not load Queryable State Server. Probable reason: flink-queryable-state-runtime is not in the classpath. To enable Queryable State, please move the flink-queryable-state-runtime jar from the opt to the lib folder.
+2022-07-26 15:53:14.687 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Starting the network environment and its components.
+2022-07-26 15:53:14.690 > WARN   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerLocation No hostname could be resolved for the IP address 127.0.0.1, using IP address as host name. Local input split assignment (such as for HDFS files) may be impacted.
+2022-07-26 15:53:14.690 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerServices Limiting managed memory to 0.7 of the currently free heap space (2523 MB), memory will be allocated lazily.
+2022-07-26 15:53:14.695 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-63fe7d02-fe5b-40f1-8e3c-8a270f833840 for spill files.
+2022-07-26 15:53:14.749 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.TaskManagerConfiguration Messages have a max timeout of 10000 ms
+2022-07-26 15:53:14.755 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/taskmanager_0 .
+2022-07-26 15:53:14.762 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Start job leader service.
+2022-07-26 15:53:14.763 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Connecting to ResourceManager akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f(b9377df6c9d0b0d91ea5607061bb4d5a).
+2022-07-26 15:53:14.764 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.filecache.FileCache User file cache uses directory C:\Users\Mechrevo\AppData\Local\Temp\flink-dist-cache-2bfe8bc0-fa54-44e6-a674-cece0a765531
+2022-07-26 15:53:14.764 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting dispatcher rest endpoint.
+2022-07-26 15:53:14.783 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Resolved ResourceManager address, beginning registration
+2022-07-26 15:53:14.783 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:53:14.789 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering TaskManager with ResourceID 32cb1445-1c35-4113-b1d9-6e30d5f055e0 (akka://flink/user/taskmanager_0) at ResourceManager
+2022-07-26 15:53:14.792 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Successful registration at resource manager akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f under registration id ac505202fc5a3c4be49e5f648b448c66.
+2022-07-26 15:53:14.794 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Registering TaskManager 32cb1445-1c35-4113-b1d9-6e30d5f055e0 under ac505202fc5a3c4be49e5f648b448c66 at the SlotManager.
+2022-07-26 15:53:14.805 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Starting rest endpoint.
+2022-07-26 15:53:15.053 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils Log file environment variable 'log.file' is not set.
+2022-07-26 15:53:15.053 > WARN   springAppName_IS_UNDEFINED o.a.f.r.webmonitor.WebMonitorUtils JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'Key: 'web.log.path' , default: null (deprecated keys: [jobmanager.web.log.path])'.
+2022-07-26 15:53:16.839 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Rest endpoint listening at localhost:49851
+2022-07-26 15:53:16.840 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.DispatcherRestEndpoint@392a04e7 @ http://localhost:49851
+2022-07-26 15:53:16.840 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Web frontend listening at http://localhost:49851.
+2022-07-26 15:53:16.840 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Starting job dispatcher(s) for JobManger
+2022-07-26 15:53:16.840 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint http://localhost:49851 was granted leadership with leaderSessionID=3c86afd2-606b-46e4-99b5-f2f73a97520e
+2022-07-26 15:53:16.840 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader http://localhost:49851 , session=3c86afd2-606b-46e4-99b5-f2f73a97520e
+2022-07-26 15:53:16.847 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085 .
+2022-07-26 15:53:16.856 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.dispatcher.StandaloneDispatcher@2dbd803f @ akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085
+2022-07-26 15:53:16.856 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Flink Mini Cluster started successfully
+2022-07-26 15:53:16.856 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Dispatcher akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085 was granted leadership with fencing token 9eec21d7-9bff-4131-8bf8-2ba7cf0c40fa
+2022-07-26 15:53:16.858 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Recovering all persisted jobs.
+2022-07-26 15:53:16.859 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085 , session=9eec21d7-9bff-4131-8bf8-2ba7cf0c40fa
+2022-07-26 15:53:16.866 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Submitting job 8b30c7694a30b79a8933982b0eab40f3 (Socket Window Count).
+2022-07-26 15:53:16.882 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.JobMaster at akka://flink/user/jobmanager_1 .
+2022-07-26 15:53:16.890 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Initializing job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3).
+2022-07-26 15:53:16.895 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Using restart strategy NoRestartStrategy for Socket Window Count (8b30c7694a30b79a8933982b0eab40f3).
+2022-07-26 15:53:16.899 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Starting RPC endpoint for org.apache.flink.runtime.jobmaster.slotpool.SlotPool at akka://flink/user/40554712-2c04-4845-bc78-018010a35ad5 .
+2022-07-26 15:53:16.918 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job recovers via failover strategy: full graph restart
+2022-07-26 15:53:16.939 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Running initialization on master for job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3).
+2022-07-26 15:53:16.940 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Successfully ran initialization on master in 0 ms.
+2022-07-26 15:53:16.958 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:53:16.968 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Proposing leadership to contender org.apache.flink.runtime.jobmaster.JobManagerRunner@df9f6d0 @ akka://flink/user/jobmanager_1
+2022-07-26 15:53:16.968 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.JobManagerRunner JobManager runner for job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3) was granted leadership with session id 797eb852-4dfc-4e58-b9ec-21ad06e16820 at akka://flink/user/jobmanager_1.
+2022-07-26 15:53:16.970 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Starting execution of job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3)
+2022-07-26 15:53:16.970 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3) switched from state CREATED to RUNNING.
+2022-07-26 15:53:16.973 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from CREATED to SCHEDULED.
+2022-07-26 15:53:16.976 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from CREATED to SCHEDULED.
+2022-07-26 15:53:16.976 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from CREATED to SCHEDULED.
+2022-07-26 15:53:16.978 > INFO   springAppName_IS_UNDEFINED o.a.f.r.h.n.e.EmbeddedLeaderService Received confirmation of leadership for leader akka://flink/user/jobmanager_1 , session=797eb852-4dfc-4e58-b9ec-21ad06e16820
+2022-07-26 15:53:16.978 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Connecting to ResourceManager akka://flink/user/resourcemanager_740ca343-4932-466b-92a5-48a570a90e5f(b9377df6c9d0b0d91ea5607061bb4d5a)
+2022-07-26 15:53:16.979 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Resolved ResourceManager address, beginning registration
+2022-07-26 15:53:16.979 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Registration at ResourceManager attempt 1 (timeout=100ms)
+2022-07-26 15:53:16.981 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registering job manager b9ec21ad06e16820797eb8524dfc4e58@akka://flink/user/jobmanager_1 for job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:16.982 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Cannot serve slot request, no ResourceManager connected. Adding as pending request [SlotRequestId{966adfb6caa2da7b3b09eff729172a86}]
+2022-07-26 15:53:16.984 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Registered job manager b9ec21ad06e16820797eb8524dfc4e58@akka://flink/user/jobmanager_1 for job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:16.986 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster JobManager successfully registered at ResourceManager, leader id: b9377df6c9d0b0d91ea5607061bb4d5a.
+2022-07-26 15:53:16.986 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Requesting new slot [SlotRequestId{966adfb6caa2da7b3b09eff729172a86}] and profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} from resource manager.
+2022-07-26 15:53:16.987 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Request slot with profile ResourceProfile{cpuCores=-1.0, heapMemoryInMB=-1, directMemoryInMB=0, nativeMemoryInMB=0, networkMemoryInMB=0} for job 8b30c7694a30b79a8933982b0eab40f3 with allocation id AllocationID{08849d640d6593df23831a1cc4a41d27}.
+2022-07-26 15:53:16.987 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Receive slot request AllocationID{08849d640d6593df23831a1cc4a41d27} for job 8b30c7694a30b79a8933982b0eab40f3 from resource manager with leader id b9377df6c9d0b0d91ea5607061bb4d5a.
+2022-07-26 15:53:16.988 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Allocated slot for AllocationID{08849d640d6593df23831a1cc4a41d27}.
+2022-07-26 15:53:16.988 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Add job 8b30c7694a30b79a8933982b0eab40f3 for job leader monitoring.
+2022-07-26 15:53:16.990 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Try to register at job manager akka://flink/user/jobmanager_1 with leader id 797eb852-4dfc-4e58-b9ec-21ad06e16820.
+2022-07-26 15:53:16.991 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Resolved JobManager address, beginning registration
+2022-07-26 15:53:16.991 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Registration at JobManager attempt 1 (timeout=100ms)
+2022-07-26 15:53:16.992 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Successful registration at job manager akka://flink/user/jobmanager_1 for job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:16.992 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Establish JobManager connection for job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:16.995 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Offer reserved slots to the leader of job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:16.995 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.slot.TaskSlotTable Activate slot AllocationID{08849d640d6593df23831a1cc4a41d27}.
+2022-07-26 15:53:17.002 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:53:17.002 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Source: Custom File Source (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:53:17.004 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:53:17.005 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Split Reader: Custom File Source -> Flat Map (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:53:17.006 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from SCHEDULED to DEPLOYING.
+2022-07-26 15:53:17.007 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Deploying Keyed Aggregation -> Sink: Print to Std. Out (1/1) (attempt #0) to 127.0.0.1
+2022-07-26 15:53:17.022 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Source: Custom File Source (1/1).
+2022-07-26 15:53:17.023 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from CREATED to DEPLOYING.
+2022-07-26 15:53:17.023 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) [DEPLOYING]
+2022-07-26 15:53:17.026 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) [DEPLOYING].
+2022-07-26 15:53:17.027 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) [DEPLOYING].
+2022-07-26 15:53:17.028 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Split Reader: Custom File Source -> Flat Map (1/1).
+2022-07-26 15:53:17.028 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from CREATED to DEPLOYING.
+2022-07-26 15:53:17.028 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) [DEPLOYING]
+2022-07-26 15:53:17.029 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) [DEPLOYING].
+2022-07-26 15:53:17.030 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Received task Keyed Aggregation -> Sink: Print to Std. Out (1/1).
+2022-07-26 15:53:17.031 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) [DEPLOYING].
+2022-07-26 15:53:17.031 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from CREATED to DEPLOYING.
+2022-07-26 15:53:17.031 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Creating FileSystem stream leak safety net for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) [DEPLOYING]
+2022-07-26 15:53:17.031 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Loading JAR files for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) [DEPLOYING].
+2022-07-26 15:53:17.031 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Registering task at network: Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) [DEPLOYING].
+2022-07-26 15:53:17.052 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.053 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.056 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:53:17.058 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.059 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.059 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:53:17.059 > INFO   springAppName_IS_UNDEFINED o.a.f.s.runtime.tasks.StreamTask No state backend has been configured, using default (Memory / JobManager) MemoryStateBackend (data in heap memory / checkpoints to JobManager) (checkpoints: 'null', savepoints: 'null', asynchronous: TRUE, maxStateSize: 5242880)
+2022-07-26 15:53:17.059 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.059 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from DEPLOYING to RUNNING.
+2022-07-26 15:53:17.105 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileReaderOperator No state to restore for the ContinuousFileReaderOperator (taskIdx=0).
+2022-07-26 15:53:17.105 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction No state to restore for the ContinuousFileMonitoringFunction.
+2022-07-26 15:53:17.112 > INFO   springAppName_IS_UNDEFINED org.apache.flink.core.fs.FileSystem Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2022-07-26 15:53:17.119 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.h.HeapKeyedStateBackend Initializing heap keyed state backend with stream factory.
+2022-07-26 15:53:17.123 > INFO   springAppName_IS_UNDEFINED o.a.f.s.a.f.s.ContinuousFileMonitoringFunction Forwarding split: [0] file:/D:/work/workspace/work_workspace/autoimpactanalysis/src/main/resources/data.txt mod@ 1658108489187 : 0 + 23
+2022-07-26 15:53:17.327 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.327 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241).
+2022-07-26 15:53:17.328 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) [FINISHED]
+2022-07-26 15:53:17.328 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Source: Custom File Source 12c2efb57b2536de2fd47ff78ca11241.
+2022-07-26 15:53:17.333 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Source: Custom File Source (1/1) (12c2efb57b2536de2fd47ff78ca11241) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.355 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.355 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e).
+2022-07-26 15:53:17.355 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) [FINISHED]
+2022-07-26 15:53:17.355 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Split Reader: Custom File Source -> Flat Map d1501a42ae324fb594434cbf05371f7e.
+2022-07-26 15:53:17.356 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.356 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Freeing task resources for Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370).
+2022-07-26 15:53:17.356 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Split Reader: Custom File Source -> Flat Map (1/1) (d1501a42ae324fb594434cbf05371f7e) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.356 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.taskmanager.Task Ensuring all FileSystem streams are closed for task Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) [FINISHED]
+2022-07-26 15:53:17.357 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Un-registering task and sending final execution state FINISHED to JobManager for task Keyed Aggregation -> Sink: Print to Std. Out 293ba4b700b99a4fed92a0ccd21ac370.
+2022-07-26 15:53:17.358 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Keyed Aggregation -> Sink: Print to Std. Out (1/1) (293ba4b700b99a4fed92a0ccd21ac370) switched from RUNNING to FINISHED.
+2022-07-26 15:53:17.358 > INFO   springAppName_IS_UNDEFINED o.a.f.r.e.ExecutionGraph Job Socket Window Count (8b30c7694a30b79a8933982b0eab40f3) switched from state RUNNING to FINISHED.
+2022-07-26 15:53:17.358 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.CheckpointCoordinator Stopping checkpoint coordinator for job 8b30c7694a30b79a8933982b0eab40f3.
+2022-07-26 15:53:17.358 > INFO   springAppName_IS_UNDEFINED o.a.f.r.c.StandaloneCompletedCheckpointStore Shutting down
+2022-07-26 15:53:17.366 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Job 8b30c7694a30b79a8933982b0eab40f3 reached globally terminal state FINISHED.
+2022-07-26 15:53:17.367 > INFO   springAppName_IS_UNDEFINED o.a.f.r.minicluster.MiniCluster Shutting down Flink Mini Cluster
+2022-07-26 15:53:17.367 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Shutting down rest endpoint.
+2022-07-26 15:53:17.369 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Stopping the JobMaster for job Socket Window Count(8b30c7694a30b79a8933982b0eab40f3).
+2022-07-26 15:53:17.369 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping dispatcher akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085.
+2022-07-26 15:53:17.369 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopping TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:53:17.369 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopping all currently running jobs of dispatcher akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085.
+2022-07-26 15:53:17.369 > INFO   springAppName_IS_UNDEFINED o.a.f.r.s.TaskExecutorLocalStateStoresManager Shutting down TaskExecutorLocalStateStoresManager.
+2022-07-26 15:53:17.370 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Suspending SlotPool.
+2022-07-26 15:53:17.370 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.jobmaster.JobMaster Close ResourceManager connection 815048e3b0726bd24e27748c4dad1c93: JobManager is shutting down..
+2022-07-26 15:53:17.371 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.StandaloneResourceManager Disconnect job manager b9ec21ad06e16820797eb8524dfc4e58@akka://flink/user/jobmanager_1 for job 8b30c7694a30b79a8933982b0eab40f3 from the resource manager.
+2022-07-26 15:53:17.372 > INFO   springAppName_IS_UNDEFINED o.a.f.runtime.rpc.akka.AkkaRpcActor The rpc endpoint org.apache.flink.runtime.jobmaster.slotpool.SlotPool has not been started yet. Discarding message org.apache.flink.runtime.rpc.messages.LocalRpcInvocation until processing is started.
+2022-07-26 15:53:17.381 > INFO   springAppName_IS_UNDEFINED o.a.f.r.jobmaster.slotpool.SlotPool Stopping SlotPool.
+2022-07-26 15:53:17.382 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor JobManager for job 8b30c7694a30b79a8933982b0eab40f3 with leader id b9ec21ad06e16820797eb8524dfc4e58 lost leadership.
+2022-07-26 15:53:17.383 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.DispatcherRestEndpoint Removing cache directory C:\Users\Mechrevo\AppData\Local\Temp\flink-web-ui
+2022-07-26 15:53:17.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Closing the SlotManager.
+2022-07-26 15:53:17.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Suspending the SlotManager.
+2022-07-26 15:53:17.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.slotmanager.SlotManager Unregister TaskManager ac505202fc5a3c4be49e5f648b448c66 from the SlotManager.
+2022-07-26 15:53:17.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.io.disk.iomanager.IOManager I/O manager removed spill file directory C:\Users\Mechrevo\AppData\Local\Temp\flink-io-63fe7d02-fe5b-40f1-8e3c-8a270f833840
+2022-07-26 15:53:17.384 > INFO   springAppName_IS_UNDEFINED o.a.f.r.i.n.NetworkEnvironment Shutting down the network environment and its components.
+2022-07-26 15:53:17.385 > INFO   springAppName_IS_UNDEFINED o.a.f.r.r.h.l.b.StackTraceSampleCoordinator Shutting down stack trace sample coordinator.
+2022-07-26 15:53:17.388 > INFO   springAppName_IS_UNDEFINED o.a.f.r.d.StandaloneDispatcher Stopped dispatcher akka://flink/user/dispatcher12b83735-666f-41cf-a004-0d1450115085.
+2022-07-26 15:53:17.395 > INFO   springAppName_IS_UNDEFINED o.a.f.r.t.JobLeaderService Stop job leader service.
+2022-07-26 15:53:17.396 > INFO   springAppName_IS_UNDEFINED o.a.f.r.taskexecutor.TaskExecutor Stopped TaskExecutor akka://flink/user/taskmanager_0.
+2022-07-26 15:53:17.401 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopping Akka RPC service.
+2022-07-26 15:53:17.420 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.PermanentBlobCache Shutting down BLOB cache
+2022-07-26 15:53:17.421 > INFO   springAppName_IS_UNDEFINED o.a.f.r.blob.TransientBlobCache Shutting down BLOB cache
+2022-07-26 15:53:17.423 > INFO   springAppName_IS_UNDEFINED o.a.flink.runtime.blob.BlobServer Stopped BLOB server at 0.0.0.0:49795
+2022-07-26 15:53:17.424 > INFO   springAppName_IS_UNDEFINED o.a.f.r.rpc.akka.AkkaRpcService Stopped Akka RPC service.

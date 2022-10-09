@@ -1,0 +1,4 @@
+# Project exclude paths
+/autoimpactanalysis_vue/mock/node_modules/
+/autoimpactanalysis_vue/node_modules/
+/target/

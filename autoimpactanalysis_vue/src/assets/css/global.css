@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.margin-l5{
+    margin-left: 5px;
+}
+
+.margin-r5{
+    margin-right: 5px;
+}
+
+.margin-l10{
+    margin-left: 10px;
+}
+
+.margin-r10{
+    margin-right: 10px;
+}
+
+.pd-10{
+    padding: 10px 0;
+}

@@ -1,0 +1,115 @@
+package ${package.Controller};
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.web.bind.annotation.*;
+#if(${restControllerStyle})
+import org.springframework.web.bind.annotation.RestController;
+#else
+import org.springframework.stereotype.Controller;
+#end
+import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.util.List;
+
+import ${package.Parent}.common.Result;
+import ${package.Service}.${table.serviceName};
+import ${package.Entity}.${entity};
+
+#if(${superControllerClassPackage})
+import ${superControllerClassPackage};
+#end
+
+/**
+ * @ClassName: ${table.controllerName}
+ * @Author: ${author}
+ * @Date: ${date}
+ * @Version: V1.0
+ * @Description: ${entity} 前端控制器
+ */
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+#if(${kotlin})
+class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
+
+#else
+#if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+#else
+public class ${table.controllerName} {
+#end
+
+    private static Logger log = LoggerFactory.getLogger(${table.controllerName}.class);
+
+    @Resource
+    private ${table.serviceName} ${table.entityPath}Service;
+
+    //全量查询
+    @GetMapping("/findAll")
+    public Result findAll() {
+        logger.info("进入${table.entityPath}/findAll方法");
+        return Result.success(${table.entityPath}Service.list());
+    }
+
+    //根据ID查询
+    @GetMapping("/findById/{id}")
+    public Result findById(@PathVariable Integer id) {
+        logger.info("进入${table.entityPath}/findById方法");
+        return Result.success(${table.entityPath}Service.getById(id));
+    }
+
+    //分页查询
+    @GetMapping("/findPage")
+    public Result findPage(@RequestParam Integer pageNum,
+                            @RequestParam Integer pageSize,
+                            @RequestParam(defaultValue = "") String username,
+                            @RequestParam(defaultValue = "") String email,
+                            @RequestParam(defaultValue = "") String nickname,
+                            @RequestParam(defaultValue = "") String address) {
+        logger.info("进入${table.entityPath}/findPage方法");
+        QueryWrapper<${entity}> queryWrapper = new QueryWrapper<>();
+        if (!"".equals(username)) {
+        queryWrapper.like("username", username);
+        }
+        if (!"".equals(email)) {
+        queryWrapper.like("email", email);
+        }
+        if (!"".equals(nickname)) {
+        queryWrapper.like("nickname", nickname);
+        }
+        if (!"".equals(address)) {
+        queryWrapper.like("address", address);
+        }
+        queryWrapper.orderByDesc("id");
+        return Result.success(${table.entityPath}Service.page(new Page<>(pageNum, pageSize), queryWrapper));
+    }
+
+    //新增或修改
+    @PostMapping("/save")
+    public Result save(@RequestBody ${entity} ${table.entityPath}) {
+        logger.info("进入${table.entityPath}/save方法");
+        return Result.success(${table.entityPath}Service.saveOrUpdate(${table.entityPath}));
+    }
+
+    //根据ID删除
+    @DeleteMapping("/delete/{id}")
+    public Result delete(@PathVariable Integer id) {
+        logger.info("进入${table.entityPath}/delete方法");
+        return Result.success(${table.entityPath}Service.removeById(id));
+    }
+
+    //批量删除
+    @PostMapping("/deleteBatch/")
+    public Result deleteBatch(@RequestBody List<Integer> ids) {
+        logger.info("进入${table.entityPath}/deleteBatch方法");
+        return Result.success(${table.entityPath}Service.removeBatchByIds(ids));
+    }
+
+}
+
+#end
