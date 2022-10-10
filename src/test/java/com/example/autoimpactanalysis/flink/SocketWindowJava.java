@@ -1,6 +1,7 @@
 package com.example.autoimpactanalysis.flink;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -27,17 +28,19 @@ public class SocketWindowJava {
 
     @Test
     public void count() {
+        String[] args = new String[]{"-port","19","-hostname","localhost"};
         //获取flink的运行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //获取需要的端口号
-        /*int port;
+        int port;
         try {
             ParameterTool parameterTool = ParameterTool.fromArgs(args);
             port = parameterTool.getInt("port");
+            log.info("get port: "+port);
         } catch (Exception e) {
             e.printStackTrace();
-            logger.error("no port set,default port 9000");
+            log.error("no port set,default port 9000");
             port = 9000;
         }
         //主机名
@@ -45,13 +48,15 @@ public class SocketWindowJava {
         //换行符
         String delimiter = "\n";
         //连接socket获取输入的数据
-        DataStreamSource<String> text = env.socketTextStream(hostname, port, delimiter);*/
-        String filePath = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\data.txt";
+        DataStreamSource<String> text = env.socketTextStream(hostname, port, delimiter);
+        
+        //以文件方式获取数据
+        /*String filePath = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\data.txt";
         //打印文件内容
         File file = new File(filePath);
         log.info(txt2String(file));
         //从文件中获取
-        DataStreamSource<String> text = env.readTextFile(filePath);
+        DataStreamSource<String> text = env.readTextFile(filePath);*/
         //a b c =>a 1;b 1;c 1
         DataStream<WordWithCount> windowCounts = text.flatMap(new FlatMapFunction<String, WordWithCount>() {
 
