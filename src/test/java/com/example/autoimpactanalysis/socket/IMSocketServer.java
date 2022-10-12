@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 @Slf4j
 public class IMSocketServer {
-    private static int PORT = 13;
+    private static int PORT = 9000;
     public static void main(String[] args) {
         ServerSocket server = null;
         try {
