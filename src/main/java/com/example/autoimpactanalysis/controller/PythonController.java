@@ -1,11 +1,9 @@
 package com.example.autoimpactanalysis.controller;
 
-
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.example.autoimpactanalysis.common.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,11 +26,10 @@ import java.util.Map;
  * @Version: V1.0
  * @Description: PythonController 前端控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/topython")
 public class PythonController {
-
-    private static Logger log = LoggerFactory.getLogger(PythonController.class);
 
     //导入发行人客户画像
     @PostMapping("/importfxrParam")

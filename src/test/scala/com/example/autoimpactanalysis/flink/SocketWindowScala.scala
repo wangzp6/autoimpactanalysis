@@ -26,7 +26,7 @@ object SocketWindowScala {
       ParameterTool.fromArgs(args).getInt("port")
     }catch {
       case e:  Exception=>{
-        System.err.println("no port set,default port 9000")
+        System.err.println("no port set,default port 9000--scala")
       }
         9000
     }
@@ -47,7 +47,7 @@ object SocketWindowScala {
 
     windowCounts.print().setParallelism(1)//打印到控制台
     //执行任务
-    env.execute("Socket Window Count")
+    env.execute("Socket Window Count--scala")
   }
 
   case class WordWithCount(word:String,count:Long)

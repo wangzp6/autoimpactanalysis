@@ -1,8 +1,7 @@
 package com.example.autoimpactanalysis.utils;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.tmatesoft.svn.core.*;
 import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
 import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
@@ -29,8 +28,8 @@ import java.util.ResourceBundle;
  * @Description: TODO
  * @Version: V1.0
  */
+@Slf4j
 public class SvnKitUtils {
-    private static Logger log = LoggerFactory.getLogger(SvnKitUtils.class);
 
     /*
      *声明客户端管理类SVNClientManager。

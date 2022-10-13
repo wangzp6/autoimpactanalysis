@@ -6,8 +6,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.example.autoimpactanalysis.entity.User;
 import com.example.autoimpactanalysis.service.IUserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -25,10 +24,9 @@ import java.util.Date;
  * @Description: 生成token
  * @Version: V1.0
  */
+@Slf4j
 @Component
 public class TokenUtils {
-
-    private static Logger log = LoggerFactory.getLogger(TokenUtils.class);
 
     private static IUserService staticUserService;
 

@@ -3,8 +3,7 @@ package com.example.autoimpactanalysis.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.autoimpactanalysis.controller.dto.SourceDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
@@ -26,11 +25,10 @@ import com.example.autoimpactanalysis.entity.Source;
  * @Version: V1.0
  * @Description: Source 前端控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/source")
 public class SourceController {
-
-    private static Logger log = LoggerFactory.getLogger(SourceController.class);
 
     @Resource
     private ISourceService sourceService;

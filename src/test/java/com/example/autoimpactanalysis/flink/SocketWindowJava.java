@@ -32,7 +32,7 @@ public class SocketWindowJava {
             port = parameterTool.getInt("port");
         } catch (Exception e) {
             e.printStackTrace();
-            log.error("no port set,default port 9000");
+            log.error("no port set,default port 9000--java");
             port = 9000;
         }
 
@@ -70,10 +70,9 @@ public class SocketWindowJava {
         log.info(windowCounts.toString());
         //把数据打印到控制台并且设置并行度
         windowCounts.print().setParallelism(1);
-        log.info("end word count==================");
         //一定要实现，否则程序不执行，因为flink延迟计算的，只有最后调用execute()方法的时候才会真正触发
-        env.execute("Socket Window Count");
-        System.out.println("exit now!");
+        env.execute("Socket Window Count--java");
+        log.info("exit now!");
     }
 
     public static class WordWithCount {

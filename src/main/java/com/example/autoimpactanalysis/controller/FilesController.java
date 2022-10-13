@@ -12,8 +12,7 @@ import com.example.autoimpactanalysis.entity.Files;
 import com.example.autoimpactanalysis.mapper.FilesMapper;
 import com.example.autoimpactanalysis.service.IBroomdatascriptService;
 import com.sun.jndi.toolkit.url.UrlUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,11 +33,10 @@ import java.util.List;
  * @Version: V1.0
  * @Description: Files 前端控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/files")
 public class FilesController {
-
-    private static Logger log = LoggerFactory.getLogger(FilesController.class);
 
     @Value("${files.upload.path}")
     private String fileUploadPath;

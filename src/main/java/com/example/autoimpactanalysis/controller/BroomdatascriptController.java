@@ -1,17 +1,12 @@
 package com.example.autoimpactanalysis.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.autoimpactanalysis.mapper.BroomdatascriptMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
-import java.util.Date;
 import java.util.List;
 
 import com.example.autoimpactanalysis.common.Result;
@@ -25,11 +20,10 @@ import com.example.autoimpactanalysis.entity.Broomdatascript;
  * @Version: V1.0
  * @Description: Broomdatascript 前端控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/broomdatascript")
 public class BroomdatascriptController {
-
-    private static Logger log = LoggerFactory.getLogger(BroomdatascriptController.class);
 
     @Resource
     private IBroomdatascriptService broomdatascriptService;

@@ -2,8 +2,7 @@ package com.example.autoimpactanalysis.controller;
 
 import com.example.autoimpactanalysis.common.Result;
 import com.example.autoimpactanalysis.utils.SvnKitUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +18,10 @@ import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
  * @Version: V1.0
  * @Description: SVN 前端控制器
  */
+@Slf4j
 @RestController
 @RequestMapping("/svn")
 public class SVNController {
-    private static Logger log = LoggerFactory.getLogger(SourceController.class);
 
     //上传
     @PostMapping("/upload")

@@ -1,9 +1,8 @@
 package com.example.autoimpactanalysis;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -22,13 +21,12 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @SpringBootApplication注解中已经包含@EnableAutoConfiguration注解，不需要重复定义
  * @Version: V1.0
  */
-
+@Slf4j
 //@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, MybatisAutoConfiguration.class})
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //@MapperScan(basePackages = {"com.example.autoimpactanalysis.mapper"})
 public class AutoimpactanalysisApplication {
-    private static Logger log = LoggerFactory.getLogger(AutoimpactanalysisApplication.class);
 
     public static void main(String[] args) {
         SpringApplication.run(AutoimpactanalysisApplication.class, args);

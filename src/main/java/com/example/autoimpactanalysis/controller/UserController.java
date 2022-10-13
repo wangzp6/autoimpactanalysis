@@ -13,8 +13,7 @@ import com.example.autoimpactanalysis.entity.User;
 import com.example.autoimpactanalysis.service.IUserService;
 import com.example.autoimpactanalysis.utils.JsonUtils;
 import com.example.autoimpactanalysis.utils.TokenUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSONObject;
@@ -34,11 +33,10 @@ import java.util.List;
  * @Version: V1.0
  * @Description: User 前端控制器 文件上传相关接口
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    private static Logger log = LoggerFactory.getLogger(SourceController.class);
 
     @Resource
     private IUserService userService;
