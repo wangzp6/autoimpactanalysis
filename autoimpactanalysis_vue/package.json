@@ -7,9 +7,18 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@packy-tang/vue-tinymce": "^1.0.0",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "element-ui": "^2.15.8",
+    "file-saver": "^2.0.5",
+    "html-docx-js": "^0.3.1",
+    "less-loader": "^11.0.0",
     "register-service-worker": "^1.7.2",
+    "tinymce": "^5.6.0",
     "vue": "^2.6.14",
+    "vue-html2pdf": "^1.8.0",
+    "vue-moment": "latest",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
@@ -19,8 +28,11 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "jquery": "^3.6.1",
+    "node-sass": "^4.9.2",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "vue-cli-plugin-element": "~1.0.1",
     "vue-template-compiler": "^2.6.14"
   }
 }

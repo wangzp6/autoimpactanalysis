@@ -30,7 +30,7 @@ export default {
     // 异步访问
     actions:{
         async FETCH_PERMISSION({ commit,state }){
-            let permissionList = await fetchPermission();
+            let permissionList = await fetchPermission(localStorage.getItem("user"));
             // 筛选
             let routes = recursionRouter(permissionList,dynamicRouter);
             let MainContainer = DynamicRoutes.find(v => v.path === "");

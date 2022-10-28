@@ -23,9 +23,9 @@ import java.util.Date;
 
 @Getter
 @Setter
+@ToString
 @TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
-@ToString
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class User implements Serializable {
 
     @ApiModelProperty("用户名")
     @Alias("用户名")
-    private String username;
+    private String userName;
 
     @ApiModelProperty("密码")
     @Alias("密码")
@@ -44,7 +44,7 @@ public class User implements Serializable {
 
     @ApiModelProperty("昵称")
     @Alias("昵称")
-    private String nickname;
+    private String nickName;
 
     @ApiModelProperty("邮箱")
     @Alias("邮箱")
@@ -63,5 +63,5 @@ public class User implements Serializable {
     private String avatarUrl;
 
     @ApiModelProperty("插入时间")
-    private Date createtime;
+    private Date createTime;
 }

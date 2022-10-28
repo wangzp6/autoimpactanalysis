@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.autoimpactanalysis.common.Constants;
 import com.example.autoimpactanalysis.common.Result;
-import com.example.autoimpactanalysis.controller.dto.UserDTO;
+import com.example.autoimpactanalysis.entity.VO.UserVO;
 import com.example.autoimpactanalysis.entity.User;
 import com.example.autoimpactanalysis.service.IUserService;
 import com.example.autoimpactanalysis.utils.JsonUtils;
@@ -110,7 +110,7 @@ public class UserController {
         queryWrapper.orderByDesc("id");
 
         User currentUser = TokenUtils.getCurrentUser();
-        log.info("当前用户信息：" + currentUser.getNickname());
+        log.info("当前用户信息：" + currentUser.getNickName());
         return Result.success(userService.page(new Page<>(pageNum, pageSize), queryWrapper));
     }
 
@@ -142,10 +142,10 @@ public class UserController {
 
     //登录
     @PostMapping("/login")
-    public Result login(@RequestBody UserDTO userDTO) {
+    public Result login(@RequestBody UserVO userVO) {
         log.info("进入user/login方法");
-        String username = userDTO.getUsername();
-        String password = userDTO.getPassword();
+        String username = userVO.getUsername();
+        String password = userVO.getPassword();
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             log.info("用户名或者密码为空");
             return Result.error(Constants.CODE_400, "参数错误");
@@ -158,16 +158,23 @@ public class UserController {
         }else{
             return Result.error(Constants.CODE_600,"用户名密码错误");
         }*/
-        UserDTO dto = userService.login(userDTO);
+        UserVO dto = userService.login(userVO);
         dto.setPassword("");
         return Result.success(dto);
     }
 
     //授权
-    @GetMapping("/permission")
-    public Result permission() {
+    @GetMapping("/permission/{username}")
+    public Result permission(@PathVariable String username) {
         log.info("进入user/permission方法");
-        String json = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\admin_permission.json";
+        String json;
+        if("kfadmin".equals(username)){
+            log.info("获取kfadmin菜单");
+            json = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\permission\\kf_permission.json";
+        }else{
+            json = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\permission\\other_permission.json";
+        }
+
         File jsonFile = new File(json);
         //通过上面那个方法获取json文件的内容
         String jsonData = JsonUtils.getStr(jsonFile);
@@ -179,15 +186,15 @@ public class UserController {
 
     //注册
     @PostMapping("/register")
-    public Result register(@RequestBody UserDTO userDTO) {
+    public Result register(@RequestBody UserVO userVO) {
         log.info("进入user/register方法");
-        String username = userDTO.getUsername();
-        String password = userDTO.getPassword();
+        String username = userVO.getUsername();
+        String password = userVO.getPassword();
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             log.info("用户名或者密码为空");
             return Result.error(Constants.CODE_400, "参数错误");
         }
-        return Result.success(userService.register(userDTO));
+        return Result.success(userService.register(userVO));
     }
 
 }

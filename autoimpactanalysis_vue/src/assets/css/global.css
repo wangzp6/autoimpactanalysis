@@ -20,6 +20,15 @@
     margin-right: 10px;
 }
 
+.margin-l10r5{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
 .pd-10{
     padding: 10px 0;
+}
+
+.pd-5{
+    padding: 5px 0;
 }

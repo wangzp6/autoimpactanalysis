@@ -1,7 +1,7 @@
 package com.example.autoimpactanalysis.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.autoimpactanalysis.controller.dto.UserDTO;
+import com.example.autoimpactanalysis.entity.VO.UserVO;
 import com.example.autoimpactanalysis.entity.User;
 
 /**
@@ -14,7 +14,7 @@ import com.example.autoimpactanalysis.entity.User;
 public interface IUserService extends IService<User> {
 
 //    Boolean login(UserDTO userDTO);
-    UserDTO login(UserDTO userDTO);
+    UserVO login(UserVO userVO);
 
-    User register(UserDTO userDTO);
+    User register(UserVO userVO);
 }

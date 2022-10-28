@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "name": "提数系统",
+      "path": "/dataretrievalsystem",
+      "children": [
+        {
+          "name": "脚本查询",
+          "path": "scriptquery"
+        },
+        {
+          "name": "报表统计",
+          "path": "reportstatistics",
+          "children": [
+            {
+              "name": "项目管理",
+              "path": "projectdetail"
+            },
+            {
+              "name": "报表管理",
+              "path": "reportdetail"
+            }
+          ]
+        },
+        {
+          "name": "测试富文本",
+          "path": "tinymce"
+        },
+        {
+          "name": "测试文件下载",
+          "path": "filedownload"
+        }
+      ]
+    },
+    {
+      "name": "影响性分析自动化",
+      "path": "/autoimpactanalysis",
+      "children": [
+        {
+          "name": "数据导入及程序解析",
+          "path": "fileupload"
+        },
+        {
+          "name": "报表展示及导出",
+          "path": "reportexport"
+        }
+      ]
+    },
+    {
+      "name": "质量管理",
+      "path": "/qualitymanager",
+      "children": [
+        {
+          "name": "字典配置",
+          "path": "dictionarydeploy"
+        },
+        {
+          "name": "文档扫描",
+          "path": "filesscan",
+          "children": [
+            {
+              "name": "单项目扫描",
+              "path": "singleprojectscan"
+            },
+            {
+              "name": "多项目扫描",
+              "path": "multipleprojectscan"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

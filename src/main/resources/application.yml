@@ -6,6 +6,9 @@ server:
 
 #连接mysql数据库
 spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://127.0.0.1:27017/developdatabase
   datasource:
     dynamic:
       primary: mysql #设置默认的数据源或者数据源组,默认值即为 mysql
@@ -13,16 +16,22 @@ spring:
       datasource:
         mysql:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/xiaobai?serverTimezone=GMT%2b8
+          url: jdbc:mysql://localhost:3306/developdatabase?serverTimezone=GMT%2b8
           username: root
           password: 123456
+
+        mongodb:
+#          name: developdatabase
+          url: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+#          username: root
+#          password: 123456
 
 #        oracle-edw:
 #          driver-class-name: oracle.jdbc.OracleDriver
 #          url: jdbc:oracle:thin:@22.21.49.39:11521/edwsit
 #          username: xyd
 #          password: '!_GBr1kPM~m'
-#
+
 #        oracle-ads:
 #          driver-class-name: oracle.jdbc.OracleDriver
 #          url: jdbc:oracle:thin:@22.21.49.21:11521/ads
@@ -30,8 +39,9 @@ spring:
 #          password: ads
   servlet:
     multipart:
-      max-file-size: 300MB
-      max-request-size: 500MB
+      max-file-size: 100MB
+      max-request-size: 100MB
+
 #扫描所有mybatis的xml文件
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -49,6 +59,8 @@ mybatis-plus:
 files:
   upload:
     path: D:/work/workspace/work_workspace/autoimpactanalysis/files/
+  download:
+    path: D:/work/workspace/work_workspace/autoimpactanalysis/files/temp/
 
 logging:
   level:

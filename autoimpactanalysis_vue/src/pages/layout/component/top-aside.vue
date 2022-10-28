@@ -80,7 +80,6 @@ export default {
     watch:{
         $route(){
             this.currentName=router.currentRoute.path;
-            console.log(router);
         }
     }
 };
@@ -187,9 +186,9 @@ export default {
         }
     }
     .aside__top--left_tabs {
-    margin-top: 50px;
-    height: 41px;
-    line-height: 41px;
+    margin-top: 48px;
+    height: 40px;
+    line-height: 40px;
     font-size: 5px;
 }
 }

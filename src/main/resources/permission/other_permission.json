@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "name": "提数系统",
+      "path": "/dataretrievalsystem",
+      "children": [
+        {
+          "name": "脚本查询",
+          "path": "scriptquery"
+        },
+        {
+          "name": "报表统计",
+          "path": "reportstatistics",
+          "children": [
+            {
+              "name": "项目管理",
+              "path": "projectdetail"
+            },
+            {
+              "name": "报表管理",
+              "path": "reportdetail"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

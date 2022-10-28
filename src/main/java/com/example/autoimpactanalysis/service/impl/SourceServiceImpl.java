@@ -9,6 +9,7 @@ import com.example.autoimpactanalysis.mapper.SourceMapper;
 import com.example.autoimpactanalysis.service.ISourceService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -26,9 +27,7 @@ public class SourceServiceImpl extends ServiceImpl<SourceMapper, Source> impleme
     @Override
     public List<Source> findByName(String name){
         QueryWrapper<Source> queryWrapper = new QueryWrapper<>();
-        if(!"".equals(name)){
-            queryWrapper.like("name", name);
-        }
+        queryWrapper.like(StringUtils.hasText(name), "name", name);
         List<Source> list = list(queryWrapper);
         return list;
     }

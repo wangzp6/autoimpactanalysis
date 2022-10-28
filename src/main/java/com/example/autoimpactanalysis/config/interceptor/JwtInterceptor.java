@@ -10,12 +10,15 @@ import com.example.autoimpactanalysis.common.Constants;
 import com.example.autoimpactanalysis.entity.User;
 import com.example.autoimpactanalysis.exception.ServiceException;
 import com.example.autoimpactanalysis.service.IUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
 
 /**
  * @project_name: autoimpactanalysis
@@ -25,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Description: 拦截器
  * @Version: V1.0
  */
-
+@Slf4j
 public class JwtInterceptor implements HandlerInterceptor {
 
     @Autowired
@@ -33,6 +36,7 @@ public class JwtInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.info("request:"+request.getMethod());
         String token = request.getHeader("token");
         // 如果不是映射到方法直接通过
         if(!(handler instanceof HandlerMethod)){
@@ -69,6 +73,30 @@ public class JwtInterceptor implements HandlerInterceptor {
         } catch (JWTVerificationException e) {
             throw new ServiceException(Constants.CODE_401,"token验证失败，请重新登录");
         }
+
+        // 如果不是映射到方法直接通过
+        if(!(handler instanceof HandlerMethod)){
+            return true;
+        }
+        HandlerMethod handlerMethod=(HandlerMethod)handler;
+        Method method=handlerMethod.getMethod();
+
+        // OPTIONS请求类型直接返回不处理
+        if ("OPTIONS".equals(request.getMethod())){
+            return false;
+        }
         return true;
+    }
+
+
+    @Override
+    public void postHandle(HttpServletRequest httpServletRequest,
+                           HttpServletResponse httpServletResponse,
+                           Object o, ModelAndView modelAndView) throws Exception {
+    }
+    @Override
+    public void afterCompletion(HttpServletRequest httpServletRequest,
+                                HttpServletResponse httpServletResponse,
+                                Object o, Exception e) throws Exception {
     }
 }

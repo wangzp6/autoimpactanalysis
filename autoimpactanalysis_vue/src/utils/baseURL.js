@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:9080/autoimpactanalysis/";
+const baseUrl = "http://autoimpactanalysis.com.cn:9080/autoimpactanalysis/";
 export default baseUrl
 
 /**

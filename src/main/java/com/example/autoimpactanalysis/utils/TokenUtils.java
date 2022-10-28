@@ -38,11 +38,11 @@ public class TokenUtils {
         staticUserService = userService;
     }
 
-    public static String generatorToken(String userid, String password) {
+    public static String generatorToken(String userid, String sign) {
         String token = "";
         token = JWT.create().withAudience(userid) // 将user id 保存到 token 里面,作为载荷
                 .withExpiresAt(DateUtil.offsetHour(new Date(), 2)) //2小时后token过期
-                .sign(Algorithm.HMAC256(password)); // 以 password 作为 token 的密钥
+                .sign(Algorithm.HMAC256(sign)); // 以 password 作为 token 的密钥
         return token;
     }
 

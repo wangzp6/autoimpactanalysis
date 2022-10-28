@@ -7,24 +7,25 @@ import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.autoimpactanalysis.common.Result;
-import com.example.autoimpactanalysis.entity.Broomdatascript;
+import com.example.autoimpactanalysis.entity.BroomDataScript;
 import com.example.autoimpactanalysis.entity.Files;
+import com.example.autoimpactanalysis.entity.ReportStatistics;
 import com.example.autoimpactanalysis.mapper.FilesMapper;
-import com.example.autoimpactanalysis.service.IBroomdatascriptService;
+import com.example.autoimpactanalysis.service.IBroomDataScriptService;
+import com.example.autoimpactanalysis.service.IReportStatisticsService;
+import com.example.autoimpactanalysis.utils.OfficeUtil;
 import com.sun.jndi.toolkit.url.UrlUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @ClassName: FilesController
@@ -41,11 +42,14 @@ public class FilesController {
     @Value("${files.upload.path}")
     private String fileUploadPath;
 
+    @Value("${files.download.path}")
+    private String fileDownloadPath;
+
     @Resource
     private FilesMapper filesMapper;
 
     @Resource
-    private IBroomdatascriptService broomdatascriptService;
+    private IBroomDataScriptService broomdatascriptService;
 
     /**
      * @author: kevin
@@ -111,7 +115,6 @@ public class FilesController {
         //定义一个文件唯一的标识码
         String uuid = IdUtil.fastSimpleUUID();
         String fileUUID = uuid + StrUtil.DOT + type;
-
         File uploadFile = new File(fileUploadPath + fileUUID);
         //判断配置的文件目录是否存在，若不存在则创建一个新的文件目录
         if (!uploadFile.getParentFile().exists()) {
@@ -130,7 +133,7 @@ public class FilesController {
             url = filesDB.getUrl();
             uploadFile.delete();
         } else {
-            url = "http://localhost:9080/autoimpactanalysis/files/downloadFiles/" + fileUUID;
+            url = "http://autoimpactanalysis.com.cn:9080/autoimpactanalysis/files/downloadFiles/" + fileUUID;
         }
 
         //存储数据库
@@ -139,14 +142,14 @@ public class FilesController {
         saveFiles.setType(type);
         saveFiles.setSize(size);
         saveFiles.setUrl(url);
-        saveFiles.setBdcid(bcdid);
+        saveFiles.setBdcId(bcdid);
         saveFiles.setMd5(md5);
         filesMapper.insert(saveFiles);
-        Broomdatascript broomdatascript = broomdatascriptService.getById(bcdid);
-        if(broomdatascript.getAttachmentliststr()==null){
-            broomdatascript.setAttachmentliststr(originalFilename+";");
+        BroomDataScript broomdatascript = broomdatascriptService.getById(bcdid);
+        if(broomdatascript.getAttachmentListStr()==null){
+            broomdatascript.setAttachmentListStr(originalFilename+";");
         }else{
-            broomdatascript.setAttachmentliststr(broomdatascript.getAttachmentliststr()+originalFilename+";");
+            broomdatascript.setAttachmentListStr(broomdatascript.getAttachmentListStr()+originalFilename+";");
         }
         broomdatascriptService.updateById(broomdatascript);
         return url;
@@ -179,7 +182,7 @@ public class FilesController {
      * @param: fileUUID 文件标识码
      * @return Type:
      * @date: 2022/4/8 10:42
-     * @describe: 文件下载接口 http://localhost:9080/autoimpactanalysis/files/downloadFiles/{fileUUID}
+     * @describe: 文件下载接口 http://autoimpactanalysis.com.cn:9080/autoimpactanalysis/files/downloadFiles/{fileUUID}
      */
     @GetMapping("downloadFiles/{fileUUID}")
     public void downloadFiles(@PathVariable String fileUUID, HttpServletResponse response) throws IOException {
@@ -253,20 +256,20 @@ public class FilesController {
         log.info("进入files/deleteWithBdcid方法");
         Files files = filesMapper.selectById(id);
         files.setIsDelete(true);
-        Broomdatascript broomdatascript = broomdatascriptService.getById(files.getBdcid());
-        String[] strArr = broomdatascript.getAttachmentliststr().split(files.getName()+";");
+        BroomDataScript broomdatascript = broomdatascriptService.getById(files.getBdcId());
+        String[] strArr = broomdatascript.getAttachmentListStr().split(files.getName()+";");
         String fileNameListStr = "";
         for (int i = 0; i < strArr.length; i++) {
             fileNameListStr = fileNameListStr + strArr[i];
         }
-        broomdatascript.setAttachmentliststr(fileNameListStr);
+        broomdatascript.setAttachmentListStr(fileNameListStr);
         broomdatascriptService.updateById(broomdatascript);
         return Result.success(filesMapper.updateById(files));
 
     }
 
     //批量删除
-    @PostMapping("/deleteBatch/")
+    @PostMapping("/deleteBatch")
     public Result deleteBatch(@RequestBody List<Integer> ids) {
         log.info("进入files/deleteBatch方法");
         QueryWrapper<Files> queryWrapper = new QueryWrapper<>();
@@ -284,9 +287,67 @@ public class FilesController {
 
     //修改
     @PostMapping("/update")
-    public Result save(@RequestBody Files files) {
-        log.info("进入files/save方法");
+    public Result update(@RequestBody Files files) {
+        log.info("进入files/update方法");
         return Result.success(filesMapper.updateById(files));
+    }
+
+    @Resource
+    private IReportStatisticsService reportStatisticsService;
+
+    @GetMapping("/downloadWord/{ids}")
+    public void downloadWord(@PathVariable List<Integer> ids,HttpServletResponse response) throws Exception {
+        log.info("进入files/downloadWord方法，reportIds:"+ids);
+
+        StringBuffer reportDetails = new StringBuffer();
+        String fileName;
+        String reportIdNo1 = null;
+        String reportNameNo1 = null;
+
+        for (int i = 0; i < ids.size(); i++) {
+            ReportStatistics reportStatistics = reportStatisticsService.getById(ids.get(i));
+            String reportId = reportStatistics.getReportId();
+            String reportName = reportStatistics.getReportName();
+            if(i==0){
+                reportIdNo1 =reportId;
+                reportNameNo1 =reportName;
+            }
+
+            String reportDetail = reportStatistics.getReportDetail();
+            reportDetails = reportDetails.append(reportDetail);
+        }
+
+        if(ids.size()>1){
+            log.info("多报表操作");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
+            String today = format.format(date);
+            fileName = "报表需求"+today+".doc";
+        }else{
+            log.info("单报表操作");
+            fileName = reportIdNo1 + reportNameNo1 + ".doc";
+        }
+
+        File uploadFile = new File(fileDownloadPath + fileName);
+        //判断配置的文件目录是否存在，若不存在则创建一个新的文件目录
+        if (!uploadFile.getParentFile().exists()) {
+            uploadFile.getParentFile().mkdirs();
+        }
+
+        String htmlbody = reportDetails.toString();
+        log.info("htmlbody:"+htmlbody);
+        File wordFile = OfficeUtil.createWordByHtml(htmlbody, fileDownloadPath + fileName);
+        //设置输出流的格式
+        ServletOutputStream os = response.getOutputStream();
+
+        response.reset();
+        response.addHeader("Content-Disposition", "attachment;filename=" + UrlUtil.encode(fileName, "UTF-8"));
+        response.setContentType("application/octet-stream");
+        //读取文件字节流
+        os.write(FileUtil.readBytes(wordFile));
+        os.flush();
+        os.close();
+
     }
 }
 

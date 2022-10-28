@@ -5,14 +5,13 @@ import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.autoimpactanalysis.common.Constants;
-import com.example.autoimpactanalysis.controller.dto.UserDTO;
+import com.example.autoimpactanalysis.entity.VO.UserVO;
 import com.example.autoimpactanalysis.entity.User;
 import com.example.autoimpactanalysis.exception.ServiceException;
 import com.example.autoimpactanalysis.mapper.UserMapper;
 import com.example.autoimpactanalysis.service.IUserService;
 import com.example.autoimpactanalysis.utils.TokenUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 
@@ -23,20 +22,24 @@ import org.springframework.stereotype.Service;
  * @Version: V1.0
  * @Description: User 服务实现类
  */
+@Slf4j
 @Service
 @DS("mysql")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
     @Override
-    public UserDTO login(UserDTO userDTO) {
-        User one = getUserInfo(userDTO);
+    public UserVO login(UserVO userVO) {
+        User one = getUserInfo(userVO);
         if (one != null) {
             //复制对象的属性
-            BeanUtil.copyProperties(one, userDTO, true);//ignoreCase 忽略大小写
+            BeanUtil.copyProperties(one, userVO, true);//ignoreCase 忽略大小写
+            log.info(one.toString());
+            log.info(userVO.toString());
             // 设置token
             String token = TokenUtils.generatorToken(one.getId().toString(),one.getPassword());
-            userDTO.setToken(token);
-            return userDTO;
+            userVO.setToken(token);
+            log.info("token:"+token);
+            return userVO;
         } else {
             throw new ServiceException(Constants.CODE_600,"用户名或密码错误");
         }
@@ -47,11 +50,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public UserDTO login(UserDTO userDTO) {
         userDTO.setNickname("管理员");
         if (userDTO != null) {
-            logger.info(userDTO.toString());
+            log.info(userDTO.toString());
             // 设置token
             String token = TokenUtils.generatorToken("1",userDTO.getPassword());
             userDTO.setToken(token);
-            logger.info("token:"+token);
+            log.info("token:"+token);
             return userDTO;
         } else {
             throw new ServiceException(Constants.CODE_600,"用户名或密码错误");
@@ -59,11 +62,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }*/
 
     @Override
-    public User register(UserDTO userDTO) {
-        User one = getUserInfo(userDTO);
+    public User register(UserVO userVO) {
+        User one = getUserInfo(userVO);
         if(one == null){
             one = new User();
-            BeanUtil.copyProperties(userDTO, one, true);
+            BeanUtil.copyProperties(userVO, one, true);
             save(one);
         }else{
             throw new ServiceException(Constants.CODE_600,"用户已存在");
@@ -71,10 +74,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return one;
     }
 
-    private User getUserInfo(UserDTO userDTO){
+    private User getUserInfo(UserVO userVO){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", userDTO.getUsername());
-        queryWrapper.eq("password", userDTO.getPassword());
+        queryWrapper.eq("user_name", userVO.getUsername());
+        queryWrapper.eq("password", userVO.getPassword());
         User one;
         try {
             one = getOne(queryWrapper);

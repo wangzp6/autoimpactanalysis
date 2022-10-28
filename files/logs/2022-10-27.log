@@ -1,0 +1,386 @@
+2022-10-27 08:47:23.207 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 14612 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 08:47:23.223 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 08:47:25.052 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:47:25.052 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$ae1c9b12] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:47:25.067 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:47:25.368 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 08:47:25.368 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 08:47:25.368 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 08:47:25.368 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 08:47:25.669 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 08:47:25.669 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2399 ms
+2022-10-27 08:47:25.900 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 08:47:26.038 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 08:47:26.038 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 08:47:26.038 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 08:47:26.571 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 08:47:31.337 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 08:47:31.368 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 08:47:31.854 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 9.172 seconds (JVM running for 13.447)
+2022-10-27 08:50:12.828 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 08:50:12.828 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 08:50:12.828 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 0 ms
+2022-10-27 08:50:12.866 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:50:26.671 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/login方法
+2022-10-27 08:50:26.787 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl User(id=1, userName=admin, password=123456, nickName=管理员, email=123.com, phone=12312341234, address=北京北京, avatarUrl=null, createTime=Thu Jun 23 14:11:16 CST 2022)
+2022-10-27 08:50:26.787 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl UserVO(username=admin, password=123456, nickname=管理员, avatarUrl=null, token=null)
+2022-10-27 08:50:26.818 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxIiwiZXhwIjoxNjY2ODM5MDI2fQ.J7R547D5qhsL_3I5NQRzak53Uz0VrxFdxmemIMNS7Qk
+2022-10-27 08:50:26.840 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:50:26.856 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.autoimpactanalysis.common.Result com.example.autoimpactanalysis.controller.UserController.permission(com.example.autoimpactanalysis.entity.VO.UserVO)]
+2022-10-27 08:50:58.847 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:50:58.857 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.autoimpactanalysis.common.Result com.example.autoimpactanalysis.controller.UserController.permission(com.example.autoimpactanalysis.entity.VO.UserVO)]
+2022-10-27 08:51:29.219 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:51:29.219 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.autoimpactanalysis.common.Result com.example.autoimpactanalysis.controller.UserController.permission(com.example.autoimpactanalysis.entity.VO.UserVO)]
+2022-10-27 08:52:10.619 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:52:10.619 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.autoimpactanalysis.common.Result com.example.autoimpactanalysis.controller.UserController.permission(com.example.autoimpactanalysis.entity.VO.UserVO)]
+2022-10-27 08:52:49.577 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:52:49.593 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.autoimpactanalysis.common.Result com.example.autoimpactanalysis.controller.UserController.permission(com.example.autoimpactanalysis.entity.VO.UserVO)]
+2022-10-27 08:55:48.379 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 9912 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 08:55:48.394 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 08:55:49.921 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:55:49.921 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:55:49.937 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 08:55:50.191 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 08:55:50.206 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 08:55:50.206 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 08:55:50.206 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 08:55:50.460 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 08:55:50.460 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2019 ms
+2022-10-27 08:55:50.661 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 08:55:50.808 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 08:55:50.808 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 08:55:50.808 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 08:55:51.325 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 08:55:56.021 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 08:55:56.037 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 08:55:56.538 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 8.713 seconds (JVM running for 12.761)
+2022-10-27 08:56:04.555 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 08:56:04.555 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 08:56:04.565 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 10 ms
+2022-10-27 08:56:04.595 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:56:07.350 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 08:56:07.450 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"},{"path":"tinymce","name":"测试富文本"},{"path":"filedownload","name":"测试文件下载"}],"name":"提数系统"},{"path":"/autoimpactanalysis","children":[{"path":"fileupload","name":"数据导入及程序解析"},{"path":"reportexport","name":"报表展示及导出"}],"name":"影响性分析自动化"},{"path":"/qualitymanager","children":[{"path":"dictionarydeploy","name":"字典配置"},{"path":"filesscan","children":[{"path":"singleprojectscan","name":"单项目扫描"},{"path":"multipleprojectscan","name":"多项目扫描"}],"name":"文档扫描"}],"name":"质量管理"}]}
+2022-10-27 08:56:31.614 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 08:56:31.629 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 08:56:31.629 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"},{"path":"tinymce","name":"测试富文本"},{"path":"filedownload","name":"测试文件下载"}],"name":"提数系统"},{"path":"/autoimpactanalysis","children":[{"path":"fileupload","name":"数据导入及程序解析"},{"path":"reportexport","name":"报表展示及导出"}],"name":"影响性分析自动化"},{"path":"/qualitymanager","children":[{"path":"dictionarydeploy","name":"字典配置"},{"path":"filesscan","children":[{"path":"singleprojectscan","name":"单项目扫描"},{"path":"multipleprojectscan","name":"多项目扫描"}],"name":"文档扫描"}],"name":"质量管理"}]}
+2022-10-27 09:00:32.182 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:00:32.190 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:00:32.192 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"},{"path":"tinymce","name":"测试富文本"},{"path":"filedownload","name":"测试文件下载"}],"name":"提数系统"},{"path":"/autoimpactanalysis","children":[{"path":"fileupload","name":"数据导入及程序解析"},{"path":"reportexport","name":"报表展示及导出"}],"name":"影响性分析自动化"},{"path":"/qualitymanager","children":[{"path":"dictionarydeploy","name":"字典配置"},{"path":"filesscan","children":[{"path":"singleprojectscan","name":"单项目扫描"},{"path":"multipleprojectscan","name":"多项目扫描"}],"name":"文档扫描"}],"name":"质量管理"}]}
+2022-10-27 09:10:08.148 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 24288 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:10:08.158 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:10:09.778 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:10:09.778 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:10:09.809 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:10:10.063 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:10:10.063 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:10:10.063 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:10:10.063 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:10:10.317 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:10:10.317 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2100 ms
+2022-10-27 09:10:10.549 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:10:10.696 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:10:10.696 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:10:10.696 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:10:11.251 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:10:16.233 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:10:16.249 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:10:16.713 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 9.132 seconds (JVM running for 13.165)
+2022-10-27 09:11:05.784 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:11:05.784 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:11:05.784 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 0 ms
+2022-10-27 09:11:05.821 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:11:08.259 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:11:08.344 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:null
+2022-10-27 09:11:08.344 > ERROR  springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [/autoimpactanalysis] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.example.autoimpactanalysis.controller.UserController.permission(UserController.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-10-27 09:11:47.068 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 14532 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:11:47.078 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:11:48.629 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:11:48.629 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:11:48.660 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:11:48.908 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:11:48.908 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:11:48.923 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:11:48.923 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:11:49.177 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:11:49.177 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2050 ms
+2022-10-27 09:11:49.393 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:11:49.531 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:11:49.531 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:11:49.531 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:11:50.033 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:11:54.892 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:11:54.923 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:11:55.424 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 8.962 seconds (JVM running for 13.058)
+2022-10-27 09:11:59.747 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:11:59.747 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:11:59.747 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 0 ms
+2022-10-27 09:11:59.793 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:12:02.168 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:12:02.237 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:12:05.692 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:12:05.692 > INFO   springAppName_IS_UNDEFINED c.e.a.c.BroomDataScriptController 进入broomDataScript/findPage方法
+2022-10-27 09:12:07.496 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:12:07.496 > INFO   springAppName_IS_UNDEFINED c.e.a.c.ProjectDetailController 进入projectDetail/findPage方法
+2022-10-27 09:12:08.345 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:12:08.351 > INFO   springAppName_IS_UNDEFINED c.e.a.c.ReportStatisticsController 进入reportStatistics/findReports方法
+2022-10-27 09:12:38.593 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/register方法
+2022-10-27 09:12:48.974 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/login方法
+2022-10-27 09:12:48.990 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl User(id=3, userName=kfadmin, password=123456, nickName=null, email=null, phone=null, address=null, avatarUrl=null, createTime=Thu Oct 27 09:12:38 CST 2022)
+2022-10-27 09:12:48.990 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl UserVO(username=kfadmin, password=123456, nickname=null, avatarUrl=null, token=null)
+2022-10-27 09:12:49.005 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzIiwiZXhwIjoxNjY2ODQwMzY4fQ.5KFYG93-NIBYFzK6tX0MBuPoLRW9Q0lD217p54egoyc
+2022-10-27 09:12:49.021 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:12:49.021 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:12:49.021 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:16:29.011 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 26056 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:16:29.011 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:16:30.786 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:16:30.802 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:16:30.824 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:16:31.190 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:16:31.215 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:16:31.215 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:16:31.215 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:16:31.543 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:16:31.551 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2455 ms
+2022-10-27 09:16:31.807 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:16:31.960 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:16:31.960 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:16:31.968 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:16:32.502 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:16:36.914 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:16:36.945 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:16:37.431 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 9.078 seconds (JVM running for 13.276)
+2022-10-27 09:17:43.067 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:17:43.068 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:17:43.074 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 5 ms
+2022-10-27 09:17:43.109 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:17:45.700 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:17:45.700 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController username:null
+2022-10-27 09:17:45.785 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:17:55.935 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:23:14.105 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:23:14.121 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:23:14.121 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController username:null
+2022-10-27 09:23:14.121 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:23:42.460 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:23:42.476 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:23:42.476 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController username:null
+2022-10-27 09:23:42.476 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:24:02.873 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:24:02.873 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:24:02.873 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController username:null
+2022-10-27 09:24:02.873 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:25:12.710 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:25:24.539 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 15336 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:25:24.539 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:25:26.148 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:25:26.163 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:25:26.179 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:25:26.433 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:25:26.449 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:25:26.449 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:25:26.449 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:25:26.696 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:25:26.696 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2097 ms
+2022-10-27 09:25:26.928 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:25:27.050 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:25:27.050 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:25:27.050 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:25:27.598 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:25:32.743 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:25:32.765 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:25:33.307 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 9.318 seconds (JVM running for 13.577)
+2022-10-27 09:25:35.133 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:25:35.133 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:25:35.133 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 0 ms
+2022-10-27 09:25:35.171 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:25:38.163 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'username' for method parameter type String is not present]
+2022-10-27 09:26:12.081 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:26:12.097 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'username' for method parameter type String is not present]
+2022-10-27 09:26:57.692 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:26:57.692 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'username' for method parameter type String is not present]
+2022-10-27 09:28:14.725 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:28:14.740 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'username' for method parameter type String is not present]
+2022-10-27 09:29:51.872 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:29:51.888 > WARN   springAppName_IS_UNDEFINED o.s.w.s.m.s.DefaultHandlerExceptionResolver Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'username' for method parameter type String is not present]
+2022-10-27 09:30:04.321 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 8104 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:30:04.321 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:30:05.910 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:05.910 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:05.942 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:06.189 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:30:06.211 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:30:06.211 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:30:06.211 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:30:06.459 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:30:06.459 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2077 ms
+2022-10-27 09:30:06.691 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:30:06.813 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:30:06.813 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:30:06.813 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:30:07.346 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:30:11.974 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:30:11.990 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:30:12.476 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 8.816 seconds (JVM running for 13.396)
+2022-10-27 09:30:21.277 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:30:21.277 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:30:21.277 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 0 ms
+2022-10-27 09:30:21.323 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:30:23.514 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:30:23.514 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 获取kfadmin菜单
+2022-10-27 09:30:23.598 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:null
+2022-10-27 09:30:23.598 > ERROR  springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [/autoimpactanalysis] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.example.autoimpactanalysis.controller.UserController.permission(UserController.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-10-27 09:30:56.188 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_231 on DESKTOP-SVPMA7U with PID 23936 (D:\work\workspace\work_workspace\autoimpactanalysis\target\classes started by Mechrevo in D:\work\workspace\work_workspace\autoimpactanalysis)
+2022-10-27 09:30:56.203 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-10-27 09:30:57.784 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:57.784 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$352c4719] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:57.800 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-10-27 09:30:58.054 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-10-27 09:30:58.070 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:30:58.070 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-10-27 09:30:58.070 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-10-27 09:30:58.333 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-10-27 09:30:58.333 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2067 ms
+2022-10-27 09:30:58.533 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-10-27 09:30:58.656 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-10-27 09:30:58.671 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-10-27 09:30:58.671 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-10-27 09:30:59.204 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-10-27 09:31:04.033 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-10-27 09:31:04.064 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-10-27 09:31:04.572 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 8.935 seconds (JVM running for 13.457)
+2022-10-27 09:32:55.665 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-27 09:32:55.665 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-10-27 09:32:55.681 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 16 ms
+2022-10-27 09:32:55.703 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:32:57.803 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:32:57.803 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 获取kfadmin菜单
+2022-10-27 09:32:57.872 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"},{"path":"tinymce","name":"测试富文本"},{"path":"filedownload","name":"测试文件下载"}],"name":"提数系统"},{"path":"/autoimpactanalysis","children":[{"path":"fileupload","name":"数据导入及程序解析"},{"path":"reportexport","name":"报表展示及导出"}],"name":"影响性分析自动化"},{"path":"/qualitymanager","children":[{"path":"dictionarydeploy","name":"字典配置"},{"path":"filesscan","children":[{"path":"singleprojectscan","name":"单项目扫描"},{"path":"multipleprojectscan","name":"多项目扫描"}],"name":"文档扫描"}],"name":"质量管理"}]}
+2022-10-27 09:33:14.783 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/login方法
+2022-10-27 09:33:14.883 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl User(id=1, userName=admin, password=123456, nickName=管理员, email=123.com, phone=12312341234, address=北京北京, avatarUrl=null, createTime=Thu Jun 23 14:11:16 CST 2022)
+2022-10-27 09:33:14.883 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl UserVO(username=admin, password=123456, nickname=管理员, avatarUrl=null, token=null)
+2022-10-27 09:33:14.899 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxIiwiZXhwIjoxNjY2ODQxNTk0fQ.JQkkgGWkkGTg5CwXhJl1kfZiDevGUW81g6KLYFNmwvo
+2022-10-27 09:33:14.968 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:33:14.968 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:33:14.968 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:37:39.646 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:37:39.662 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:37:39.662 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:37:48.606 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:37:48.606 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:37:48.606 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-10-27 09:38:16.260 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-10-27 09:38:16.275 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-10-27 09:38:16.275 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}

@@ -37,7 +37,7 @@ public class MysqlCodeGenerator {
                     builder.mapperBuilder().enableMapperAnnotation().build();//在UserMapper 加@mapper注释，在 MybatisPlusConfig已经加过了，可加可不加
                     builder.controllerBuilder().enableHyphenStyle()  // 开启驼峰转连字符
                             .enableRestStyle();  // 开启生成@RestController 控制器
-                    builder.addInclude("broomdatascript") // 设置需要生成的表名
+                    builder.addInclude("item_detail_List") // 设置需要生成的表名
                             .addTablePrefix("t_", "sys_") // 设置过滤表前缀
                             .addTableSuffix("_20220620","_backup");//设置过滤表后缀
                 })

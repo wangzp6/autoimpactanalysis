@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @ClassName: Source
@@ -17,7 +18,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-  @TableName("ALL_SOURCE_BACKUP")
+@ToString
+@TableName("ALL_SOURCE_BACKUP")
 @ApiModel(value = "Source对象", description = "")
 public class Source implements Serializable {
 

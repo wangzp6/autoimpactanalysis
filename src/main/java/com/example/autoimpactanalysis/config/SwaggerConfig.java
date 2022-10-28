@@ -49,14 +49,14 @@ public class SwaggerConfig {
      * 创建该API的基本信息（这些基本信息会展现在文档页面中）
      * 访问地址：http://ip:port/swagger-ui.html
      * http://localhost:9080/swagger-ui.html   swagger2访问页面
-     * http://localhost:9080/swagger-ui/index.html   swagger3访问页面
+     * http://autoimpactanalysis.com.cn:9080/autoimpactanalysis/swagger-ui/index.html  swagger3访问页面
      * @return
      */
     private ApiInfo apiInfo(String title, String version) {
         return new ApiInfoBuilder()
                 .title(title)
                 .description("这是swagger测试页面")
-                .termsOfServiceUrl("http://localhost:9080/autoimpactanalysis/swagger-ui/index.html")
+                .termsOfServiceUrl("http://autoimpactanalysis.com.cn:9080/autoimpactanalysis/swagger-ui/index.html")
                 .version(version)
                 .build();
     }

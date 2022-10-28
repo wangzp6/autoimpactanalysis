@@ -2,11 +2,12 @@ package com.example.autoimpactanalysis.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.autoimpactanalysis.controller.dto.SourceDTO;
-import lombok.extern.slf4j.Slf4j;
+import com.example.autoimpactanalysis.entity.VO.SourceVO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +26,11 @@ import com.example.autoimpactanalysis.entity.Source;
  * @Version: V1.0
  * @Description: Source 前端控制器
  */
-@Slf4j
 @RestController
 @RequestMapping("/source")
 public class SourceController {
+
+    private static Logger logger = LoggerFactory.getLogger(SourceController.class);
 
     @Resource
     private ISourceService sourceService;
@@ -36,21 +38,21 @@ public class SourceController {
     //全量查询
     @GetMapping("/findAll")
     public Result findAll() {
-        log.info("进入source/findAll方法");
+        logger.info("进入source/findAll方法");
         return Result.success(sourceService.list());
     }
 
     //根据ID查询
     @GetMapping("/findById/{id}")
     public Result findById(@PathVariable Integer id) {
-        log.info("进入source/findById方法");
+        logger.info("进入source/findById方法");
         return Result.success(sourceService.getById(id));
     }
 
     //根据存储过程名称查询
     @GetMapping("/findByName")
     public Result findByName(@RequestParam String name) {
-        log.info("进入source/findByName方法,查询名称为:"+name);
+        logger.info("进入source/findByName方法,查询名称为:"+name);
         List<Source> sourceList = sourceService.findByName(name);
         StringBuilder str = new StringBuilder();
         String pro_user = sourceList.get(0).getOwner();
@@ -65,9 +67,9 @@ public class SourceController {
         ArrayList arr = new ArrayList();
         for (int i = 0; i < arrStr.length; i++) {
             if(arrStr[i].contains("INSERT")){
-                SourceDTO sourceDTO = new SourceDTO();
-                sourceDTO.setPro_user(pro_user);
-                sourceDTO.setPro_name(pro_name);
+                SourceVO sourceVO = new SourceVO();
+                sourceVO.setPro_user(pro_user);
+                sourceVO.setPro_name(pro_name);
 
                 String a = arrStr[i].substring(arrStr[i].indexOf("INSERT INTO") + 12);
                 String b=a.substring(0,a.indexOf(" "));
@@ -77,32 +79,32 @@ public class SourceController {
                 }else{
                     tmp = b;
                 }
-                sourceDTO.setTmp_user(tmp.substring(0,tmp.indexOf(".")));
-                sourceDTO.setTmp_name(tmp.substring(tmp.indexOf(".")+1));
+                sourceVO.setTmp_user(tmp.substring(0,tmp.indexOf(".")));
+                sourceVO.setTmp_name(tmp.substring(tmp.indexOf(".")+1));
 
                 String par="";
                 if(arrStr[i].contains("JOIN")){
                     String c = arrStr[i].substring(arrStr[i].indexOf("JOIN") + 5);
                     String d=c.substring(0,c.indexOf(" "));
                     par=d;
-                    sourceDTO.setPar_user(par.substring(0,par.indexOf(".")));
-                    sourceDTO.setPar_name(par.substring(par.indexOf(".")+1));
+                    sourceVO.setPar_user(par.substring(0,par.indexOf(".")));
+                    sourceVO.setPar_name(par.substring(par.indexOf(".")+1));
                 }
 
                 String con="";
                 if(arrStr[i].contains("FROM")){
-                    log.info("con原:"+arrStr[i]);
+                    logger.info("con原:"+arrStr[i]);
                     String e = arrStr[i].substring(arrStr[i].indexOf("FROM"));
-                    log.info("e:"+e);
+                    logger.info("e:"+e);
 
                     /*if(arrStr[i].contains("WHERE")){
-                        sourceDTO.setCondition(e.substring(0,e.indexOf("WHERE")));
+                        sourceVO.setCondition(e.substring(0,e.indexOf("WHERE")));
                     }else{
-                        sourceDTO.setCondition(e);
+                        sourceVO.setCondition(e);
                     }*/
-                    sourceDTO.setCondition(e);
+                    sourceVO.setCondition(e);
                 }
-                arr.add(sourceDTO);
+                arr.add(sourceVO);
             }
         }
         map.put("records",arr);
@@ -118,7 +120,7 @@ public class SourceController {
                             @RequestParam(defaultValue = "") String email,
                             @RequestParam(defaultValue = "") String nickname,
                             @RequestParam(defaultValue = "") String address) {
-        log.info("进入source/findPage方法");
+        logger.info("进入source/findPage方法");
         QueryWrapper<Source> queryWrapper = new QueryWrapper<>();
         if (!"".equals(username)) {
         queryWrapper.like("username", username);
@@ -139,21 +141,21 @@ public class SourceController {
     //新增或修改
     @PostMapping("/save")
     public Result save(@RequestBody Source source) {
-        log.info("进入source/save方法");
+        logger.info("进入source/save方法");
         return Result.success(sourceService.saveOrUpdate(source));
     }
 
     //根据ID删除
     @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable Integer id) {
-        log.info("进入source/delete方法");
+        logger.info("进入source/delete方法");
         return Result.success(sourceService.removeById(id));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
     public Result deleteBatch(@RequestBody List<Integer> ids) {
-        log.info("进入source/deleteBatch方法");
+        logger.info("进入source/deleteBatch方法");
         return Result.success(sourceService.removeBatchByIds(ids));
     }
 

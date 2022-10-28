@@ -9,8 +9,9 @@ export function login(user){
     return axios.get("/api/login?user=" + user)
 } */
 
-export function fetchPermission() {
-    return axios.get("/user/permission");
+export function fetchPermission(user) {
+    var userVO = JSON.parse(user);
+    return axios.get("/user/permission/"+ userVO.username);
 } 
 
 export function login(user) {

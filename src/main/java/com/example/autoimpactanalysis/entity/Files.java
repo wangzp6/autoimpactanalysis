@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -19,6 +20,7 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
+@ToString
 @TableName("sys_files")
 @ApiModel(value = "Files对象", description = "")
 public class Files implements Serializable {
@@ -42,7 +44,7 @@ public class Files implements Serializable {
     private String url;
 
     @ApiModelProperty("提数单编号")
-    private Integer bdcid;
+    private Integer bdcId;
 
     @ApiModelProperty("文件md5")
     private String md5;
