@@ -52,7 +52,7 @@
             <version>19.16.0.0</version>
         </dependency>
         <!--mongodb驱动-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
@@ -60,7 +60,7 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>4.7.2</version>
-        </dependency>
+        </dependency>-->
         <!--redis驱动-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

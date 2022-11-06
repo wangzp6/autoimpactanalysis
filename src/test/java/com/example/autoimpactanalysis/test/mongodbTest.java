@@ -18,13 +18,13 @@ public class mongodbTest {
 
     public static void main(String[] args) {
         // Replace the uri string with your MongoDB deployment's connection string
-        String uri = "mongodb://127.0.0.1:27017/";
+        /*String uri = "mongodb://127.0.0.1:27017/";
         try (MongoClient mongoClient = MongoClients.create(uri)) {
             MongoDatabase database = mongoClient.getDatabase("developdatabase");
             MongoCollection<Document> collection = database.getCollection("developdatabase");
             Document doc = collection.find(eq("title", "Back to the Future")).first();
             System.out.println(doc.toJson());
-        }
+        }*/
     }
 }
 

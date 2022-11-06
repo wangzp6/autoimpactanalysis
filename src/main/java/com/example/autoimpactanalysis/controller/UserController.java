@@ -170,9 +170,9 @@ public class UserController {
         String json;
         if("kfadmin".equals(username)){
             log.info("获取kfadmin菜单");
-            json = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\permission\\kf_permission.json";
+            json = "/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/resources/permission/kf_permission.json";
         }else{
-            json = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\permission\\other_permission.json";
+            json = "/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/resources/permission/other_permission.json";
         }
 
         File jsonFile = new File(json);

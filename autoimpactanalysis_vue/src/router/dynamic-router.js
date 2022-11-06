@@ -53,6 +53,33 @@ const dynamicRoutes = [
                             name: '报表元素管理',
                             icon: 'icon-quit'
                         }
+                    },
+                    {
+                        path: 'busconfirm',
+                        name: 'busconfirm',
+                        component: () => import('../pages/dataretrievalsystem/reportstatistics/busconfirm'),
+                        meta: {
+                            name: '业务确认管理',
+                            icon: 'icon-quit'
+                        }
+                    },
+                    {
+                        path: 'documentdetail',
+                        name: 'documentdetail',
+                        component: () => import('../pages/dataretrievalsystem/reportstatistics/documentdetail'),
+                        meta: {
+                            name: '文档管理',
+                            icon: 'icon-quit'
+                        }
+                    },
+                    {
+                        path: 'doctypecode',
+                        name: 'doctypecode',
+                        component: () => import('../pages/dataretrievalsystem/reportstatistics/doctypecode'),
+                        meta: {
+                            name: '文档类型码值配置',
+                            icon: 'icon-quit'
+                        }
                     }
                 ]
             },

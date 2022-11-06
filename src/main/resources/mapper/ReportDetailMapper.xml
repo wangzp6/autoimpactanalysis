@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.autoimpactanalysis.mapper.ReportDetailMapper">
+    <select id="findReports" resultType="com.example.autoimpactanalysis.entity.VO.ReportDetailVO">
+        SELECT r.report_id,
+               r.report_code,
+               r.report_name,
+               r.report_state,
+               r.operation_flag,
+               r.project_id,
+               p.project_code,
+               p.project_name
+        FROM report_detail r
+                 LEFT JOIN project_detail p
+                           ON r.project_id = p.project_id
+            ${ew.customSqlSegment}
+    </select>
+</mapper>

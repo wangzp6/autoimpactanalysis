@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.autoimpactanalysis.mapper.DocumentDetailMapper">
+    <select id="findPage" resultType="com.example.autoimpactanalysis.entity.VO.DocumentDetailVO">
+        SELECT d.doc_id,
+               d.doc_code,
+               d.doc_state,
+               d.doc_detail,
+               d.operator,
+               r.report_id,
+               r.report_code,
+               r.report_name,
+               p.project_id,
+               p.project_code,
+               p.project_name,
+               c.doc_type
+        FROM document_detail d
+                 LEFT JOIN report_detail r ON d.report_id = r.report_id
+                    LEFT JOIN project_detail p ON r.project_id = p.project_id
+                        LEFT JOIN document_code c ON d.doc_code = c.doc_code
+            ${ew.customSqlSegment}
+    </select>
+</mapper>

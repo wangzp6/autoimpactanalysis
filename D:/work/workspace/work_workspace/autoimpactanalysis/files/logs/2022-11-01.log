@@ -1,0 +1,945 @@
+2022-11-01 16:06:46.702 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 47873 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:06:46.706 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:06:47.770 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:06:47.771 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:06:47.795 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:06:47.811 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:06:47.813 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:06:47.822 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:06:48.307 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:06:48.310 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$a853f8c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:06:48.330 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:06:48.518 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:06:48.526 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:06:48.527 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:06:48.528 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:06:48.600 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:06:48.601 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1804 ms
+2022-11-01 16:06:48.883 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:06:50.250 > ERROR  springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.baomidou.dynamic.datasource.creator.HikariDataSourceCreator.doCreateDataSource(HikariDataSourceCreator.java:82)
+	at com.baomidou.dynamic.datasource.creator.AbstractDataSourceCreator.createDataSource(AbstractDataSourceCreator.java:70)
+	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:48)
+	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:47)
+	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:42)
+	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+2022-11-01 16:06:50.260 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'broomDataScriptController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+2022-11-01 16:06:50.267 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:06:50.286 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:06:50.303 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'broomDataScriptController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 60 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.baomidou.dynamic.datasource.creator.HikariDataSourceCreator.doCreateDataSource(HikariDataSourceCreator.java:82)
+	at com.baomidou.dynamic.datasource.creator.AbstractDataSourceCreator.createDataSource(AbstractDataSourceCreator.java:70)
+	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:48)
+	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:47)
+	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:42)
+	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 71 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:829)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 81 common frames omitted
+2022-11-01 16:09:28.386 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48045 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:09:28.390 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:09:29.409 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:09:29.410 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:09:29.434 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:09:29.450 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:09:29.450 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:09:29.458 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:09:29.881 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:09:29.885 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$8d40f90f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:09:29.901 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:09:30.067 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:09:30.072 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:09:30.075 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:09:30.076 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:09:30.151 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:09:30.151 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1679 ms
+2022-11-01 16:09:30.484 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:09:30.885 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:09:30.890 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mongodb - Starting...
+2022-11-01 16:09:30.893 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'broomDataScriptController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+2022-11-01 16:09:30.895 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:09:30.910 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:09:30.928 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'broomDataScriptController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'broomDataScriptMapper' defined in file [/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes/com/example/autoimpactanalysis/mapper/BroomDataScriptMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Invocation of init method failed; nested exception is java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 60 common frames omitted
+Caused by: java.lang.RuntimeException: Failed to get driver instance for jdbcUrl=mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:114)
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:331)
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:114)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.baomidou.dynamic.datasource.creator.HikariDataSourceCreator.doCreateDataSource(HikariDataSourceCreator.java:82)
+	at com.baomidou.dynamic.datasource.creator.AbstractDataSourceCreator.createDataSource(AbstractDataSourceCreator.java:70)
+	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:48)
+	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:47)
+	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:42)
+	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 71 common frames omitted
+Caused by: java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getDriver(DriverManager.java:315)
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:106)
+	... 83 common frames omitted
+2022-11-01 16:10:03.674 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48078 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:10:03.677 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:10:04.686 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:10:04.687 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:10:04.712 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:10:04.725 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:10:04.726 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:10:04.734 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:10:05.169 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:10:05.172 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4ee655a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:10:05.189 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:10:05.358 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:10:05.365 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:10:05.366 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:10:05.367 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:10:05.438 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:10:05.438 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1680 ms
+2022-11-01 16:10:05.711 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:10:06.040 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:10:06.042 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:10:06.042 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:10:06.495 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:10:07.444 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:10:07.488 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:10:07.490 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:10:07.503 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:10:07.504 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:10:07.519 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:10:07.547 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:10:07.567 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:11:18.038 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48172 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:11:18.042 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:11:18.975 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:11:18.976 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:11:18.997 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 18 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:11:19.007 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:11:19.007 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:11:19.016 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:11:19.431 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:11:19.434 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4ee655a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:11:19.451 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:11:19.616 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:11:19.622 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:11:19.624 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:11:19.625 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:11:19.694 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:11:19.694 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1566 ms
+2022-11-01 16:11:19.976 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:11:20.310 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:11:20.311 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:11:20.312 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:11:20.759 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:11:21.691 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:11:21.714 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:11:21.716 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:11:21.728 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:11:21.729 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:11:21.744 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:11:21.764 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:11:21.784 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:12:29.854 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48263 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:12:29.859 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:12:30.992 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:12:30.993 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:12:31.018 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:12:31.030 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:12:31.031 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:12:31.039 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:12:31.462 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:12:31.465 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4ee655a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:12:31.482 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:12:31.648 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:12:31.655 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:12:31.656 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:12:31.657 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:12:31.725 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:12:31.726 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1770 ms
+2022-11-01 16:12:32.007 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:12:32.354 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:12:32.356 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:12:32.356 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:12:32.811 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:12:33.742 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:12:33.760 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:12:33.762 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:12:33.774 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:12:33.774 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:12:33.790 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:12:33.829 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:12:33.848 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:14:56.032 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48445 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:14:56.035 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:14:57.008 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:14:57.009 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:14:57.032 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:14:57.042 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:14:57.043 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:14:57.051 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:14:57.458 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:14:57.461 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4ee655a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:14:57.480 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:14:57.648 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:14:57.656 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:14:57.657 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:14:57.658 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:14:57.727 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:14:57.727 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1609 ms
+2022-11-01 16:14:57.996 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:14:58.340 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:14:58.342 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:14:58.342 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:14:58.795 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:14:59.728 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:14:59.749 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:14:59.750 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:14:59.762 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:14:59.763 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:14:59.778 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:14:59.817 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:14:59.836 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:15:39.954 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48517 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:15:39.957 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:15:40.957 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:15:40.957 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:15:40.980 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:15:40.990 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:15:40.991 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:15:40.999 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:15:41.414 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:15:41.416 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$1ccdbbe9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:15:41.437 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:15:41.615 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:15:41.621 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:15:41.624 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:15:41.625 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:15:41.692 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:15:41.693 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1651 ms
+2022-11-01 16:15:41.971 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:15:42.283 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:15:42.285 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:15:42.285 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:15:42.788 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:15:43.728 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:15:43.746 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:15:43.748 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:15:43.761 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:15:43.762 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:15:43.776 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:15:43.794 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:15:43.814 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:17:41.140 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48640 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:17:41.143 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:17:42.157 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:17:42.157 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-01 16:17:42.181 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 MongoDB repository interfaces.
+2022-11-01 16:17:42.191 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:17:42.192 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:17:42.199 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:17:42.615 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:17:42.618 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$4ee655a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:17:42.635 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:17:42.801 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:17:42.806 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:17:42.809 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:17:42.810 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:17:42.879 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:17:42.880 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1657 ms
+2022-11-01 16:17:43.160 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:17:43.506 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:17:43.507 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:17:43.508 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:17:43.946 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:17:44.883 > WARN   springAppName_IS_UNDEFINED o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+2022-11-01 16:17:44.900 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:17:44.901 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:17:44.913 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:17:44.914 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:17:44.929 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Stopping service [Tomcat]
+2022-11-01 16:17:44.947 > INFO   springAppName_IS_UNDEFINED o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-01 16:17:44.988 > ERROR  springAppName_IS_UNDEFINED o.s.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongo' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.autoimpactanalysis.AutoimpactanalysisApplication.main(AutoimpactanalysisApplication.java:32)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.client.MongoClient]: Factory method 'mongo' threw exception; nested exception is java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/mongodb/internal/connection/InternalConnectionPoolSettings
+	at com.mongodb.client.internal.MongoClientImpl.createCluster(MongoClientImpl.java:223)
+	at com.mongodb.client.internal.MongoClientImpl.<init>(MongoClientImpl.java:70)
+	at com.mongodb.client.MongoClients.create(MongoClients.java:108)
+	at org.springframework.boot.autoconfigure.mongo.MongoClientFactorySupport.createMongoClient(MongoClientFactorySupport.java:50)
+	at org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo(MongoAutoConfiguration.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.mongodb.internal.connection.InternalConnectionPoolSettings
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 30 common frames omitted
+2022-11-01 16:20:40.672 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 48842 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:20:40.676 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:20:41.640 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:20:41.642 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:20:41.672 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:20:42.087 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:20:42.090 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$43e3a798] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:20:42.110 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:20:42.284 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:20:42.290 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:20:42.290 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:20:42.290 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:20:42.357 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:20:42.360 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1609 ms
+2022-11-01 16:20:42.590 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:20:42.944 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:20:42.946 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:20:42.946 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:20:43.388 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:20:44.414 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:20:44.436 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-11-01 16:20:44.902 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 4.52 seconds (JVM running for 5.101)
+2022-11-01 16:21:35.163 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-01 16:21:35.164 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-11-01 16:21:35.168 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 4 ms
+2022-11-01 16:21:35.232 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/login方法
+2022-11-01 16:21:35.537 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl User(id=1, userName=admin, password=123456, nickName=管理员, email=123.com, phone=12312341234, address=北京北京, avatarUrl=null, createTime=Thu Jun 23 14:11:16 CST 2022)
+2022-11-01 16:21:35.538 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl UserVO(username=admin, password=123456, nickname=管理员, avatarUrl=null, token=null)
+2022-11-01 16:21:35.557 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxIiwiZXhwIjoxNjY3Mjk4MDk1fQ.Dmz2zV27v5qSl7wMDIgRpceNHUk41a7IrpCFYrUiuuQ
+2022-11-01 16:21:35.601 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-11-01 16:21:35.646 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-11-01 16:21:35.671 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:null
+2022-11-01 16:21:35.675 > ERROR  springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [/autoimpactanalysis] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.example.autoimpactanalysis.controller.UserController.permission(UserController.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2022-11-01 16:23:08.587 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 16:23:08.592 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 16:23:08.603 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 16:23:08.603 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye
+2022-11-01 16:23:15.394 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on localhost with PID 49017 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-01 16:23:15.396 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-01 16:23:16.368 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-01 16:23:16.370 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-01 16:23:16.399 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-11-01 16:23:16.806 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:23:16.808 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$d8e50a7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:23:16.829 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-01 16:23:17.010 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-01 16:23:17.016 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:23:17.016 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-01 16:23:17.017 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-01 16:23:17.083 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-01 16:23:17.084 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1606 ms
+2022-11-01 16:23:17.329 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-01 16:23:17.674 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-01 16:23:17.675 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-01 16:23:17.676 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-01 16:23:18.139 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-01 16:23:19.158 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-11-01 16:23:19.179 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-11-01 16:23:19.618 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 4.518 seconds (JVM running for 5.097)
+2022-11-01 16:23:27.996 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-01 16:23:27.997 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2022-11-01 16:23:28.000 > INFO   springAppName_IS_UNDEFINED o.s.web.servlet.DispatcherServlet Completed initialization in 2 ms
+2022-11-01 16:23:28.084 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/login方法
+2022-11-01 16:23:28.389 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl User(id=1, userName=admin, password=123456, nickName=管理员, email=123.com, phone=12312341234, address=北京北京, avatarUrl=null, createTime=Thu Jun 23 14:11:16 CST 2022)
+2022-11-01 16:23:28.391 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl UserVO(username=admin, password=123456, nickname=管理员, avatarUrl=null, token=null)
+2022-11-01 16:23:28.410 > INFO   springAppName_IS_UNDEFINED c.e.a.service.impl.UserServiceImpl token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxIiwiZXhwIjoxNjY3Mjk4MjA4fQ.gwr8dUDKI8i4puifNLMi8kpRgyTx10wfACvBIJuCbqM
+2022-11-01 16:23:28.451 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-11-01 16:23:28.495 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController 进入user/permission方法
+2022-11-01 16:23:28.526 > INFO   springAppName_IS_UNDEFINED c.e.a.controller.UserController jsonObject:{"data":[{"path":"/dataretrievalsystem","children":[{"path":"scriptquery","name":"脚本查询"},{"path":"reportstatistics","children":[{"path":"projectdetail","name":"项目管理"},{"path":"reportdetail","name":"报表管理"}],"name":"报表统计"}],"name":"提数系统"}]}
+2022-11-01 16:23:33.057 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-11-01 16:23:33.071 > INFO   springAppName_IS_UNDEFINED c.e.a.c.BroomDataScriptController 进入broomDataScript/findPage方法
+2022-11-01 16:23:35.083 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-11-01 16:23:35.108 > INFO   springAppName_IS_UNDEFINED c.e.a.c.ProjectDetailController 进入projectDetail/findPage方法
+2022-11-01 16:23:36.709 > INFO   springAppName_IS_UNDEFINED c.e.a.c.interceptor.JwtInterceptor request:GET
+2022-11-01 16:23:36.719 > INFO   springAppName_IS_UNDEFINED c.e.a.c.ReportStatisticsController 进入reportStatistics/findReports方法
+2022-11-01 18:49:07.293 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource start closing ....
+2022-11-01 18:49:07.297 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown initiated...
+2022-11-01 18:49:07.319 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Shutdown completed.
+2022-11-01 18:49:07.319 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource all closed success,bye

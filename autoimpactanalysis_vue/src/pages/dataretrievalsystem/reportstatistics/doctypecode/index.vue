@@ -4,25 +4,11 @@
 
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
-            <el-input style="width: 200px" placeholder="请输入项目编号" suffix-icon="el-icon-search" class="margin-l5"
-                      v-model="projectCode"></el-input>
-            <el-input style="width: 200px" placeholder="请输入项目名称" suffix-icon="el-icon-search" class="margin-l5"
-                      v-model="projectName"></el-input>
-            <el-date-picker class="margin-l5"
-                                 v-model="createTime"
-                                 type="date"
-                                value-format="yyyy-MM-dd"
-                                 placeholder="选择项目创建日期"
-                            >
-            </el-date-picker>
-            <el-date-picker class="margin-l5"
-                            v-model="putIntoProTime"
-                            type="date"
-                            value-format="yyyy-MM-dd"
-                            placeholder="选择项目上线日期"
-            >
-            </el-date-picker>
-
+            <el-input style="width: 300px" placeholder="请输入码值" suffix-icon="el-icon-search" class="margin-l5"
+                      v-model="docCode"></el-input>
+            <el-input style="width: 300px" placeholder="请输入文档类型" suffix-icon="el-icon-search" class="margin-l5"
+                      v-model="docType"></el-input>
+          
             <el-button class="margin-l5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
             <el-button class="margin-l5" type="warning" @click="reset">重置 </el-button>
             <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
@@ -44,28 +30,22 @@
                   :cell-style="{padding: '0'}"
                   @selection-change="handleSelectionChange">
             <el-table-column type="selection" width="55" align="center"></el-table-column>
-            <el-table-column prop="projectCode" label="项目编号" width="250" sortable>
+            <el-table-column prop="docCode" label="码值" width="200" sortable>
             </el-table-column>
-            <el-table-column prop="projectName" label="项目名称" sortable>
-            </el-table-column>
-            <el-table-column prop="createTime" label="项目创建时间" width="200" sortable>
-                <template slot-scope="scope">{{scope.row.createTime| dateYMDFormat}}</template>
-            </el-table-column>
-            <el-table-column prop="putIntoProTime" label="项目上线时间" width="200" sortable>
-              <template slot-scope="scope">{{scope.row.putIntoProTime| dateYMDFormat}}</template>
+            <el-table-column prop="docType" label="文档类型" width="300" sortable>
             </el-table-column>
             <el-table-column label="操作" width="150">
                 <template slot-scope="scope">
                     <el-button type="success" plain class="bottomClass" @click="handleEdit(scope.row)">编辑 <i class="el-icon-edit"></i>
                     </el-button>
                     <el-popconfirm
-                            class="margin-l10"
+                            class="margin-l5"
                             confirm-button-text='确定'
                             cancel-button-text='我再想想'
                             icon="el-icon-info"
                             icon-color="red"
                             title="确定删除这条数据吗？"
-                            @confirm="deleteRow(scope.row.projectId)">
+                            @confirm="deleteRow(scope.row.codeId)">
                         <el-button type="danger" plain class="bottomClass" slot="reference">删除 <i class="el-icon-delete"></i></el-button>
                     </el-popconfirm>
                 </template>
@@ -83,59 +63,31 @@
                     :total="total">
             </el-pagination>
         </div>
-        <el-dialog title="项目新增" :visible.sync="projectDialogAdd" width="50%" top="50px" :show-close="false">
-            <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="projectForm">
-                <el-form-item label="项目编号" prop="projectCode">
-                    <el-input v-model="form.projectCode" autocomplete="off" maxlength="100"></el-input>
+        <el-dialog title="文档类型码值新增" :visible.sync="docCodeDialogAdd" width="50%" top="50px">
+            <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="docTypeForm">
+                <el-form-item label="码值" prop="docCode">
+                    <el-input v-model="form.docCode" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
-                <el-form-item label="项目名称" prop="projectName" >
-                    <el-input v-model="form.projectName" autocomplete="off" maxlength="100"></el-input>
-                </el-form-item>
-                <el-form-item label="项目创建时间" prop="createTime">
-                    <el-date-picker
-                        v-model="form.createTime"
-                        type="date"
-                        placeholder="选择日期">
-                    </el-date-picker>
-                </el-form-item>
-                <el-form-item label="项目上线时间" prop="putIntoProTime">
-                  <el-date-picker
-                      v-model="form.putIntoProTime"
-                      type="date"
-                      placeholder="选择日期">
-                  </el-date-picker>
+                <el-form-item label="文档类型" prop="docType" >
+                    <el-input v-model="form.docType" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="quit()">取 消</el-button>
+                <el-button @click="docCodeDialogAdd = false">取 消</el-button>
                 <el-button type="primary" @click="save()">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="项目修改" :visible.sync="projectDialogEdit" width="50%" top="50px" :show-close="false">
-            <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="projectForm">
-                <el-form-item label="项目编号" prop="projectCode">
-                    <el-input v-model="form.projectCode" autocomplete="off" maxlength="100"></el-input>
+        <el-dialog title="文档类型码值修改" :visible.sync="docCodeDialogEdit" width="50%" top="50px">
+            <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="docTypeForm">
+                <el-form-item label="码值" prop="docCode">
+                    <el-input v-model="form.docCode" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
-                <el-form-item label="项目名称" prop="projectName" >
-                    <el-input v-model="form.projectName" autocomplete="off" maxlength="100"></el-input>
-                </el-form-item>
-                <el-form-item label="项目创建时间" prop="createTime">
-                    <el-date-picker
-                            v-model="form.createTime"
-                            type="date"
-                            placeholder="选择日期">
-                    </el-date-picker>
-                </el-form-item>
-                <el-form-item label="项目上线时间" prop="createTime">
-                  <el-date-picker
-                      v-model="form.putIntoProTime"
-                      type="date"
-                      placeholder="选择日期">
-                  </el-date-picker>
+                <el-form-item label="文档类型" prop="docType" >
+                    <el-input v-model="form.docType" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-                <el-button @click="quit()">取 消</el-button>
+                <el-button @click="docCodeDialogEdit = false">取 消</el-button>
                 <el-button type="primary" @click="edit()">确 定</el-button>
             </div>
         </el-dialog>
@@ -146,45 +98,31 @@
     import axios from "../../../../utils/http";
 
     export default {
-        name: "ProjectDetail",
+        name: "DocTypeCode",
         data() {
             return {
                 tableData: [],
                 total: 0,
                 pageNum: 1,
                 pageSize: 20,
-                projectId: '',
-                projectCode: '',
-                projectName: '',
-                createTime: '',
-                putIntoProTime: '',
-                pickerOptions: { // 限制日期不让选择今天之后的
-                    disabledDate(time) {
-                        return time.getTime() > Date.now();
-                    }
-                },
+                codeId:'',
+                docCode: '',
+                docType: "",
                 form: {
-                    projectCode: '',
-                    projectName: '',
-                    createTime: '',
-                    putIntoProTime: '',
+                    codeId:'',
+                    docCode: '',
+                    docType: '',
                 },
-                projectDialogAdd: false,
-                projectDialogEdit:false,
+                docCodeDialogAdd: false,
+                docCodeDialogEdit:false,
                 multipleSelection: [],
                 headerBg: 'headerBg',
                 rules: {
-                    projectCode: [
-                        { required: true, message: '请输入项目编号', trigger: 'blur' }
+                    docCode: [
+                        { required: true, message: '请输入码值', trigger: 'blur' }
                     ],
-                    projectName: [
-                        { required: true, message: '请输入项目名称', trigger: 'blur' }
-                    ],
-                    createTime: [
-                        { type: 'date', required: true, message: '请选择项目创建日期', trigger: 'blur' }
-                    ],
-                    putIntoProTime: [
-                        { type: 'date', required: true, message: '请选择项目上线日期', trigger: 'blur' }
+                    docType: [
+                        { required: true, message: '请输入文档类型', trigger: 'blur' }
                     ]
                 }
 
@@ -207,14 +145,12 @@
             // 加载
             load() {
                 axios.get(
-                    "/projectDetail/findPage", {
+                    "/documentCode/findPage", {
                         params: {
                             pageNum: this.pageNum,
                             pageSize: this.pageSize,
-                            projectCode: this.projectCode,
-                            projectName: this.projectName,
-                            createTime: this.createTime,
-                            putIntoProTime: this.putIntoProTime,
+                            docCode: this.docCode,
+                            docType: this.docType,
                         }
                     }
                 ).then(data => {
@@ -224,51 +160,40 @@
             },
             //重置
             reset() {
-                this.projectCode = "";
-                this.projectName = "";
-                this.createTime = "";
-                this.putIntoProTime = "";
+                this.codeId="";
+                this.docCode = "";
+                this.docType = "";
                 this.pageNum = 1;
                 this.load()
             },
             //新增
             handleAdd() {
                 this.form = {};
-                this.projectDialogAdd = true;
+                this.docCodeDialogAdd = true;
             },
             //保存
             save() {
-                this.$refs['projectForm'].validate((valid) =>{
+                this.$refs['docTypeForm'].validate((valid) =>{
                     if (valid) {
-                        axios.post("/projectDetail/save", this.form).then(data => {
+                        axios.post("/documentCode/save", this.form).then(data => {
                             console.log(data);
                             if (data) {
                                 this.$message.success("保存成功");
                             } else {
                                 this.$message.error("保存失败");
                             }
-                            this.load()
+                          this.load()
                         });
-                        this.projectDialogAdd = false;
+                        this.docCodeDialogAdd = false;
                     } else {
                         alert('信息填写不完整!');
                     }
                 });
             },
-            //编辑
-            handleEdit(row) {
-              this.form = row;
-              var createTimestamp = Date.parse(new Date(row.createTime));
-              this.form.createTime=createTimestamp;
-              var proTimestamp = Date.parse(new Date(row.putIntoProTime));
-              this.form.putIntoProTime=proTimestamp;
-              this.projectDialogEdit = true;
-            },
-            //修改
             edit() {
-                this.$refs['projectForm'].validate((valid) =>{
+                this.$refs['docTypeForm'].validate((valid) =>{
                     if (valid) {
-                        axios.post("/projectDetail/edit", this.form).then(data => {
+                        axios.post("/documentCode/edit", this.form).then(data => {
                             console.log(data);
                             if (data) {
                                 this.$message.success("修改成功");
@@ -277,25 +202,20 @@
                             }
                             this.load()
                         });
-                        this.projectDialogEdit = false;
+                        this.docCodeDialogEdit = false;
                     } else {
                         alert('信息填写不完整!');
                     }
                 });
             },
-            //退出
-            quit() {
-              this.form = {};
-              this.projectId = '';
-              this.projectCode = '';
-              this.projectName = '';
-              this.projectDialogAdd = false;
-              this.projectDialogEdit = false;
-              this.load()
+            //编辑
+            handleEdit(row) {
+                this.form = row;
+                this.docCodeDialogEdit = true;
             },
             //删除
-            deleteRow(projectId) {
-                axios.delete("/projectDetail/delete/" + projectId).then(data => {
+            deleteRow(codeId) {
+                axios.delete("/documentCode/delete/" + codeId).then(data => {
                     if (data) {
                         this.$message.success("删除成功");
                         this.load()
@@ -310,12 +230,11 @@
             },
             // 批量删除
             deleteBatch() {
-                let ids = this.multipleSelection.map(v => v.projectId); //[{1,username,...},{2,username,...}]=>[1,2,3]
-                axios.post("/projectDetail/deleteBatch/", ids).then(data => {
+                let codeIds = this.multipleSelection.map(v => v.codeId); //[{1,username,...},{2,username,...}]=>[1,2,3]
+                axios.post("/documentCode/deleteBatch/", codeIds).then(data => {
                     console.log(data);
                     if (data) {
                         this.$message.success("批量删除成功");
-                        this.projectDialogAdd = false;
                         this.load()
                     } else {
                         this.$message.error("批量删除失败");

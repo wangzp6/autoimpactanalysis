@@ -19,6 +19,18 @@
             {
               "name": "报表管理",
               "path": "reportdetail"
+            },
+            {
+              "name": "业务确认管理",
+              "path": "busconfirm"
+            },
+            {
+              "name": "文档管理",
+              "path": "documentdetail"
+            },
+            {
+              "name": "文档类型码值配置",
+              "path": "doctypecode"
             }
           ]
         }

@@ -1,0 +1,9 @@
+查看IP
+ifconfig en0 或者 ifconfig
+
+修改hosts
+
+sudo vim /etc/hosts
+添加
+192.168.124.12 autoimpactanalysisvue.com.cn
+192.168.124.12 autoimpactanalysis.com.cn

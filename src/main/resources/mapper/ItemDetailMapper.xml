@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.autoimpactanalysis.mapper.ItemDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="itemResultMap" type="com.example.autoimpactanalysis.entity.VO.ItemDetailVO">
+        <id column="item_id" property="itemId" />
+        <result column="item_name" property="itemName" />
+        <result column="report_id" property="reportId" />
+        <result column="item_detail" property="itemDetail" />
+        <result column="item_parent_id" property="itemParentId" />
+        <result column="item_order" property="itemOrder" />
+    </resultMap>
+
+    <resultMap id="childrenItemResultMap" type="com.example.autoimpactanalysis.entity.VO.ItemDetailVO" extends="itemResultMap">
+        <collection property="childrenItemList" ofType="com.example.autoimpactanalysis.entity.VO.ItemDetailVO">
+            <id column="itemId2" property="itemId" />
+            <result column="itemName2" property="itemName" />
+            <result column="reportId2" property="reportId" />
+            <result column="itemDetail2" property="itemDetail" />
+            <result column="itemParentId2" property="itemParentId" />
+            <result column="itemOrder2" property="itemOrder" />
+        </collection>
+    </resultMap>
+
+    <select id="getItemDetailByReportId"  parameterType="com.example.autoimpactanalysis.entity.VO.ItemDetailVO"
+            resultType="com.example.autoimpactanalysis.entity.VO.ItemDetailVO">
+        SELECT * FROM item_detail
+        WHERE item_parent_id = #{itemParentId}
+            AND report_id = #{reportId}
+    </select>
+
+    <select id="getItemDetailListByReportId1"  resultMap="childrenItemResultMap">
+        SELECT
+            i1.*,
+            i2.item_id itemId2,
+            i2.item_name itemName2,
+            i2.report_id reportId2,
+            i2.item_detail itemDetail2,
+            i2.item_parent_id itemParentId2,
+            i2.item_order itemOrder2
+        FROM item_detail i1,
+             item_detail i2
+        WHERE i1.item_id = i2.item_parent_id
+            AND i1.item_parent_id IS NOT NULL
+            AND i1.report_id = #{reportId}
+    </select>
+</mapper>

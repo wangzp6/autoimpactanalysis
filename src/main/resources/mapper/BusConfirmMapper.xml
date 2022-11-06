@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.autoimpactanalysis.mapper.BusConfirmMapper">
+    <select id="findBusConfirm" resultType="com.example.autoimpactanalysis.entity.VO.BusConfirmVO">
+        SELECT b.bus_confirm_id,
+               b.bus_confirm_question,
+               b.bus_confirm_reply,
+               b.bus_confirm_state,
+               b.bus_confirm_time,
+               b.bus_confirm_type,
+               b.questioner,
+               b.replier,
+               b.operator,
+               r.report_id,
+               r.report_code,
+               r.report_name,
+               p.project_id,
+               p.project_code,
+               p.project_name
+        FROM bus_confirm b
+                 LEFT JOIN report_detail r ON b.report_id = r.report_id
+                    LEFT JOIN project_detail p ON r.project_id = p.project_id
+            ${ew.customSqlSegment}
+    </select>
+</mapper>

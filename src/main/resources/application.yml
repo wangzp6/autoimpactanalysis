@@ -18,11 +18,11 @@ spring:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://localhost:3306/developdatabase?serverTimezone=GMT%2b8
           username: root
-          password: 123456
+          password: root123456
 
-        mongodb:
+          #mongodb:
 #          name: developdatabase
-          url: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+  #         url: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
 #          username: root
 #          password: 123456
 
