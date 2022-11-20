@@ -36,9 +36,8 @@
                     // 允许粘贴图片上传,及格式
                     paste_data_images: true,
                     images_file_types: 'jpeg,jpg,png,gif,bmp,webp',
-                    paste_convert_word_fake_lists:false,
+                    paste_convert_word_fake_lists:true,
                     paste_retain_style_properties: "all",
-                    // paste_word_valid_elements:"table[width],tr,td[colspan|rowspan|width],th[colspan|rowspan|width],thead,tfoot,tbody,h1,h2,h3,h4,h5,img,p",
                     paste_word_valid_elements: "*[*]", //word需要它
                     paste_webkit_styles: "all",
                     paste_merge_formats: true,

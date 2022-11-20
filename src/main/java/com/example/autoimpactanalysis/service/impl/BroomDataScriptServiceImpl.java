@@ -52,13 +52,12 @@ public class BroomDataScriptServiceImpl extends ServiceImpl<BroomDataScriptMappe
     }
 
     @Override
-    public Integer removeByIdWithFile(Integer bdcid) {
-        ArrayList<Files> filesList = filesMapper.findByBdcId(bdcid);
-        for (int i = 0; i < filesList.size(); i++) {
-            Files files =filesList.get(i);
-            files.setIsDelete(true);
+    public int removeByIdWithFile(String bdcId) {
+        ArrayList<Files> filesList = filesMapper.findByBdcId(bdcId);
+        for (Files files : filesList) {
+            files.setIsDelete("1");
             filesMapper.updateById(files);
         }
-        return broomDataScriptMapper.deleteById(bdcid);
+        return broomDataScriptMapper.deleteById(bdcId);
     }
 }

@@ -4,23 +4,23 @@
 
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
-            <el-input style="width: 300px" placeholder="请输入码值" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 300px" placeholder="请输入码值" suffix-icon="el-icon-search" class="margin-5"
                       v-model="docCode"></el-input>
-            <el-input style="width: 300px" placeholder="请输入文档类型" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 300px" placeholder="请输入文档类型" suffix-icon="el-icon-search" class="margin-5"
                       v-model="docType"></el-input>
-          
-            <el-button class="margin-l5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
-            <el-button class="margin-l5" type="warning" @click="reset">重置 </el-button>
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
+
+            <el-button class="margin-5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
+            <el-button class="margin-5" type="warning" @click="reset">重置</el-button>
+            <el-button class="margin-5" type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
             <el-popconfirm
-                    style="margin-left: 10px; margin-right: 10px;"
+                    class="margin-5"
                     confirm-button-text='好的'
                     cancel-button-text='不用了'
                     icon="el-icon-info"
                     icon-color="red"
                     title="确定删除这些数据吗？"
                     @confirm="deleteBatch">
-                <el-button type="danger" slot="reference">批量删除 <i class="el-icon-minus"></i></el-button>
+                <el-button class="margin-5" type="danger" slot="reference">批量删除 <i class="el-icon-minus"></i></el-button>
             </el-popconfirm>
         </div>
         <el-table :data="tableData" border stripe class="tableClass"
@@ -36,7 +36,8 @@
             </el-table-column>
             <el-table-column label="操作" width="150">
                 <template slot-scope="scope">
-                    <el-button type="success" plain class="bottomClass" @click="handleEdit(scope.row)">编辑 <i class="el-icon-edit"></i>
+                    <el-button type="success" plain class="bottomClass" @click="handleEdit(scope.row)">编辑 <i
+                            class="el-icon-edit"></i>
                     </el-button>
                     <el-popconfirm
                             class="margin-l5"
@@ -46,7 +47,8 @@
                             icon-color="red"
                             title="确定删除这条数据吗？"
                             @confirm="deleteRow(scope.row.codeId)">
-                        <el-button type="danger" plain class="bottomClass" slot="reference">删除 <i class="el-icon-delete"></i></el-button>
+                        <el-button type="danger" plain class="bottomClass" slot="reference">删除 <i
+                                class="el-icon-delete"></i></el-button>
                     </el-popconfirm>
                 </template>
             </el-table-column>
@@ -63,12 +65,13 @@
                     :total="total">
             </el-pagination>
         </div>
-        <el-dialog title="文档类型码值新增" :visible.sync="docCodeDialogAdd" width="50%" top="50px">
+        <el-dialog title="文档类型码值新增" :visible.sync="docCodeDialogAdd" width="50%" top="50px"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="docTypeForm">
                 <el-form-item label="码值" prop="docCode">
                     <el-input v-model="form.docCode" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
-                <el-form-item label="文档类型" prop="docType" >
+                <el-form-item label="文档类型" prop="docType">
                     <el-input v-model="form.docType" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
             </el-form>
@@ -77,12 +80,13 @@
                 <el-button type="primary" @click="save()">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="文档类型码值修改" :visible.sync="docCodeDialogEdit" width="50%" top="50px">
+        <el-dialog title="文档类型码值修改" :visible.sync="docCodeDialogEdit" width="50%" top="50px"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="docTypeForm">
                 <el-form-item label="码值" prop="docCode">
                     <el-input v-model="form.docCode" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
-                <el-form-item label="文档类型" prop="docType" >
+                <el-form-item label="文档类型" prop="docType">
                     <el-input v-model="form.docType" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
             </el-form>
@@ -105,24 +109,24 @@
                 total: 0,
                 pageNum: 1,
                 pageSize: 20,
-                codeId:'',
+                codeId: '',
                 docCode: '',
                 docType: "",
                 form: {
-                    codeId:'',
+                    codeId: '',
                     docCode: '',
                     docType: '',
                 },
                 docCodeDialogAdd: false,
-                docCodeDialogEdit:false,
+                docCodeDialogEdit: false,
                 multipleSelection: [],
                 headerBg: 'headerBg',
                 rules: {
                     docCode: [
-                        { required: true, message: '请输入码值', trigger: 'blur' }
+                        {required: true, message: '请输入码值', trigger: 'blur'}
                     ],
                     docType: [
-                        { required: true, message: '请输入文档类型', trigger: 'blur' }
+                        {required: true, message: '请输入文档类型', trigger: 'blur'}
                     ]
                 }
 
@@ -160,7 +164,7 @@
             },
             //重置
             reset() {
-                this.codeId="";
+                this.codeId = "";
                 this.docCode = "";
                 this.docType = "";
                 this.pageNum = 1;
@@ -173,7 +177,7 @@
             },
             //保存
             save() {
-                this.$refs['docTypeForm'].validate((valid) =>{
+                this.$refs['docTypeForm'].validate((valid) => {
                     if (valid) {
                         axios.post("/documentCode/save", this.form).then(data => {
                             console.log(data);
@@ -182,7 +186,7 @@
                             } else {
                                 this.$message.error("保存失败");
                             }
-                          this.load()
+                            this.load()
                         });
                         this.docCodeDialogAdd = false;
                     } else {
@@ -191,7 +195,7 @@
                 });
             },
             edit() {
-                this.$refs['docTypeForm'].validate((valid) =>{
+                this.$refs['docTypeForm'].validate((valid) => {
                     if (valid) {
                         axios.post("/documentCode/edit", this.form).then(data => {
                             console.log(data);
@@ -249,6 +253,7 @@
     .headerBg {
         background: #F5F5F5 !important;
     }
+
     /*    .tableClass{
             td{
                 padding: 0 !important;
@@ -261,25 +266,29 @@
                 line-height: 30px;
             }
         }*/
-    .tableClass .cell{
+    .tableClass .cell {
         max-height: 125px;
-        line-height: 25px!important;
+        line-height: 25px !important;
         /*text-align: left;*/
     }
-    .bottomClass{
-        padding: 5px!important;
+
+    .bottomClass {
+        padding: 5px !important;
     }
-    .bottomClassDetail{
-        padding: 5px!important;
+
+    .bottomClassDetail {
+        padding: 5px !important;
         right: 2px;
         bottom: 2px;
         position: absolute;
         border: none;
     }
+
     .el-dialog__body {
-        padding: 10px 20px!important;
+        padding: 10px 20px !important;
     }
-    .el-textarea.is-disabled .el-textarea__inner{
-        color: #000000!important;
+
+    .el-textarea.is-disabled .el-textarea__inner {
+        color: #000000 !important;
     }
 </style>

@@ -41,27 +41,6 @@ public class UserController {
     @Resource
     private IUserService userService;
 
-    //新增或修改
-    @PostMapping("/save")
-    public Result save(@RequestBody User user) {
-        log.info("进入user/save方法");
-        return Result.success(userService.saveOrUpdate(user));
-    }
-
-    //根据ID删除
-    @DeleteMapping("/delete/{id}")
-    public Result delete(@PathVariable Integer id) {
-        log.info("进入user/delete方法");
-        return Result.success(userService.removeById(id));
-    }
-
-    //批量删除
-    @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> ids) {
-        log.info("进入user/deleteBatch方法");
-        return Result.success(userService.removeBatchByIds(ids));
-    }
-
     //全量查询
     @GetMapping("/findAll")
     public Result findAll() {
@@ -70,18 +49,18 @@ public class UserController {
     }
 
     //根据ID查询
-    @GetMapping("/findById/{id}")
-    public Result findById(@PathVariable Integer id) {
+    @GetMapping("/findById/{userId}")
+    public Result findById(@PathVariable String userId) {
         log.info("进入findById方法");
-        return Result.success(userService.getById(id));
+        return Result.success(userService.getById(userId));
     }
 
     //根据username查询
-    @GetMapping("/findByUsername/{username}")
-    public Result findByUsername(@PathVariable String username) {
-        log.info("进入userfindByUsername方法");
+    @GetMapping("/findByUserName/{userName}")
+    public Result findByUserName(@PathVariable String userName) {
+        log.info("进入userfindByUserName方法");
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", username);
+        queryWrapper.eq("user_name", userName);
         return Result.success(userService.getOne(queryWrapper));
     }
 
@@ -89,29 +68,50 @@ public class UserController {
     @GetMapping("/findPage")
     public Result findPage(@RequestParam Integer pageNum,
                            @RequestParam Integer pageSize,
-                           @RequestParam(defaultValue = "") String username,
+                           @RequestParam(defaultValue = "") String userName,
                            @RequestParam(defaultValue = "") String email,
-                           @RequestParam(defaultValue = "") String nickname,
+                           @RequestParam(defaultValue = "") String nickName,
                            @RequestParam(defaultValue = "") String address) {
         log.info("进入user/findPage方法");
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        if (!"".equals(username)) {
-            queryWrapper.like("username", username);
+        if (!"".equals(userName)) {
+            queryWrapper.like("user_name", userName);
         }
         if (!"".equals(email)) {
             queryWrapper.like("email", email);
         }
-        if (!"".equals(nickname)) {
-            queryWrapper.like("nickname", nickname);
+        if (!"".equals(nickName)) {
+            queryWrapper.like("nick_name", nickName);
         }
         if (!"".equals(address)) {
             queryWrapper.like("address", address);
         }
-        queryWrapper.orderByDesc("id");
+        queryWrapper.orderByDesc("user_id");
 
         User currentUser = TokenUtils.getCurrentUser();
         log.info("当前用户信息：" + currentUser.getNickName());
         return Result.success(userService.page(new Page<>(pageNum, pageSize), queryWrapper));
+    }
+
+    //新增或修改
+    @PostMapping("/save")
+    public Result save(@RequestBody User user) {
+        log.info("进入user/save方法");
+        return Result.success(userService.saveOrUpdate(user));
+    }
+
+    //根据ID删除
+    @DeleteMapping("/delete/{userId}")
+    public Result delete(@PathVariable String userId) {
+        log.info("进入user/delete方法");
+        return Result.success(userService.removeById(userId));
+    }
+
+    //批量删除
+    @PostMapping("/deleteBatch/")
+    public Result deleteBatch(@RequestBody List<String> userIds) {
+        log.info("进入user/deleteBatch方法");
+        return Result.success(userService.removeBatchByIds(userIds));
     }
 
     //导出
@@ -144,7 +144,7 @@ public class UserController {
     @PostMapping("/login")
     public Result login(@RequestBody UserVO userVO) {
         log.info("进入user/login方法");
-        String username = userVO.getUsername();
+        String username = userVO.getUserName();
         String password = userVO.getPassword();
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             log.info("用户名或者密码为空");
@@ -164,15 +164,15 @@ public class UserController {
     }
 
     //授权
-    @GetMapping("/permission/{username}")
-    public Result permission(@PathVariable String username) {
+    @GetMapping("/permission/{userName}")
+    public Result permission(@PathVariable String userName) {
         log.info("进入user/permission方法");
         String json;
-        if("kfadmin".equals(username)){
+        if("kfadmin".equals(userName)){
             log.info("获取kfadmin菜单");
-            json = "/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/resources/permission/kf_permission.json";
+            json = "src/main/resources/permission/kf_permission.json";
         }else{
-            json = "/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/resources/permission/other_permission.json";
+            json = "src/main/resources/permission/other_permission.json";
         }
 
         File jsonFile = new File(json);
@@ -188,7 +188,7 @@ public class UserController {
     @PostMapping("/register")
     public Result register(@RequestBody UserVO userVO) {
         log.info("进入user/register方法");
-        String username = userVO.getUsername();
+        String username = userVO.getUserName();
         String password = userVO.getPassword();
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             log.info("用户名或者密码为空");

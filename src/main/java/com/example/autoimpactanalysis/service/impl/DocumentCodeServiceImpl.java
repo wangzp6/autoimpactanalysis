@@ -1,5 +1,6 @@
 package com.example.autoimpactanalysis.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.autoimpactanalysis.entity.DocumentCode;
 import com.example.autoimpactanalysis.mapper.DocumentCodeMapper;
@@ -18,12 +19,13 @@ import java.util.List;
  * @Description: DocumentCode 服务实现类
  */
 @Service
+@DS("mysql")
 public class DocumentCodeServiceImpl extends ServiceImpl<DocumentCodeMapper, DocumentCode> implements IDocumentCodeService {
 
     @Override
     public List<DocumentCode> getByDocCode(String docCode) {
         QueryWrapper<DocumentCode> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like(StringUtils.hasText(docCode), "doc_code", docCode);
+        queryWrapper.eq(StringUtils.hasText(docCode), "doc_code", docCode.trim());
         List<DocumentCode> list = list(queryWrapper);
         return list;
     }

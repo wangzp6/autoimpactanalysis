@@ -1,14 +1,9 @@
 package com.example.autoimpactanalysis.test;
 
-import cn.hutool.core.io.FileUtil;
-import com.example.autoimpactanalysis.utils.OfficeUtil;
-import com.sun.jndi.toolkit.url.UrlUtil;
-import org.junit.jupiter.api.Test;
-
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @project_name: autoimpactanalysis
@@ -18,6 +13,9 @@ import java.io.FileInputStream;
  * @Description: TODO
  * @Version: V1.0
  */
+@RunWith(SpringRunner.class)
+@Slf4j
+@SpringBootTest
 public class WordTest {
 
 

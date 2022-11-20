@@ -38,7 +38,7 @@ public class DocumentCodeController {
 
     //根据ID查询
     @GetMapping("/findById/{codeId}")
-    public Result findById(@PathVariable Integer codeId) {
+    public Result findById(@PathVariable String codeId) {
         log.info("进入documentCode/findById方法");
         return Result.success(documentCodeService.getById(codeId));
     }
@@ -61,6 +61,8 @@ public class DocumentCodeController {
     @PostMapping("/save")
     public Result save(@RequestBody DocumentCode documentCode) {
         log.info("进入documentCode/save方法");
+        documentCode.setDocCode(documentCode.getDocCode().trim());
+        documentCode.setDocType(documentCode.getDocType().trim());
         List<DocumentCode> documentCodes= documentCodeService.getByDocCode(documentCode.getDocCode());
         if(!documentCodes.isEmpty()){
             return Result.success("此文档类型已存在！");
@@ -73,20 +75,27 @@ public class DocumentCodeController {
     @PostMapping("/edit")
     public Result edit(@RequestBody DocumentCode documentCode) {
         log.info("进入documentCode/edit方法");
-        return Result.success(documentCodeService.saveOrUpdate(documentCode));
+        documentCode.setDocCode(documentCode.getDocCode().trim());
+        documentCode.setDocType(documentCode.getDocType().trim());
+        List<DocumentCode> documentCodes= documentCodeService.getByDocCode(documentCode.getDocCode());
+        if(!documentCodes.isEmpty()){
+            return Result.success("此文档类型已存在！");
+        }else{
+            return Result.success(documentCodeService.saveOrUpdate(documentCode));
+        }
     }
 
 
     //根据ID删除
     @DeleteMapping("/delete/{codeId}")
-    public Result delete(@PathVariable Integer codeId) {
+    public Result delete(@PathVariable String codeId) {
         log.info("进入documentCode/delete方法");
         return Result.success(documentCodeService.removeById(codeId));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> codeIds) {
+    public Result deleteBatch(@RequestBody List<String> codeIds) {
         log.info("进入documentCode/deleteBatch方法");
         return Result.success(documentCodeService.removeBatchByIds(codeIds));
     }

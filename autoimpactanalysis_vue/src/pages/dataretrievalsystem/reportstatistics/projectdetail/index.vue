@@ -4,18 +4,18 @@
 
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
-            <el-input style="width: 200px" placeholder="请输入项目编号" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入项目编号" suffix-icon="el-icon-search" class="margin-5"
                       v-model="projectCode"></el-input>
-            <el-input style="width: 200px" placeholder="请输入项目名称" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入项目名称" suffix-icon="el-icon-search" class="margin-5"
                       v-model="projectName"></el-input>
-            <el-date-picker class="margin-l5"
+            <el-date-picker class="margin-5"
                                  v-model="createTime"
                                  type="date"
                                 value-format="yyyy-MM-dd"
                                  placeholder="选择项目创建日期"
                             >
             </el-date-picker>
-            <el-date-picker class="margin-l5"
+            <el-date-picker class="margin-5"
                             v-model="putIntoProTime"
                             type="date"
                             value-format="yyyy-MM-dd"
@@ -23,11 +23,11 @@
             >
             </el-date-picker>
 
-            <el-button class="margin-l5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
-            <el-button class="margin-l5" type="warning" @click="reset">重置 </el-button>
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
+            <el-button class="margin-5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
+            <el-button class="margin-5" type="warning" @click="reset">重置 </el-button>
+            <el-button class="margin-5" type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
             <el-popconfirm
-                    style="margin-left: 10px; margin-right: 10px;"
+                    class="margin-5"
                     confirm-button-text='好的'
                     cancel-button-text='不用了'
                     icon="el-icon-info"
@@ -77,13 +77,14 @@
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="pageNum"
-                    :page-sizes="[5, 10, 20]"
+                    :page-sizes="[5, 10, 20, total]"
                     :page-size="pageSize"
                     layout="total, sizes, prev, pager, next, jumper"
                     :total="total">
             </el-pagination>
         </div>
-        <el-dialog title="项目新增" :visible.sync="projectDialogAdd" width="50%" top="50px" :show-close="false">
+        <el-dialog title="项目新增" :visible.sync="projectDialogAdd" width="50%" top="50px" :show-close="false"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="projectForm">
                 <el-form-item label="项目编号" prop="projectCode">
                     <el-input v-model="form.projectCode" autocomplete="off" maxlength="100"></el-input>
@@ -111,7 +112,8 @@
                 <el-button type="primary" @click="save()">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="项目修改" :visible.sync="projectDialogEdit" width="50%" top="50px" :show-close="false">
+        <el-dialog title="项目修改" :visible.sync="projectDialogEdit" width="50%" top="50px" :show-close="false"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="projectForm">
                 <el-form-item label="项目编号" prop="projectCode">
                     <el-input v-model="form.projectCode" autocomplete="off" maxlength="100"></el-input>
@@ -247,8 +249,9 @@
                             } else {
                                 this.$message.error("保存失败");
                             }
-                            this.load()
+                            this.load();
                         });
+                        this.load();
                         this.projectDialogAdd = false;
                     } else {
                         alert('信息填写不完整!');
@@ -275,8 +278,9 @@
                             } else {
                                 this.$message.error("修改失败");
                             }
-                            this.load()
+                            this.load();
                         });
+                        this.load();
                         this.projectDialogEdit = false;
                     } else {
                         alert('信息填写不完整!');

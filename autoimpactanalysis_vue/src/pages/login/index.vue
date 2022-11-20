@@ -2,13 +2,13 @@
     <div class="clearfix" id="login_wrap">
         <div>
             <div>
-                <h2 class="title">登 录</h2>
+                <h2 class="title">数据工作支持系统</h2>
             </div>
             <div class="login">
                 <el-form :model="user" :rules="rules" ref="userForm">
-                    <el-form-item prop="username">
+                    <el-form-item prop="userName">
                         <el-input size="mediun" style="margin: 10px 0" prefix-icon="el-icon-user"
-                                  v-model="user.username" placeholder="请输入账号"></el-input>
+                                  v-model="user.userName" placeholder="请输入账号"></el-input>
                     </el-form-item>
                     <el-form-item prop="password">
                         <el-input placeholder="请输入密码" size="medium" style="margin: 10px 0;" prefix-icon="el-icon-lock"
@@ -34,7 +34,7 @@
             return {
                 user: {},
                 rules: {
-                    username: [
+                    userName: [
                         {required: true, message: '请输入用户名', trigger: 'blur'},
                         {min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur'}
                     ],

@@ -28,7 +28,7 @@ public interface BroomDataScriptMapper extends BaseMapper<BroomDataScript> {
 //            " FROM broomdatascript, sys_files " +
 //            " WHERE broomdatascript.bdcid = #{bdcid} " +
 //            "     AND broomdatascript.bdcid = sys_files.bdcid")
-//    String findBroomdatascript(@Param("bdcid") Integer bdcid);
+//    String findBroomdatascript(@Param("bdcid") String bdcid);
 
     /**
      * 动态查询

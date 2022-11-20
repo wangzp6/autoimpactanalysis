@@ -1,9 +1,6 @@
 package com.example.autoimpactanalysis.entity.VO;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
  * @ClassName: SourceVO
@@ -14,9 +11,6 @@ import lombok.ToString;
  */
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public class SourceVO {
     private String pro_user;
     private String pro_name;

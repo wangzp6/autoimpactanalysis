@@ -1,0 +1,8 @@
+2022-11-19 15:23:30.998 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=48s825ms).
+2022-11-19 15:26:09.690 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m8s635ms).
+2022-11-19 15:36:41.595 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m11s367ms).
+2022-11-19 16:03:51.530 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m12s445ms).
+2022-11-19 16:06:41.151 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=48s702ms).
+2022-11-19 16:09:22.515 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m11s359ms).
+2022-11-19 17:55:33.145 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=53s892ms).
+2022-11-19 17:57:44.352 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m11s209ms).

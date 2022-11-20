@@ -3,14 +3,11 @@ package com.example.autoimpactanalysis.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @ClassName: DocumentCode
@@ -19,8 +16,7 @@ import lombok.Setter;
  * @Version: V1.0
  * @Description: DocumentCode 实体类
  */
-@Getter
-@Setter
+@Data
 @TableName("document_code")
 @ApiModel(value = "DocumentCode对象", description = "")
 public class DocumentCode implements Serializable {
@@ -29,7 +25,7 @@ public class DocumentCode implements Serializable {
 
     @ApiModelProperty("码值ID")
     @TableId(value = "code_id", type = IdType.AUTO)
-    private Integer codeId;
+    private String codeId;
 
     @ApiModelProperty("文档类型码值")
     private String docCode;
@@ -37,6 +33,17 @@ public class DocumentCode implements Serializable {
     @ApiModelProperty("文档类型")
     private String docType;
 
+    @ApiModelProperty("操作人")
+    private String operator;
+
+    @ApiModelProperty("是否已删除；0:否；1:已删除")
+    private String isDelete;
+
     @ApiModelProperty("插入时间")
     private Date insertTime;
+
+    @ApiModelProperty("修改时间")
+    private Date updateTime;
+
+
 }

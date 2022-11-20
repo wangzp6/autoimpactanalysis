@@ -11,6 +11,7 @@
                b.questioner,
                b.replier,
                b.operator,
+               b.update_time,
                r.report_id,
                r.report_code,
                r.report_name,
@@ -22,4 +23,16 @@
                     LEFT JOIN project_detail p ON r.project_id = p.project_id
             ${ew.customSqlSegment}
     </select>
+
+    <update id="removeBatchByBusConfirmIds" parameterType="java.util.List">
+        <foreach collection="busConfirms" item="item" separator=";">
+            UPDATE bus_confirm
+            <set>
+                is_delete = '1' ,
+                operator = #{item.operator},
+                update_time = now()
+            </set>
+            WHERE bus_confirm_id = #{item.busConfirmId}
+        </foreach>
+    </update>
 </mapper>

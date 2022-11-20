@@ -1,11 +1,10 @@
 package com.example.autoimpactanalysis.test;
 
-import static com.mongodb.client.model.Filters.eq;
-import org.bson.Document;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.example.autoimpactanalysis.AutoimpactanalysisApplicationTests;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+
 /**
  * @project_name: autoimpactanalysis
  * @ClassName: mongodbTest
@@ -14,17 +13,20 @@ import com.mongodb.client.MongoDatabase;
  * @Description: TODO
  * @Version: V1.0
  */
-public class mongodbTest {
+public class mongodbTest  extends AutoimpactanalysisApplicationTests {
 
-    public static void main(String[] args) {
-        // Replace the uri string with your MongoDB deployment's connection string
-        /*String uri = "mongodb://127.0.0.1:27017/";
-        try (MongoClient mongoClient = MongoClients.create(uri)) {
-            MongoDatabase database = mongoClient.getDatabase("developdatabase");
-            MongoCollection<Document> collection = database.getCollection("developdatabase");
-            Document doc = collection.find(eq("title", "Back to the Future")).first();
-            System.out.println(doc.toJson());
-        }*/
+    @Autowired
+    MongoTemplate mongoTemplate;
+    /**
+     * 创建集合
+     */
+    @Test
+    public void testCreateCollection(){
+        boolean emp = mongoTemplate.collectionExists("emp");
+        if(emp){
+            mongoTemplate.dropCollection("emp");
+        }
+        mongoTemplate.createCollection("emp");
     }
 }
 

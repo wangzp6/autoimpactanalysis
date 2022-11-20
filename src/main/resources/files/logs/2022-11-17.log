@@ -1,0 +1,44 @@
+2022-11-17 15:10:18.511 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Starting AutoimpactanalysisApplication using Java 1.8.0_351 on wangzhipingdeMacBook-Pro.local with PID 45607 (/Users/wangzp/work/java/workspace/autoimpactanalysis/target/classes started by wangzp in /Users/wangzp/work/java/workspace/autoimpactanalysis)
+2022-11-17 15:10:18.517 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication No active profile set, falling back to 1 default profile: "default"
+2022-11-17 15:10:20.333 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-17 15:10:20.334 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-17 15:10:20.363 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 26 ms. Found 0 MongoDB repository interfaces.
+2022-11-17 15:10:20.385 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-17 15:10:20.386 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-17 15:10:20.400 > INFO   springAppName_IS_UNDEFINED o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-11-17 15:10:20.957 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-17 15:10:20.964 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$517ddb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-17 15:10:20.989 > INFO   springAppName_IS_UNDEFINED o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-17 15:10:21.323 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 9080 (http)
+2022-11-17 15:10:21.334 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9080"]
+2022-11-17 15:10:21.336 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardService Starting service [Tomcat]
+2022-11-17 15:10:21.336 > INFO   springAppName_IS_UNDEFINED o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-11-17 15:10:21.429 > INFO   springAppName_IS_UNDEFINED o.a.c.c.C.[.[.[/autoimpactanalysis] Initializing Spring embedded WebApplicationContext
+2022-11-17 15:10:21.429 > INFO   springAppName_IS_UNDEFINED o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2843 ms
+2022-11-17 15:10:21.808 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Starting...
+2022-11-17 15:10:22.290 > INFO   springAppName_IS_UNDEFINED com.zaxxer.hikari.HikariDataSource mysql - Start completed.
+2022-11-17 15:10:22.292 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource - add a datasource named [mysql] success
+2022-11-17 15:10:22.292 > INFO   springAppName_IS_UNDEFINED c.b.d.d.DynamicRoutingDataSource dynamic-datasource initial loaded [1] datasource,primary datasource named [mysql]
+2022-11-17 15:10:22.894 > WARN   springAppName_IS_UNDEFINED c.b.m.c.injector.DefaultSqlInjector class com.example.autoimpactanalysis.entity.Source ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-11-17 15:10:24.023 > INFO   springAppName_IS_UNDEFINED org.mongodb.driver.cluster Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-11-17 15:10:24.077 > INFO   springAppName_IS_UNDEFINED org.mongodb.driver.cluster Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2022-11-17 15:10:24.454 > INFO   springAppName_IS_UNDEFINED o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-9080"]
+2022-11-17 15:10:24.475 > INFO   springAppName_IS_UNDEFINED o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 9080 (http) with context path '/autoimpactanalysis'
+2022-11-17 15:10:24.930 > INFO   springAppName_IS_UNDEFINED c.e.a.AutoimpactanalysisApplication Started AutoimpactanalysisApplication in 7.155 seconds (JVM running for 8.012)

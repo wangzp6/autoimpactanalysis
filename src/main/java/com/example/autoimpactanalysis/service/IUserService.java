@@ -13,7 +13,6 @@ import com.example.autoimpactanalysis.entity.User;
  */
 public interface IUserService extends IService<User> {
 
-//    Boolean login(UserDTO userDTO);
     UserVO login(UserVO userVO);
 
     User register(UserVO userVO);

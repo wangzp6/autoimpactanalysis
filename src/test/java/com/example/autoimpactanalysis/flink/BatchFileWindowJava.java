@@ -3,7 +3,6 @@ package com.example.autoimpactanalysis.flink;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.api.java.operators.AggregateOperator;
 import org.apache.flink.api.java.operators.DataSource;
 import org.apache.flink.api.java.tuple.Tuple2;
 import lombok.extern.slf4j.Slf4j;
@@ -37,8 +36,8 @@ public class BatchFileWindowJava {
         env.setParallelism(1);
 
         //以文件方式获取数据
-        String filePath = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\file";
-        String outPath = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\result";
+        String filePath = "src\\main\\resources\\files\\data";
+        String outPath = "src\\main\\resources\\files\\result\\output";
         //打印文件内容
         /*File file = new File(filePath);
         log.info(txt2String(file));*/

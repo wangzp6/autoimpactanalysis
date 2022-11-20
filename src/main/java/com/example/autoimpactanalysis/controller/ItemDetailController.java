@@ -41,7 +41,7 @@ public class ItemDetailController {
 
     //根据ID查询
     @GetMapping("/findById/{id}")
-    public Result findById(@PathVariable Integer id) {
+    public Result findById(@PathVariable String id) {
         log.info("进入itemDetail/findById方法");
         return Result.success(itemDetailService.getById(id));
     }
@@ -50,7 +50,7 @@ public class ItemDetailController {
     public Result getItemDetailListByReportId(@PathVariable String reportId) {
         ItemDetailVO itemDetailVO = new ItemDetailVO();
         itemDetailVO.setReportId(reportId);
-        itemDetailVO.setItemParentId(0);
+        itemDetailVO.setItemParentId("0");
         List<ItemDetailVO> itemDetailVOList = itemDetailService.getItemDetailListByReportId(itemDetailVO);
         return Result.success(itemDetailVOList);
     }
@@ -64,14 +64,14 @@ public class ItemDetailController {
 
     //根据ID删除
     @DeleteMapping("/delete/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable String id) {
         log.info("进入itemDetail/delete方法");
         return Result.success(itemDetailService.removeById(id));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> ids) {
+    public Result deleteBatch(@RequestBody List<String> ids) {
         log.info("进入itemDetail/deleteBatch方法");
         return Result.success(itemDetailService.removeBatchByIds(ids));
     }

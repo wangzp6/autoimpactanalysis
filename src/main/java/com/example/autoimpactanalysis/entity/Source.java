@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 /**
  * @ClassName: Source
@@ -16,9 +13,7 @@ import lombok.ToString;
  * @Version: V1.0
  * @Description: Source 实体类
  */
-@Getter
-@Setter
-@ToString
+@Data
 @TableName("ALL_SOURCE_BACKUP")
 @ApiModel(value = "Source对象", description = "")
 public class Source implements Serializable {

@@ -1,13 +1,15 @@
 package com.example.autoimpactanalysis.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.example.autoimpactanalysis.entity.ProjectDetail;
 import com.example.autoimpactanalysis.entity.VO.ReportDetailVO;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
+
 import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 
 import com.example.autoimpactanalysis.common.Result;
@@ -39,7 +41,7 @@ public class ReportDetailController {
 
     //根据ID查询
     @GetMapping("/findById/{reportId}")
-    public Result findById(@PathVariable Integer reportId) {
+    public Result findById(@PathVariable String reportId) {
         log.info("进入reportDetail/findById方法");
         return Result.success(reportDetailService.getByReportId(reportId));
     }
@@ -72,7 +74,8 @@ public class ReportDetailController {
         queryWrapper.like(StringUtils.hasText(reportName), "r.report_name", reportName);
         queryWrapper.like(StringUtils.hasText(projectCode), "p.project_code", projectCode);
         queryWrapper.like(StringUtils.hasText(projectName), "p.project_name", projectName);
-        queryWrapper.ne("r.is_delete","1");
+        queryWrapper.ne("r.report_type", "1");
+        queryWrapper.ne("r.is_delete", "1");
         queryWrapper.orderByAsc("r.report_id");
         return Result.success(reportDetailService.findReports(pageNum, pageSize, queryWrapper));
     }
@@ -81,11 +84,21 @@ public class ReportDetailController {
     @PostMapping("/save")
     public Result save(@RequestBody ReportDetail reportDetail) {
         log.info("进入reportDetail/save方法");
-
-        List<ReportDetail> reportDetails = reportDetailService.getBySameReport(reportDetail);
-        if (!reportDetails.isEmpty()) {
-            return Result.error("600","此报表已存在！");
-        }else{
+        if(StringUtils.hasText(reportDetail.getReportName())){
+            reportDetail.setReportName(reportDetail.getReportName().trim());
+        }
+        if(StringUtils.hasText(reportDetail.getReportCode())){
+            reportDetail.setReportCode(reportDetail.getReportCode().trim());
+            List<ReportDetail> reportDetails = reportDetailService.getBySameReport(reportDetail);
+            if (!reportDetails.isEmpty()) {
+                return Result.error("600", "此报表已存在！");
+            }else {
+                reportDetail.setReportType("0");
+                reportDetail.setIsDelete("0");
+                return Result.success(reportDetailService.saveOrUpdate(reportDetail));
+            }
+        }else {
+            reportDetail.setReportType("0");
             reportDetail.setIsDelete("0");
             return Result.success(reportDetailService.saveOrUpdate(reportDetail));
         }
@@ -95,19 +108,32 @@ public class ReportDetailController {
     @PostMapping("/edit")
     public Result edit(@RequestBody ReportDetail reportDetail) {
         log.info("进入reportDetail/edit方法");
-        return Result.success(reportDetailService.saveOrUpdate(reportDetail));
+        if(StringUtils.hasText(reportDetail.getReportName())){
+            reportDetail.setReportName(reportDetail.getReportName().trim());
+        }
+        if(StringUtils.hasText(reportDetail.getReportCode())){
+            reportDetail.setReportCode(reportDetail.getReportCode().trim());
+            List<ReportDetail> reportDetails = reportDetailService.getBySameReport(reportDetail);
+            if(!reportDetails.isEmpty()&&!reportDetail.getReportId().equals(reportDetails.get(0).getReportId())){
+                return Result.error("600", "此项目下已存在此报表编号！");
+            }else{
+                return Result.success(reportDetailService.saveOrUpdate(reportDetail));
+            }
+        }else{
+            return Result.success(reportDetailService.saveOrUpdate(reportDetail));
+        }
     }
 
     //根据ID删除
     @DeleteMapping("/delete/{reportId}")
-    public Result delete(@PathVariable Integer reportId) {
+    public Result delete(@PathVariable String reportId) {
         log.info("进入reportDetail/delete方法");
         return Result.success(reportDetailService.removeByReportId(reportId));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> reportIds) {
+    public Result deleteBatch(@RequestBody List<String> reportIds) {
         log.info("进入reportDetail/deleteBatch方法");
         return Result.success(reportDetailService.removeBatchByReportIds(reportIds));
     }

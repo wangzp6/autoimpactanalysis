@@ -8,6 +8,8 @@ import com.example.autoimpactanalysis.entity.VO.BusConfirmVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * @ClassName: BusConfirmMapper
  * @Author: kevin
@@ -17,5 +19,8 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface BusConfirmMapper extends BaseMapper<BusConfirm> {
+
     IPage<BusConfirmVO> findBusConfirm(IPage<BusConfirmVO> page, @Param("ew") QueryWrapper<BusConfirmVO> queryWrapper);
+
+    int removeBatchByBusConfirmIds(List<BusConfirm> busConfirms);
 }

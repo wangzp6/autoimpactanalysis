@@ -7,9 +7,11 @@
                d.doc_state,
                d.doc_detail,
                d.operator,
+               d.update_time,
                r.report_id,
                r.report_code,
                r.report_name,
+               r.report_type,
                p.project_id,
                p.project_code,
                p.project_name,
@@ -19,5 +21,61 @@
                     LEFT JOIN project_detail p ON r.project_id = p.project_id
                         LEFT JOIN document_code c ON d.doc_code = c.doc_code
             ${ew.customSqlSegment}
+    </select>
+
+    <update id="removeBatchByDocIds" parameterType="java.util.List">
+        <foreach collection="docs" item="item" close=";" separator=";">
+            UPDATE document_detail
+            <set>
+                is_delete = '1' ,
+                operator = #{item.operator},
+                update_time = now()
+            </set>
+            WHERE doc_id = #{item.docId}
+        </foreach>
+    </update>
+
+    <select id="getBySameChapter" resultType="com.example.autoimpactanalysis.entity.VO.DocumentDetailVO">
+        SELECT d.doc_id,
+               d.doc_code,
+               d.doc_state,
+               d.doc_detail,
+               d.operator,
+               d.update_time,
+               r.report_id,
+               r.report_code,
+               r.report_name,
+               r.report_type,
+               p.project_id,
+               p.project_code,
+               p.project_name,
+               c.doc_type
+        FROM document_detail d
+                 LEFT JOIN report_detail r ON d.report_id = r.report_id
+                    LEFT JOIN project_detail p ON r.project_id = p.project_id
+                        LEFT JOIN document_code c ON d.doc_code = c.doc_code
+            ${ew.customSqlSegment}
+    </select>
+
+    <select id="getDocVOByDocId" resultType="com.example.autoimpactanalysis.entity.VO.DocumentDetailVO">
+        SELECT d.doc_id,
+               d.doc_code,
+               d.doc_state,
+               d.doc_detail,
+               d.operator,
+               d.update_time,
+               r.report_id,
+               r.report_code,
+               r.report_name,
+               r.report_type,
+               p.project_id,
+               p.project_code,
+               p.project_name,
+               c.doc_type
+        FROM document_detail d
+                 LEFT JOIN report_detail r ON d.report_id = r.report_id
+                    LEFT JOIN project_detail p ON r.project_id = p.project_id
+                        LEFT JOIN document_code c ON d.doc_code = c.doc_code
+            WHERE doc_id = #{docId}
     </select>
 </mapper>

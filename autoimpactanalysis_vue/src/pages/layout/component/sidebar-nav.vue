@@ -1,13 +1,13 @@
 <template>
     <div class="aside_left">
-             <div class="aside__left--top" style="flex: 1; font-size: 20px; height: 60px; line-height: 60px;">
-            <b style="color: red" v-show="logoTextShow">XX系统</b>
+        <div class="aside__left--top" style="flex: 1; font-size: 22px; height: 60px; line-height: 60px; font-family: 华文楷体; color: rgb(242, 253, 255);">
+            <b v-show="logoTextShow">数据工作支持系统</b>
             <span :class="collapseBtnClass" style="cursor: pointer; left: 210px; top: 20px; position: absolute;" @click="collapse"></span>
         </div>
         <el-menu
             background-color="transparent"
             text-color="#eee"
-            active-text-color="#1E073A"
+            active-text-color="#D9D919"
             :default-active="currentPage"
             style="margin-top: 50px; min-height: calc(100vh - 50px); overflow-x: hidden"
             :collapse="isCollapse"

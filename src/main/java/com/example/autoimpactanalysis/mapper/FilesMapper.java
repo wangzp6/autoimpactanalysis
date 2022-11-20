@@ -20,9 +20,9 @@ import java.util.ArrayList;
 public interface FilesMapper extends BaseMapper<Files> {
 
     @Select("select * from sys_files where bdc_id = #{bdcId} and is_delete = 0 and enable = 1")
-    ArrayList<Files> findByBdcId(Integer bdcId);
+    ArrayList<Files> findByBdcId(String bdcId);
 
-    @Select("select * from sys_files where url like '%${fileUUID}%' and is_delete = 0 and enable = 1")
+    @Select("select * from sys_files where file_url like '%${fileUUID}%' and is_delete = 0 and enable = 1")
     ArrayList<Files> findByUrl(String fileUUID);
 
 }

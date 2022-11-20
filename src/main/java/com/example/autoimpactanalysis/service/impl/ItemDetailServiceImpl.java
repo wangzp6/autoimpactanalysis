@@ -1,5 +1,6 @@
 package com.example.autoimpactanalysis.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.autoimpactanalysis.entity.ItemDetail;
 import com.example.autoimpactanalysis.entity.VO.ItemDetailVO;
@@ -18,6 +19,7 @@ import java.util.List;
  * @Description: ItemDetail 服务实现类
  */
 @Service
+@DS("mysql")
 public class ItemDetailServiceImpl extends ServiceImpl<ItemDetailMapper, ItemDetail> implements IItemDetailService {
 
     @Autowired

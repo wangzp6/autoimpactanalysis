@@ -24,13 +24,13 @@ public class MysqlCodeGenerator {
                     builder.author("kevin") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
                             .fileOverride() // 覆盖已生成文件
-                            .outputDir("/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/java/")// 指定输出目录
+                            .outputDir("src\\main\\java\\")// 指定输出目录
                             .dateType(DateType.ONLY_DATE);
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.example.autoimpactanalysis") // 设置父包名
                             .moduleName(null) // 设置父包模块名 若为""则多一个/
-                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "/Users/wangzp/work/java/workspace/autoimpactanalysis/src/main/resources/mapper/")); // 设置mapperXml生成路径
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "src\\main\\resources\\mapper\\")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     builder.entityBuilder().enableLombok();

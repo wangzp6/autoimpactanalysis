@@ -19,12 +19,13 @@ public interface IBusConfirmService extends IService<BusConfirm> {
 
     List<BusConfirm> findList();
 
-    List<BusConfirm> getBybBusConfirmId(Integer busConfirmId);
+    List<BusConfirm> getBybBusConfirmId(String busConfirmId);
 
     IPage<BusConfirmVO> findBusConfirm(Integer pageNum, Integer pageSize, QueryWrapper<BusConfirmVO> queryWrapper);
 
-    int removeByBusConfirmId(Integer busConfirmId);
-    int removeBatchByBusConfirmIds(List<Integer> busConfirmIds);
+    int removeByBusConfirmId(String busConfirmId,String operator);
+
+    int removeBatchByBusConfirmIds(List<BusConfirm> busConfirms);
 
 
 

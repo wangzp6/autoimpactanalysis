@@ -2,14 +2,11 @@ package com.example.autoimpactanalysis.entity.VO;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.example.autoimpactanalysis.entity.DocumentDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -19,14 +16,13 @@ import java.util.Date;
  * @Version: V1.0
  * @Description: DocumentDetail 实体类
  */
-@Getter
-@Setter
+@Data
 @ApiModel(value = "DocumentDetail对象", description = "")
 public class DocumentDetailVO extends DocumentDetail {
 
     @ApiModelProperty("文档ID")
     @TableId(value = "doc_id", type = IdType.AUTO)
-    private Integer docId;
+    private String docId;
 
     @ApiModelProperty("文档类型码值")
     private String docCode;
@@ -60,6 +56,9 @@ public class DocumentDetailVO extends DocumentDetail {
 
     @ApiModelProperty("项目名称")
     private String projectName;
+
+    @ApiModelProperty("非报表章节;1:是")
+    private String reportType;
 
     @ApiModelProperty("是否删除,0:未删除；1：已删除")
     private String isDelete;

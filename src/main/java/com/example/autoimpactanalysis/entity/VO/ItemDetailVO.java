@@ -1,15 +1,10 @@
 package com.example.autoimpactanalysis.entity.VO;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.example.autoimpactanalysis.entity.ItemDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,16 +14,15 @@ import java.util.List;
  * @Version: V1.0
  * @Description:
  */
-@Getter
-@Setter
+@Data
 @ApiModel(value = "ItemDetail对象", description = "")
-public class ItemDetailVO extends ItemDetail{
+public class ItemDetailVO extends ItemDetail {
 
     @ApiModelProperty("元素编号")
-    private Integer itemId;
+    private String itemId;
 
     @ApiModelProperty("元素标题")
-    private Integer itemTitle;
+    private String itemTitle;
 
     @ApiModelProperty("元素名称")
     private String itemName;
@@ -37,13 +31,13 @@ public class ItemDetailVO extends ItemDetail{
     private String reportId;
 
     @ApiModelProperty("元素序号")
-    private Integer itemOrder;
+    private String itemOrder;
 
     @ApiModelProperty("元素明细")
     private String itemDetail;
 
     @ApiModelProperty("父元素编号")
-    private Integer itemParentId;
+    private String itemParentId;
 
     @ApiModelProperty(value = "子菜单")
     private List<ItemDetailVO> childrenItemList;

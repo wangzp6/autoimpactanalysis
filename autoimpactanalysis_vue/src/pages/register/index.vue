@@ -1,12 +1,12 @@
 <template>
     <div id="register_wrap">
         <div>
-            <h2 class="title">注 册</h2>
+            <h2 class="title">数据工作支持系统</h2>
             <div class="register">
                 <el-form :model="user" :rules="rules" ref="userForm">
-                    <el-form-item prop="username">
+                    <el-form-item prop="userName">
                         <el-input placeholder="请输入账号" size="medium" style="margin: 10px 0;" prefix-icon="el-icon-user"
-                                  v-model="user.username"></el-input>
+                                  v-model="user.userName"></el-input>
                     </el-form-item>
                     <el-form-item prop="password">
                         <el-input placeholder="请输入密码" size="medium" style="margin: 10px 0;" prefix-icon="el-icon-lock"
@@ -36,7 +36,7 @@
             return {
                 user: {},
                 rules: {
-                    username: [
+                    userName: [
                         {required: true, message: '请输入用户名', trigger: 'blur'},
                         {min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur'}
                     ],

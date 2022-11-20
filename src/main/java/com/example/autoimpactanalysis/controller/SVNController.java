@@ -2,6 +2,7 @@ package com.example.autoimpactanalysis.controller;
 
 import com.example.autoimpactanalysis.common.Result;
 import com.example.autoimpactanalysis.utils.SvnKitUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,16 +25,16 @@ import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 public class SVNController {
     private static Logger logger = LoggerFactory.getLogger(SourceController.class);
 
+
+    @Value("${files.upload.path}")
+    private String uploadPath;
     //上传
     @PostMapping("/upload")
     public Result upload(String filename,String filepath) {
         logger.info("进入svn/upload方法");
         try {
-//            String filename = "354.txt";
-            String workspace = "D:/workspace/newIdea_workspace/autoimpactanalysis/files";
-//            String filepath = "/file/2";
             SvnKitUtils svnDeal = new SvnKitUtils();
-            svnDeal.upload(workspace,filepath, filename,false);
+            svnDeal.upload(uploadPath,filepath, filename,false);
         } catch (Exception e) {
             e.printStackTrace();
         }

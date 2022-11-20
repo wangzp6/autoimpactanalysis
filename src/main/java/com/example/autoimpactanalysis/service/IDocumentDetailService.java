@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.autoimpactanalysis.entity.DocumentDetail;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.autoimpactanalysis.entity.ReportDetail;
 import com.example.autoimpactanalysis.entity.VO.DocumentDetailVO;
 
 import java.util.List;
@@ -17,15 +18,19 @@ import java.util.List;
  */
 public interface IDocumentDetailService extends IService<DocumentDetail> {
 
-    IPage<DocumentDetailVO> findPage(Integer pageNum, Integer pageSize, QueryWrapper<DocumentDetailVO> queryWrapper);
-
-    List<DocumentDetail> getBySameDoc(DocumentDetail documentDetail);
-
     List<DocumentDetail> findList();
 
-    List<DocumentDetail> getByDocId(Integer docId);
+    List<DocumentDetail> getByDocId(String docId);
 
-    int removeByDocId(Integer docId);
+    DocumentDetailVO getDocVOByDocId(String codeId);
 
-    int removeBatchByDocIds(List<Integer> docIds);
+    IPage<DocumentDetailVO> findPage(Integer pageNum, Integer pageSize, QueryWrapper<DocumentDetailVO> queryWrapper);
+
+    List<DocumentDetail> getBySameDocVO(DocumentDetailVO documentDetailVO);
+
+    List<DocumentDetailVO> getBySameChapter(DocumentDetailVO documentDetailVO);
+
+    int removeByDocId(String docId, String operator);
+
+    int removeBatchByDocIds(List<DocumentDetail> docs);
 }

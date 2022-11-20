@@ -16,5 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBroomDataScriptService extends IService<BroomDataScript> {
     IPage<BroomDataScript> findBroomDataScript(Integer pageNum, Integer pageSize, QueryWrapper<BroomDataScript> queryWrapper);
 
-    Integer removeByIdWithFile(Integer id);
+    int removeByIdWithFile(String bdcId);
 }

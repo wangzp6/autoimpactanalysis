@@ -3,13 +3,11 @@ package com.example.autoimpactanalysis.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import java.io.Serializable;
+import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.io.Serializable;
+import lombok.Data;
 
 /**
  * @ClassName: Files
@@ -18,9 +16,7 @@ import java.io.Serializable;
  * @Version: V1.0
  * @Description: Files 实体类
  */
-@Getter
-@Setter
-@ToString
+@Data
 @TableName("sys_files")
 @ApiModel(value = "Files对象", description = "")
 public class Files implements Serializable {
@@ -28,32 +24,35 @@ public class Files implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("id")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "file_id", type = IdType.AUTO)
+    private String fileId;
 
     @ApiModelProperty("文件名称")
-    private String name;
+    private String fileName;
 
     @ApiModelProperty("文件类型")
-    private String type;
+    private String fileType;
 
-    @ApiModelProperty("文件大小")
-    private Long size;
+    @ApiModelProperty("文件大小，单位：字节（b）")
+    private Long fileSize;
 
     @ApiModelProperty("下载链接")
-    private String url;
+    private String fileUrl;
 
     @ApiModelProperty("提数单编号")
-    private Integer bdcId;
+    private String bdcId;
 
     @ApiModelProperty("文件md5")
-    private String md5;
-
-    @ApiModelProperty("是否删除,0:未删除；1：已删除")
-    private Boolean isDelete;
+    private String fileMd5;
 
     @ApiModelProperty("是否禁用链接,1：可用；0：不可用")
-    private Boolean enable;
+    private String enable;
+
+    @ApiModelProperty("是否删除,0:未删除；1：已删除")
+    private String isDelete;
+
+    @ApiModelProperty("插入时间")
+    private Date insertTime;
 
 
 }

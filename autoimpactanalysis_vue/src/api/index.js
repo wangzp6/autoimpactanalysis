@@ -11,8 +11,8 @@ export function login(user){
 
 export function fetchPermission(user) {
     var userVO = JSON.parse(user);
-    return axios.get("/user/permission/"+ userVO.username);
-} 
+    return axios.get("/user/permission/" + userVO.userName );
+}
 
 export function login(user) {
     return axios.post("/user/login", user);

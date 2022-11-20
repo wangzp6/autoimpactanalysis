@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.autoimpactanalysis.entity.ReportDetail;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.autoimpactanalysis.entity.ReportDetail;
 import com.example.autoimpactanalysis.entity.VO.ReportDetailVO;
 
 import java.util.List;
@@ -21,17 +20,19 @@ public interface IReportDetailService extends IService<ReportDetail> {
 
     IPage<ReportDetailVO> findReports(Integer pageNum, Integer pageSize, QueryWrapper<ReportDetailVO> queryWrapper);
 
-    List<ReportDetail> getByReportId(Integer reportId);
+    List<ReportDetail> getByReportId(String reportId);
 
     List<ReportDetail> getByReportCode(String reportCode);
 
     List<ReportDetail> getBySameReport(ReportDetail reportDetail);
 
+    List<ReportDetail> getIDBySameReport(ReportDetail reportDetail);
+
     List<ReportDetail> getByProjectId(String projectId);
 
-    int removeBatchByReportIds(List<Integer> reportIds);
+    int removeBatchByReportIds(List<String> reportIds);
 
-    int removeByReportId(Integer reportId);
+    int removeByReportId(String reportId);
 
 
 }

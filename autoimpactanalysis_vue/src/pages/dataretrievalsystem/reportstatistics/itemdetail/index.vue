@@ -4,22 +4,22 @@
 
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
-            <el-input style="width: 200px" placeholder="请输入报表编号" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入报表编号" suffix-icon="el-icon-search" class="margin-5"
                       v-model="reportId"></el-input>
-            <el-input style="width: 200px" placeholder="请输入报表名称" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入报表名称" suffix-icon="el-icon-search" class="margin-5"
                       v-model="reportName"></el-input>
-            <el-button class="margin-l5" type="primary" @click="load">搜索</el-button>
-            <el-button class="margin-l5" type="warning" @click="reset">重置</el-button>
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
+            <el-button class="margin-5" type="primary" @click="load">搜索</el-button>
+            <el-button class="margin-5" type="warning" @click="reset">重置</el-button>
+            <el-button class="margin-5" type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
             <el-popconfirm
-                    style="margin-left: 10px; margin-right: 10px;"
+                    class="margin-5"
                     confirm-button-text='好的'
                     cancel-button-text='不用了'
                     icon="el-icon-info"
                     icon-color="red"
                     title="确定删除这些数据吗？"
                     @confirm="deleteBatch">
-                <el-button type="danger" slot="reference">批量删除 <i class="el-icon-minus"></i></el-button>
+                <el-button class="margin-5" type="danger" slot="reference">批量删除 <i class="el-icon-minus"></i></el-button>
             </el-popconfirm>
         </div>
         <el-table :data="tableData" border stripe class="tableClass"
@@ -80,7 +80,7 @@
                     :total="total">
             </el-pagination>
         </div>
-        <el-dialog title="项目明细" :visible.sync="dialogFormVisible" width="50%" top="50px" :show-close="false">
+        <el-dialog title="新增元素" :visible.sync="dialogFormVisible" width="50%" top="50px" :show-close="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="itemForm">
                 <el-form-item label="项目名称" prop="projectName">
                     <el-select v-model="form.projectId" @change="getReportList" placeholder="请选择">
@@ -120,7 +120,8 @@
                     </el-select>
                 </el-form-item>
                 <el-form-item label="元素序号">
-                    <el-input v-model="form.itemOrder" autocomplete="off" maxlength="50" @change="confirmOrder"></el-input>
+                    <el-input v-model="form.itemOrder" autocomplete="off" maxlength="50"
+                              @change="confirmOrder"></el-input>
                 </el-form-item>
                 <el-form-item label="元素明细">
                     <br>
@@ -133,7 +134,7 @@
                 <el-button type="primary" @click="save">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="项目明细" :visible.sync="dialogFormVisible2" width="50%" top="50px" :show-close="false">
+        <el-dialog title="修改元素" :visible.sync="dialogFormVisibleEdit" width="50%" top="50px" :show-close="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="itemForm">
                 <el-form-item label="报表名称" prop="reportName">
                     <el-select v-model="form.reportId" placeholder="请选择">
@@ -144,7 +145,6 @@
                                 :value="item.reportId">
                         </el-option>
                     </el-select>
-
                 </el-form-item>
                 <el-form-item label="元素标题" prop="itemTitle">
                     <el-input v-model="form.itemTitle" autocomplete="off" maxlength="50"></el-input>
@@ -259,7 +259,7 @@
                     ]
                 },
                 dialogFormVisible: false,
-                dialogFormVisible2: false,
+                dialogFormVisibleEdit: false,
                 dialogFormVisibleDetail: false,
                 initSuccess: false,
                 multipleSelection: [],
@@ -325,7 +325,7 @@
                             this.load();
                         });
                         this.dialogFormVisible = false;
-                        this.dialogFormVisible2 = false;
+                        this.dialogFormVisibleEdit = false;
                         this.initSuccess = false;
                     } else {
                         alert('信息填写不完整!');
@@ -339,7 +339,7 @@
                 this.itemDetail = '';
                 this.initSuccess = false;
                 this.dialogFormVisible = false;
-                this.dialogFormVisible2 = false;
+                this.dialogFormVisibleEdit = false;
                 this.dialogFormVisibleDetail = false;
             },
             getProjectList() {
@@ -362,7 +362,7 @@
                 this.projectName = this.form.projectName;
                 this.form = row;
                 this.initSuccess = true;
-                this.dialogFormVisible2 = true;
+                this.dialogFormVisibleEdit = true;
             },
             //删除
             deleteRow(id) {
@@ -401,7 +401,7 @@
                 this.dialogFormVisibleDetail = true;
                 this.initSuccess = true;
             },
-            confirmOrder(){
+            confirmOrder() {
                 if (!/^1[0-9]{10}$/.test(this.form.itemOrder))
                     this.form.itemOrder = '';
             }

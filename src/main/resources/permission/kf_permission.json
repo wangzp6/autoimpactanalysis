@@ -1,43 +1,33 @@
 {
   "data": [
     {
-      "name": "提数系统",
-      "path": "/dataretrievalsystem",
+      "name": "项目管理",
+      "path": "projectdetail"
+    },
+    {
+      "name": "报表管理",
+      "path": "reportdetail"
+    },
+    {
+      "name": "交付件管理",
+      "path": "documentdetail"
+    },
+    {
+      "name": "问题确认管理",
+      "path": "busconfirm"
+    },
+    {
+      "name": "业务提数",
+      "path": "scriptquery"
+    },
+    {
+      "name": "枚举值配置",
+      "path": "doctypecode"
+    },
+    {
+      "name": "测试页面",
+      "path": "/test",
       "children": [
-        {
-          "name": "脚本查询",
-          "path": "scriptquery"
-        },
-        {
-          "name": "报表统计",
-          "path": "reportstatistics",
-          "children": [
-            {
-              "name": "项目管理",
-              "path": "projectdetail"
-            },
-            {
-              "name": "报表管理",
-              "path": "reportdetail"
-            },
-            {
-              "name": "报表元素管理",
-              "path": "itemdetail"
-            },
-            {
-              "name": "业务确认管理",
-              "path": "busconfirm"
-            },
-            {
-              "name": "文档管理",
-              "path": "documentdetail"
-            },
-            {
-              "name": "文档类型码值配置",
-              "path": "doctypecode"
-            }
-          ]
-        },
         {
           "name": "测试富文本",
           "path": "tinymce"
@@ -45,6 +35,10 @@
         {
           "name": "测试文件下载",
           "path": "filedownload"
+        },
+        {
+          "name": "报表元素管理",
+          "path": "itemdetail"
         }
       ]
     },

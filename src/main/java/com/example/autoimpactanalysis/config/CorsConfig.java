@@ -5,12 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
 
 /**
  * @project_name: autoimpactanalysis
@@ -38,7 +32,5 @@ public class CorsConfig {
         source.registerCorsConfiguration("/**", corsConfiguration); // 4 对接口配置跨域设置
         return new CorsFilter(source);
     }
-
-
 }
 

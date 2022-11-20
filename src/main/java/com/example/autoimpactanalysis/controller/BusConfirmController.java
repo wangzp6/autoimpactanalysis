@@ -42,7 +42,7 @@ public class BusConfirmController {
 
     //根据ID查询
     @GetMapping("/findById/{busConfirmId}")
-    public Result findById(@PathVariable Integer busConfirmId) {
+    public Result findById(@PathVariable String busConfirmId) {
         log.info("进入busConfirm/findById方法");
         return Result.success(busConfirmService.getBybBusConfirmId(busConfirmId));
     }
@@ -51,25 +51,27 @@ public class BusConfirmController {
     @GetMapping("/findPage")
     public Result findPage(@RequestParam Integer pageNum,
                             @RequestParam Integer pageSize,
-                            @RequestParam(defaultValue = "") String busConfirmQuestion,
                             @RequestParam(defaultValue = "") String busConfirmState,
                             @RequestParam(defaultValue = "") String busConfirmTime,
                             @RequestParam(defaultValue = "") String questioner,
                             @RequestParam(defaultValue = "") String replier,
-                            @RequestParam(defaultValue = "") String reportId,
+                            @RequestParam(defaultValue = "") String busConfirmQuestion,
+                            @RequestParam(defaultValue = "") String busConfirmReply,
+                            @RequestParam(defaultValue = "") String reportCode,
                             @RequestParam(defaultValue = "") String reportName,
-                            @RequestParam(defaultValue = "") String projectId,
+                            @RequestParam(defaultValue = "") String projectCode,
                             @RequestParam(defaultValue = "") String projectName) {
         log.info("进入busConfirm/findPage方法");
         QueryWrapper<BusConfirmVO> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like(StringUtils.hasText(busConfirmQuestion), "b.bus_confirm_question", busConfirmQuestion);
         queryWrapper.like(StringUtils.hasText(busConfirmState), "b.bus_confirm_state", busConfirmState);
         queryWrapper.like(StringUtils.hasText(busConfirmTime), "b.bus_confirm_time", busConfirmTime);
         queryWrapper.like(StringUtils.hasText(questioner), "b.questioner", questioner);
         queryWrapper.like(StringUtils.hasText(replier), "b.replier", replier);
-        queryWrapper.like(StringUtils.hasText(reportId), "r.report_id", reportId);
+        queryWrapper.like(StringUtils.hasText(busConfirmQuestion), "b.bus_confirm_question", busConfirmQuestion);
+        queryWrapper.like(StringUtils.hasText(busConfirmReply), "b.bus_confirm_reply", busConfirmReply);
+        queryWrapper.like(StringUtils.hasText(reportCode), "r.report_code", reportCode);
         queryWrapper.like(StringUtils.hasText(reportName), "r.report_name", reportName);
-        queryWrapper.like(StringUtils.hasText(projectId), "p.project_id", projectId);
+        queryWrapper.like(StringUtils.hasText(projectCode), "p.project_code", projectCode);
         queryWrapper.like(StringUtils.hasText(projectName), "p.project_name", projectName);
         queryWrapper.ne("b.is_delete","1");
         queryWrapper.orderByDesc("b.bus_confirm_id");
@@ -81,9 +83,9 @@ public class BusConfirmController {
     public Result save(@RequestBody BusConfirm busConfirm) {
         log.info("进入busConfirm/save方法");
         busConfirm.setBusConfirmState("0");
+        busConfirm.setUpdateTime(new Date());
         busConfirm.setIsDelete("0");
         return Result.success(busConfirmService.saveOrUpdate(busConfirm));
-
     }
 
     //修改
@@ -104,17 +106,18 @@ public class BusConfirmController {
     }
 
     //根据ID删除
-    @DeleteMapping("/delete/{busConfirmId}")
-    public Result delete(@PathVariable Integer busConfirmId) {
+    @GetMapping("/delete/")
+    public Result delete(@RequestParam String busConfirmId,
+                         @RequestParam String operator) {
         log.info("进入busConfirm/delete方法");
-        return Result.success(busConfirmService.removeByBusConfirmId(busConfirmId));
+        return Result.success(busConfirmService.removeByBusConfirmId(busConfirmId,operator));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> busConfirmIds) {
+    public Result deleteBatch(@RequestBody List<BusConfirm> busConfirms) {
         log.info("进入busConfirm/deleteBatch方法");
-        return Result.success(busConfirmService.removeBatchByBusConfirmIds(busConfirmIds));
+        return Result.success(busConfirmService.removeBatchByBusConfirmIds(busConfirms));
     }
 
 }

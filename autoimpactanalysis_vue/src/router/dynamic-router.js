@@ -1,92 +1,72 @@
 /* 需要权限判断的路由 */
 const dynamicRoutes = [
     {
-        path: '/dataretrievalsystem',
-        name: 'dataretrievalsystem',
-        component: () => import('../pages/dataretrievalsystem'),
+        path: 'projectdetail',
+        name: 'projectdetail',
+        component: () => import('../pages/dataretrievalsystem/reportstatistics/projectdetail'),
         meta: {
-            name: '提数系统',
-            icon: 'icon-setting'
+            name: '项目管理',
+            icon: 'icon-quit'
+        }
+    },
+    {
+        path: 'reportdetail',
+        name: 'reportdetail',
+        component: () => import('../pages/dataretrievalsystem/reportstatistics/reportdetail'),
+        meta: {
+            name: '报表管理',
+            icon: 'icon-quit'
+        }
+    },
+    {
+        path: 'documentdetail',
+        name: 'documentdetail',
+        component: () => import('../pages/dataretrievalsystem/reportstatistics/documentdetail'),
+        meta: {
+            name: '交付件管理',
+            icon: 'icon-quit'
+        }
+    },
+    {
+        path: 'busconfirm',
+        name: 'busconfirm',
+        component: () => import('../pages/dataretrievalsystem/reportstatistics/busconfirm'),
+        meta: {
+            name: '问题确认管理',
+            icon: 'icon-quit'
+        }
+    },
+    {
+        path: 'scriptquery',
+        name: 'scriptquery',
+        component: () => import('../pages/dataretrievalsystem/scriptquery'),
+        meta: {
+            name: '业务提数',
+            icon: 'icon-nav'
+        }
+    },
+    {
+        path: 'doctypecode',
+        name: 'doctypecode',
+        component: () => import('../pages/dataretrievalsystem/reportstatistics/doctypecode'),
+        meta: {
+            name: '枚举值配置',
+            icon: 'icon-quit'
+        }
+    },
+    {
+        path: '/test',
+        name: 'test',
+        component: () => import('../pages/test'),
+        meta: {
+            name: '测试页面',
+            icon: 'icon-order-manage'
         },
         children: [
             {
-                path: 'scriptquery',
-                name: 'scriptquery',
-                component: () => import('../pages/dataretrievalsystem/scriptquery'),
-                meta: {
-                    name: '脚本查询',
-                    icon: 'icon-nav'
-                }
-            },
-            {
-                path: 'reportstatistics',
-                name: 'reportstatistics',
-                component: () => import('../pages/dataretrievalsystem/reportstatistics'),
-                meta: {
-                    name: '报表统计',
-                    icon: 'icon-quit'
-                },
-                children: [
-                    {
-                        path: 'projectdetail',
-                        name: 'projectdetail',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/projectdetail'),
-                        meta: {
-                            name: '项目管理',
-                            icon: 'icon-quit'
-                        }
-                    },
-                    {
-                        path: 'reportdetail',
-                        name: 'reportdetail',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/reportdetail'),
-                        meta: {
-                            name: '报表管理',
-                            icon: 'icon-quit'
-                        }
-                    },
-                    {
-                        path: 'itemdetail',
-                        name: 'itemdetail',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/itemdetail'),
-                        meta: {
-                            name: '报表元素管理',
-                            icon: 'icon-quit'
-                        }
-                    },
-                    {
-                        path: 'busconfirm',
-                        name: 'busconfirm',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/busconfirm'),
-                        meta: {
-                            name: '业务确认管理',
-                            icon: 'icon-quit'
-                        }
-                    },
-                    {
-                        path: 'documentdetail',
-                        name: 'documentdetail',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/documentdetail'),
-                        meta: {
-                            name: '文档管理',
-                            icon: 'icon-quit'
-                        }
-                    },
-                    {
-                        path: 'doctypecode',
-                        name: 'doctypecode',
-                        component: () => import('../pages/dataretrievalsystem/reportstatistics/doctypecode'),
-                        meta: {
-                            name: '文档类型码值配置',
-                            icon: 'icon-quit'
-                        }
-                    }
-                ]
-            },
-            {
                 path: 'tinymce',
                 name: 'tinymce',
-                component: () => import('../pages/dataretrievalsystem/tinymce'),
+                component: () => import('../pages/test/tinymce'),
                 meta: {
                     name: '测试富文本',
                     icon: 'icon-quit'
@@ -95,12 +75,22 @@ const dynamicRoutes = [
             {
                 path: 'filedownload',
                 name: 'filedownload',
-                component: () => import('../pages/dataretrievalsystem/filedownload/index'),
+                component: () => import('../pages/test/filedownload'),
                 meta: {
                     name: '测试文件下载',
                     icon: 'icon-quit'
                 }
+            },
+            {
+                path: 'itemdetail',
+                name: 'itemdetail',
+                component: () => import('../pages/dataretrievalsystem/reportstatistics/itemdetail'),
+                meta: {
+                    name: '报表元素管理',
+                    icon: 'icon-quit'
+                }
             }
+
         ]
     },
     {
@@ -157,8 +147,7 @@ const dynamicRoutes = [
                 meta: {
                     name: '字典配置',
                     icon: 'icon-home'
-                },
-
+                }
             },
             {
                 path: 'filesscan',

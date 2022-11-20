@@ -67,8 +67,8 @@ public class ProjectDetailController {
         log.info("进入projectDetail/save方法");
         List<ProjectDetail> projectDetails = projectDetailService.getByProjectCode(projectDetail.getProjectCode());
         if (!projectDetails.isEmpty()) {
-            return Result.error("600","此项目已存在！");
-        }else{
+            return Result.error("600", "此项目已存在！");
+        } else {
             projectDetail.setIsDelete("0");
             return Result.success(projectDetailService.saveOrUpdate(projectDetail));
         }
@@ -78,7 +78,12 @@ public class ProjectDetailController {
     @PostMapping("/edit")
     public Result edit(@RequestBody ProjectDetail projectDetail) {
         log.info("进入projectDetail/edit方法");
-        return Result.success(projectDetailService.saveOrUpdate(projectDetail));
+        List<ProjectDetail> projectDetails = projectDetailService.getByProjectCode(projectDetail.getProjectCode());
+        if (!projectDetails.isEmpty()&&!projectDetail.getProjectId().equals(projectDetails.get(0).getProjectId())) {
+            return Result.error("600", "此项目编号已存在！");
+        }else{
+            return Result.success(projectDetailService.saveOrUpdate(projectDetail));
+        }
     }
 
     //根据ID删除

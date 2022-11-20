@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import com.example.autoimpactanalysis.common.Result;
 
@@ -34,17 +35,17 @@ public class BroomDataScriptController {
     }
 
     //根据ID查询
-    @GetMapping("/findById/{id}")
-    public Result findById(@PathVariable Integer id) {
+    @GetMapping("/findById/{bdcId}")
+    public Result findById(@PathVariable String bdcId) {
         log.info("进入broomDataScript/findById方法");
-        return Result.success(broomDataScriptService.getById(id));
+        return Result.success(broomDataScriptService.getById(bdcId));
     }
 
     //分页查询
     @GetMapping("/findPage")
     public Result findPage(@RequestParam Integer pageNum,
                             @RequestParam Integer pageSize,
-                            @RequestParam(defaultValue = "") String bdcNumber,
+                            @RequestParam(defaultValue = "") String bdcCode,
                             @RequestParam(defaultValue = "") String bdcTitle,
                             @RequestParam(defaultValue = "") String principal,
                             @RequestParam(defaultValue = "") String contentDescription,
@@ -52,12 +53,12 @@ public class BroomDataScriptController {
         log.info("进入broomDataScript/findPage方法");
         QueryWrapper<BroomDataScript> queryWrapper = new QueryWrapper<>();
 
-        queryWrapper.like(StringUtils.hasText(bdcNumber), "bdc_number", bdcNumber);
+        queryWrapper.like(StringUtils.hasText(bdcCode), "bdc_code", bdcCode);
         queryWrapper.like(StringUtils.hasText(bdcTitle), "bdc_title", bdcTitle);
         queryWrapper.like(StringUtils.hasText(principal), "principal", principal);
         queryWrapper.like(StringUtils.hasText(contentDescription), "content_description", contentDescription);
         queryWrapper.like(StringUtils.hasText(broomDataScript), "broom_data_script", broomDataScript);
-        queryWrapper.orderByDesc("bdc_number");
+        queryWrapper.orderByDesc("bdc_code");
 //        return Result.success(broomDataScriptService.page(new Page<>(pageNum, pageSize), queryWrapper));
 
         /*QueryWrapper<Broomdatascript> queryWrapper = new QueryWrapper<>();
@@ -76,28 +77,30 @@ public class BroomDataScriptController {
     @PostMapping("/save")
     public Result save(@RequestBody BroomDataScript broomdatascript) {
         log.info("进入broomDataScript/save方法");
+        broomdatascript.setIsDelete("0");
+        broomdatascript.setUpdateTime(new Date());
         return Result.success(broomDataScriptService.saveOrUpdate(broomdatascript));
     }
 
     /*//根据ID删除
-    @DeleteMapping("/delete/{id}")
-    public Result delete(@PathVariable Integer id) {
+    @DeleteMapping("/delete/{bdcId}")
+    public Result delete(@PathVariable String bdcId) {
         log.info("进入broomDataScript/delete方法");
-        return Result.success(broomDataScriptService.removeById(id));
+        return Result.success(broomDataScriptService.removeById(bdcId));
     }*/
 
     //根据ID删除
-    @DeleteMapping("/delete/{id}")
-    public Result delete(@PathVariable Integer id) {
+    @DeleteMapping("/delete/{bdcId}")
+    public Result delete(@PathVariable String bdcId) {
         log.info("进入broomDataScript/delete方法");
-        return Result.success(broomDataScriptService.removeByIdWithFile(id));
+        return Result.success(broomDataScriptService.removeByIdWithFile(bdcId));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> ids) {
+    public Result deleteBatch(@RequestBody List<String> bdcIds) {
         log.info("进入broomDataScript/deleteBatch方法");
-        return Result.success(broomDataScriptService.removeBatchByIds(ids));
+        return Result.success(broomDataScriptService.removeBatchByIds(bdcIds));
     }
 
 }

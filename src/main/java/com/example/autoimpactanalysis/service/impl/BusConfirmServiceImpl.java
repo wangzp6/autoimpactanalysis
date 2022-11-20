@@ -1,5 +1,6 @@
 package com.example.autoimpactanalysis.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -12,6 +13,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,6 +24,7 @@ import java.util.List;
  * @Description: BusConfirm 服务实现类
  */
 @Service
+@DS("mysql")
 public class BusConfirmServiceImpl extends ServiceImpl<BusConfirmMapper, BusConfirm> implements IBusConfirmService {
 
     @Autowired
@@ -43,34 +46,28 @@ public class BusConfirmServiceImpl extends ServiceImpl<BusConfirmMapper, BusConf
     }
 
     @Override
-    public List<BusConfirm> getBybBusConfirmId(Integer busConfirmId) {
+    public List<BusConfirm> getBybBusConfirmId(String busConfirmId) {
         QueryWrapper<BusConfirm> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("bus_confirm_id", busConfirmId);
+        queryWrapper.eq("bus_confirm_id", busConfirmId);
         queryWrapper.ne("is_delete", "1");
         List<BusConfirm> list = list(queryWrapper);
         return list;
     }
 
     @Override
-    public int removeByBusConfirmId(Integer busConfirmId) {
+    public int removeByBusConfirmId(String busConfirmId,String operator) {
         BusConfirm busConfirm = new BusConfirm();
         UpdateWrapper<BusConfirm> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.like("bus_confirm_id", busConfirmId);
+        updateWrapper.eq("bus_confirm_id", busConfirmId);
         updateWrapper.ne("is_delete", "1");
+        updateWrapper.set("operator", operator);
+        updateWrapper.set("update_time", new Date());
         updateWrapper.set("is_delete", "1");
         return busConfirmMapper.update(busConfirm,updateWrapper);
     }
 
     @Override
-    public int removeBatchByBusConfirmIds(List<Integer> busConfirmIds) {
-        BusConfirm busConfirm = new BusConfirm();
-        try {
-            UpdateWrapper<BusConfirm> updateWrapper = new UpdateWrapper<>();
-            updateWrapper.ne("is_delete", "1");
-            updateWrapper.set("is_delete", "1").in("bus_confirm_id",busConfirmIds);
-            return busConfirmMapper.update(busConfirm,updateWrapper);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public int removeBatchByBusConfirmIds(List<BusConfirm> busConfirms) {
+        return busConfirmMapper.removeBatchByBusConfirmIds(busConfirms);
     }
 }

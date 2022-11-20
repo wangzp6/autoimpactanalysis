@@ -4,14 +4,11 @@ import cn.hutool.core.annotation.Alias;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * @ClassName: User
@@ -21,9 +18,7 @@ import java.util.Date;
  * @Description: User 实体类
  */
 
-@Getter
-@Setter
-@ToString
+@Data
 @TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
@@ -31,8 +26,8 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("ID")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "user_id", type = IdType.AUTO)
+    private String userId;
 
     @ApiModelProperty("用户名")
     @Alias("用户名")
@@ -61,7 +56,9 @@ public class User implements Serializable {
     @ApiModelProperty("头像")
     @Alias("头像")
     private String avatarUrl;
+	
+	@ApiModelProperty("插入时间")
+	@Alias("插入时间")
+    private Date insertTime;
 
-    @ApiModelProperty("插入时间")
-    private Date createTime;
 }

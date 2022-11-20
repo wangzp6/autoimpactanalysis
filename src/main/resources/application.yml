@@ -6,9 +6,9 @@ server:
 
 #连接mysql数据库
 spring:
-#  data:
-#    mongodb:
-#      uri: mongodb://127.0.0.1:27017/developdatabase
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/developdatabase
   datasource:
     dynamic:
       primary: mysql #设置默认的数据源或者数据源组,默认值即为 mysql
@@ -16,15 +16,10 @@ spring:
       datasource:
         mysql:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/developdatabase?serverTimezone=GMT%2b8
+          url: jdbc:mysql://127.0.0.1:3306/developdatabase?serverTimezone=GMT%2b8&allowMultiQueries=true
           username: root
           password: root123456
 
-          #mongodb:
-#          name: developdatabase
-  #         url: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
-#          username: root
-#          password: 123456
 
 #        oracle-edw:
 #          driver-class-name: oracle.jdbc.OracleDriver
@@ -55,17 +50,15 @@ mybatis-plus:
 #banner:
 #  location: classpath:banner20200303.txt
 
-
-files:
-  upload:
-    path: D:/work/workspace/work_workspace/autoimpactanalysis/files/
-  download:
-    path: D:/work/workspace/work_workspace/autoimpactanalysis/files/temp/
-
 logging:
   level:
     root: info
+files:
+  upload:
+    path: src\\main\\resources\\files\\temp\\
+  download:
+    path: src\\main\\resources\\files\\temp\\
 
-log:
-    file: D:/work/workspace/work_workspace/autoimpactanalysis/files/logs
+#log:
+#    file: src\\main\\resources\\files\\logs
 

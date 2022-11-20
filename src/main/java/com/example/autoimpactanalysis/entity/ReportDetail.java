@@ -3,14 +3,11 @@ package com.example.autoimpactanalysis.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @ClassName: ReportDetail
@@ -19,8 +16,7 @@ import lombok.Setter;
  * @Version: V1.0
  * @Description: ReportDetail 实体类
  */
-@Getter
-@Setter
+@Data
 @TableName("report_detail")
 @ApiModel(value = "ReportDetail对象", description = "")
 public class ReportDetail implements Serializable {
@@ -29,7 +25,7 @@ public class ReportDetail implements Serializable {
 
     @ApiModelProperty("报表ID")
     @TableId(value = "report_id", type = IdType.AUTO)
-    private Integer reportId;
+    private String reportId;
 
     @ApiModelProperty("报表编号")
     private String reportCode;
@@ -46,11 +42,19 @@ public class ReportDetail implements Serializable {
     @ApiModelProperty("项目编号")
     private String projectId;
 
-    @ApiModelProperty("是否删除,0:未删除；1：已删除")
+    @ApiModelProperty("非报表章节;1:是")
+    private String reportType;
+
+    @ApiModelProperty("操作人")
+    private String operator;
+
+    @ApiModelProperty("是否已删除；0:否；1:已删除")
     private String isDelete;
 
     @ApiModelProperty("插入时间")
     private Date insertTime;
 
+    @ApiModelProperty("修改时间")
+    private Date updateTime;
 
 }

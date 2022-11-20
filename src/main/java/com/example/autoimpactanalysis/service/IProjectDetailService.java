@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface IProjectDetailService extends IService<ProjectDetail> {
     List<ProjectDetail> findList();
+
     List<ProjectDetail> getByProjectId(String projectId);
 
     List<ProjectDetail> getByProjectCode(String projectCode);

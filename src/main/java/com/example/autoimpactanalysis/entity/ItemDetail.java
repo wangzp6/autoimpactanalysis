@@ -3,13 +3,10 @@ package com.example.autoimpactanalysis.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @ClassName: ItemDetail
@@ -18,8 +15,7 @@ import lombok.Setter;
  * @Version: V1.0
  * @Description: ItemDetail 实体类
  */
-@Getter
-@Setter
+@Data
 @TableName("item_detail")
 @ApiModel(value = "ItemDetail对象", description = "")
 public class ItemDetail implements Serializable {
@@ -28,10 +24,7 @@ public class ItemDetail implements Serializable {
 
     @ApiModelProperty("元素编号")
     @TableId(value = "item_id", type = IdType.AUTO)
-    private Integer itemId;
-
-    @ApiModelProperty("元素标题")
-    private Integer itemTitle;
+    private String itemId;
 
     @ApiModelProperty("元素名称")
     private String itemName;
@@ -39,14 +32,13 @@ public class ItemDetail implements Serializable {
     @ApiModelProperty("报表编号")
     private String reportId;
 
-    @ApiModelProperty("元素序号")
-    private Integer itemOrder;
-
     @ApiModelProperty("元素明细")
     private String itemDetail;
 
     @ApiModelProperty("父元素编号")
-    private Integer itemParentId;
+    private String itemParentId;
 
+    @ApiModelProperty("元素序号")
+    private String itemOrder;
 
 }

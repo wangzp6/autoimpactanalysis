@@ -18,8 +18,8 @@ object BatchFileWindowScala {
     val env: ExecutionEnvironment = ExecutionEnvironment.getExecutionEnvironment
 
     //获取数据
-    val filePath: String = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\file"
-    val output: String = "D:\\work\\workspace\\work_workspace\\autoimpactanalysis\\src\\main\\resources\\resultScala"
+    val filePath: String = "src\\main\\resources\\file"
+    val output: String = "src\\main\\resources\\resultScala"
     //从文件中获取
     val text = env.readTextFile(filePath)
 

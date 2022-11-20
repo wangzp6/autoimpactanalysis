@@ -1,0 +1,3 @@
+2022-11-20 01:41:29.718 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m45s260ms).
+2022-11-20 14:47:42.634 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Retrograde clock change detected (housekeeper delta=26s752ms), soft-evicting connections from pool.
+2022-11-20 18:20:30.112 > WARN   springAppName_IS_UNDEFINED com.zaxxer.hikari.pool.HikariPool mysql - Thread starvation or clock leap detected (housekeeper delta=2m25s795ms).

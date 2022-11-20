@@ -36,7 +36,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             log.info(one.toString());
             log.info(userVO.toString());
             // 设置token
-            String token = TokenUtils.generatorToken(one.getId().toString(),one.getPassword());
+            String token = TokenUtils.generatorToken(one.getUserId(),one.getPassword());
             userVO.setToken(token);
             log.info("token:"+token);
             return userVO;
@@ -76,7 +76,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     private User getUserInfo(UserVO userVO){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_name", userVO.getUsername());
+        queryWrapper.eq("user_name", userVO.getUserName());
         queryWrapper.eq("password", userVO.getPassword());
         User one;
         try {

@@ -49,6 +49,10 @@ public class SvnKitUtils {
     private static String svnUsername = rb.getString("svn.username");
     //版本库的用户密码
     private static String svnPassword = rb.getString("svn.password");
+    //上传路径
+    private static String svnUploadPath = rb.getString("svn.upload.path");
+    //下载路径
+    private static String svnDownloadPath = rb.getString("svn.download.path");
 
     /**
      * 启动svn连接
@@ -528,10 +532,9 @@ public class SvnKitUtils {
     public static void main(String[] args) throws SVNException {
         try {
             String filename = "354.txt";
-            String workspace = "D:/WorkBase/files";
             String filepath = "/file/2";
             SvnKitUtils svnDeal = new SvnKitUtils();
-            svnDeal.upload(workspace,filepath, filename,false);
+            svnDeal.upload(svnUploadPath,filepath, filename,false);
 //            svnDeal.deleteSvnFile(filepath,filename);
         } catch (Exception e) {
             e.printStackTrace();

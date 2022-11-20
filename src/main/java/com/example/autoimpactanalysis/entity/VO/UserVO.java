@@ -1,7 +1,12 @@
 package com.example.autoimpactanalysis.entity.VO;
 
 import cn.hutool.core.annotation.Alias;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * @project_name: autoimpactanalysis
@@ -14,16 +19,17 @@ import lombok.Data;
 @Data
 public class UserVO {
     @Alias("用户名")
-    private String username;
+    private String userName;
 
     @Alias("密码")
     private String password;
 
     @Alias("昵称")
-    private String nickname;
+    private String nickName;
 
     @Alias("头像")
     private String avatarUrl;
 
     private String token;
+
 }

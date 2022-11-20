@@ -5,21 +5,21 @@
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
             <!--<el-input style="width: 200px" placeholder="请选择日期" suffix-icon="el-icon-date" class="margin-l5"></el-input>-->
-            <el-input style="width: 200px" placeholder="请输入提数单编号" suffix-icon="el-icon-search" class="margin-l5"
-                      v-model="bdcNumber"></el-input>
-            <el-input style="width: 200px" placeholder="请输入提数标题" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入提数单编号" suffix-icon="el-icon-search" class="margin-5"
+                      v-model="bdcCode"></el-input>
+            <el-input style="width: 200px" placeholder="请输入提数标题" suffix-icon="el-icon-search" class="margin-5"
                       v-model="bdcTitle"></el-input>
-            <el-input style="width: 200px" placeholder="请输入内容描述" suffix-icon="el-icon-message" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入内容描述" suffix-icon="el-icon-message" class="margin-5"
                       v-model="contentDescription"></el-input>
-            <el-input style="width: 200px" placeholder="请输入提数脚本" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入提数脚本" suffix-icon="el-icon-search" class="margin-5"
                       v-model="broomDataScript"></el-input>
-            <el-input style="width: 200px" placeholder="请输入负责人" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入负责人" suffix-icon="el-icon-search" class="margin-5"
                       v-model="principal"></el-input>
-            <el-button class="margin-l5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
-            <el-button class="margin-l5" type="warning" @click="reset">重置 </el-button>
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
+            <el-button class="margin-5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
+            <el-button class="margin-5" type="warning" @click="reset">重置</el-button>
+            <el-button class="margin-5" type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
             <el-popconfirm
-                    style="margin-left: 10px; margin-right: 10px;"
+                    class="margin-5"
                     confirm-button-text='好的'
                     cancel-button-text='不用了'
                     icon="el-icon-info"
@@ -37,7 +37,7 @@
                   :cell-style="{padding: '0'}"
                   @selection-change="handleSelectionChange">
             <el-table-column type="selection" width="55" align="center"></el-table-column>
-            <el-table-column prop="bdcNumber" label="提数单编号" width="120" sortable>
+            <el-table-column prop="bdcCode" label="提数单编号" width="120" sortable>
             </el-table-column>
             <el-table-column prop="bdcTitle" label="提数标题" width="140" sortable>
             </el-table-column>
@@ -50,7 +50,7 @@
             <el-table-column prop="attachmentList" label="附件列表" width="200">
                 <template slot-scope="scope">
                     <div v-for="(item,index) in scope.row.attachmentList" :key="index">
-                        <span>{{item.name}}</span>
+                        <span>{{item.fileName}}</span>
                     </div>
                     <div><el-button icon="el-icon-more" class="bottomClassDetail" @click="handleShow1(scope.row)"></el-button></div>
                 </template>
@@ -98,10 +98,11 @@
                     :total="total">
             </el-pagination>
         </div>
-        <el-dialog title="脚本信息" :visible.sync="dialogFormVisible" width="50%" top="50px">
+        <el-dialog title="脚本信息" :visible.sync="dialogFormVisible" width="50%" top="50px"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small">
                 <el-form-item label="提数单编号">
-                    <el-input v-model="form.bdcNumber" autocomplete="off" maxlength="50"></el-input>
+                    <el-input v-model="form.bdcCode" autocomplete="off" maxlength="50"></el-input>
                 </el-form-item>
                 <el-form-item label="提数标题">
                     <el-input v-model="form.bdcTitle" autocomplete="off" maxlength="1000"></el-input>
@@ -128,13 +129,14 @@
                 <el-button type="primary" @click="save">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="附件列表" :visible.sync="dialogFormVisibleDetail1" width="50%">
+        <el-dialog title="附件列表" :visible.sync="dialogFormVisibleDetail1" width="50%"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <template>
                 <el-table
                         :data="this.fileForm"
                         :header-cell-style="{'text-align':'center'}">
                     <el-table-column
-                            prop="name"
+                            prop="fileName"
                             label="文件名"
                             width="550">
                     </el-table-column>
@@ -150,7 +152,7 @@
                                     @confirm="deleteFile(scope.row)">
                                 <el-button type="danger" plain class="bottomClass" slot="reference">删除 <i class="el-icon-delete"></i></el-button>
                             </el-popconfirm>
-                            <el-button type="success" plain class="bottomClass" @click="downloadFile(scope.row.url)" style="margin-left: 5px">下载<i class="el-icon-download"></i></el-button>
+                            <el-button type="success" plain class="bottomClass" @click="downloadFile(scope.row.fileUrl)" style="margin-left: 5px">下载<i class="el-icon-download"></i></el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -159,7 +161,8 @@
                 <el-button @click="dialogFormVisibleDetail1 = false" >关 闭</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="提数脚本" :visible.sync="dialogFormVisibleDetail2" width="50%">
+        <el-dialog title="提数脚本" :visible.sync="dialogFormVisibleDetail2" width="50%"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small">
                 <el-form-item>
                     <el-input type="textarea" :disabled="true" class="textareaClass"
@@ -171,7 +174,8 @@
                 <el-button @click="dialogFormVisibleDetail2 = false" >关 闭</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="内容描述" :visible.sync="dialogFormVisibleDetail3" width="50%">
+        <el-dialog title="内容描述" :visible.sync="dialogFormVisibleDetail3" width="50%"
+                   :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small">
                 <el-form-item>
                     <el-input type="textarea" :disabled="true" class="textareaClass"
@@ -191,7 +195,7 @@
     import axios from "../../../utils/http";
     import baseURL from "../../../utils/baseURL";
     export default {
-        name: "BroomDataScript",
+        name: "ScriptQuery",
         data() {
             return {
                 tableData: [],
@@ -199,7 +203,7 @@
                 pageNum: 1,
                 pageSize: 5,
                 bdcId: '',
-                bdcNumber: '',
+                bdcCode: '',
                 bdcTitle: "",
                 contentDescription: '',
                 attachmentListStr:'',
@@ -240,7 +244,7 @@
                         params: {
                             pageNum: this.pageNum,
                             pageSize: this.pageSize,
-                            bdcNumber: this.bdcNumber,
+                            bdcCode: this.bdcCode,
                             bdcTitle: this.bdcTitle,
                             principal: this.principal,
                             contentDescription: this.contentDescription,
@@ -254,7 +258,7 @@
             },
             //重置
             reset() {
-                this.bdcNumber = "";
+                this.bdcCode = "";
                 this.bdcTitle = "";
                 this.principal = "";
                 this.contentDescription = "";
@@ -302,7 +306,7 @@
                 console.log(row);
                 for (let item of row.attachmentList){
                     console.log(item);
-                    this.attachment = this.attachment + item.name+";\r\n";
+                    this.attachment = this.attachment + item.fileName+";\r\n";
                 }
                 console.log(this.attachment);
             },
@@ -334,8 +338,8 @@
             },
             // 批量删除
             deleteBatch() {
-                let ids = this.multipleSelection.map(v => v.bdcId); //[{1,username,...},{2,username,...}]=>[1,2,3]
-                axios.post("/broomDataScript/deleteBatch/", ids).then(data => {
+                let bdcIds = this.multipleSelection.map(v => v.bdcId); //[{1,username,...},{2,username,...}]=>[1,2,3]
+                axios.post("/broomDataScript/deleteBatch/", bdcIds).then(data => {
                     console.log(data);
                     if (data) {
                         this.$message.success("批量删除成功");
@@ -356,7 +360,7 @@
             //删除附件
             deleteFile(row){
                 console.log(row);
-                axios.delete("/files/deleteWithBdcId/" + row.id).then(res => {
+                axios.delete("/files/deleteByFileId/" + row.fileId).then(res => {
                     console.log(res);
                     if (res === 1) {
                         this.$message.success("删除成功");
@@ -368,8 +372,8 @@
                 });
             },
             //下载文件
-            downloadFile(url){
-                window.open(url);
+            downloadFile(fileUrl){
+                window.open(fileUrl);
                 this.dialogFormVisibleDetail1 = false;
             },
         }

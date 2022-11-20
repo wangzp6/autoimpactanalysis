@@ -44,7 +44,7 @@ public class SourceController {
 
     //根据ID查询
     @GetMapping("/findById/{id}")
-    public Result findById(@PathVariable Integer id) {
+    public Result findById(@PathVariable String id) {
         logger.info("进入source/findById方法");
         return Result.success(sourceService.getById(id));
     }
@@ -147,14 +147,14 @@ public class SourceController {
 
     //根据ID删除
     @DeleteMapping("/delete/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable String id) {
         logger.info("进入source/delete方法");
         return Result.success(sourceService.removeById(id));
     }
 
     //批量删除
     @PostMapping("/deleteBatch/")
-    public Result deleteBatch(@RequestBody List<Integer> ids) {
+    public Result deleteBatch(@RequestBody List<String> ids) {
         logger.info("进入source/deleteBatch方法");
         return Result.success(sourceService.removeBatchByIds(ids));
     }

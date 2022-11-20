@@ -4,19 +4,19 @@
 
         </div>
         <div style="padding-bottom: 10px; padding-left: 20px;">
-            <el-input style="width: 200px" placeholder="请输入报表编号" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入报表编号" suffix-icon="el-icon-search" class="margin-5"
                       v-model="reportCode"></el-input>
-            <el-input style="width: 200px" placeholder="请输入报表名称" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入报表名称" suffix-icon="el-icon-search" class="margin-5"
                       v-model="reportName"></el-input>
-            <el-input style="width: 200px" placeholder="请输入项目编号" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入项目编号" suffix-icon="el-icon-search" class="margin-5"
                       v-model="projectCode"></el-input>
-            <el-input style="width: 200px" placeholder="请输入项目名称" suffix-icon="el-icon-search" class="margin-l5"
+            <el-input style="width: 200px" placeholder="请输入项目名称" suffix-icon="el-icon-search" class="margin-5"
                       v-model="projectName"></el-input>
-            <el-button class="margin-l5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
-            <el-button class="margin-l5" type="warning" @click="reset">重置 <i class="el-icon-close"></i></el-button>
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
+            <el-button class="margin-5" type="primary" @click="load">搜索 <i class="el-icon-search"></i></el-button>
+            <el-button class="margin-5" type="warning" @click="reset">重置 <i class="el-icon-close"></i></el-button>
+            <el-button class="margin-5" type="primary" @click="handleAdd">新增 <i class="el-icon-plus"></i></el-button>
             <el-popconfirm
-                    style="margin-left: 10px; margin-right: 10px;"
+                    class="margin-5"
                     confirm-button-text='好的'
                     cancel-button-text='不用了'
                     icon="el-icon-info"
@@ -41,9 +41,11 @@
             </el-table-column>
             <el-table-column prop="projectName" label="项目名称" width="200" sortable>
             </el-table-column>
-            <el-table-column prop="reportState" label="报表状态" width="150" :formatter="reportStateFormat" :filters="reportStateOptions" :filter-method="filterReportState" sortable>
+            <el-table-column prop="reportState" label="报表状态" width="150" :formatter="reportStateFormat"
+                             :filters="reportStateOptions" :filter-method="filterReportState" sortable>
             </el-table-column>
-            <el-table-column prop="operationFlag" label="操作标志" width="150" :formatter="operationFlagFormat" :filters="operationFlagOptions" :filter-method="filterOperationFlag" sortable>
+            <el-table-column prop="operationFlag" label="操作标志" width="150" :formatter="operationFlagFormat"
+                             :filters="operationFlagOptions" :filter-method="filterOperationFlag" sortable>
             </el-table-column>
             <el-table-column label="操作" width="150">
                 <template slot-scope="scope">
@@ -70,14 +72,14 @@
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="pageNum"
-                    :page-sizes="[5, 10, 20]"
+                    :page-sizes="[5, 10, 20, total]"
                     :page-size="pageSize"
                     layout="total, sizes, prev, pager, next, jumper"
                     :total="total">
             </el-pagination>
         </div>
         <el-dialog title="报表新增" :visible.sync="reportDialogAdd" width="70%" top="10px" style="margin-top: 0px"
-                   :show-close="false">
+                   :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="reportForm">
                 <el-form-item label="项目名称" prop="projectId">
                     <el-select v-model="form.projectId" placeholder="请选择项目名称" filterable default-first-option
@@ -109,14 +111,14 @@
                     </el-select>
                 </el-form-item>
                 <el-form-item label="报表状态" prop="reportState">
-                  <el-select v-model="form.reportState" >
-                    <el-option
-                        v-for="item in reportStateOptions"
-                        :key="item.reportState"
-                        :label="item.label"
-                        :value="item.reportState">
-                    </el-option>
-                  </el-select>
+                    <el-select v-model="form.reportState">
+                        <el-option
+                                v-for="item in reportStateOptions"
+                                :key="item.reportState"
+                                :label="item.label"
+                                :value="item.reportState">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -125,7 +127,7 @@
             </div>
         </el-dialog>
         <el-dialog title="报表编辑" :visible.sync="reportDialogEdit" width="70%" top="10px" style="margin-top: 0px"
-                   :show-close="false">
+                   :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false">
             <el-form label_witch="100px" size="small" :model="form" :rules="rules" ref="reportForm">
                 <el-form-item label="项目名称" prop="projectId">
                     <el-select v-model="form.projectId" placeholder="请选择项目名称" filterable default-first-option
@@ -147,7 +149,7 @@
                               style="width: 600px;"></el-input>
                 </el-form-item>
                 <el-form-item label="操作标志" prop="operationFlag">
-                    <el-select v-model="form.operationFlag" >
+                    <el-select v-model="form.operationFlag">
                         <el-option
                                 v-for="item in operationFlagOptions"
                                 :key="item.operationFlag"
@@ -156,16 +158,16 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
-              <el-form-item label="报表状态" prop="reportState">
-                <el-select v-model="form.reportState">
-                  <el-option
-                      v-for="item in reportStateOptions"
-                      :key="item.reportState"
-                      :label="item.label"
-                      :value="item.reportState">
-                  </el-option>
-                </el-select>
-              </el-form-item>
+                <el-form-item label="报表状态" prop="reportState">
+                    <el-select v-model="form.reportState">
+                        <el-option
+                                v-for="item in reportStateOptions"
+                                :key="item.reportState"
+                                :label="item.label"
+                                :value="item.reportState">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="quit">取 消</el-button>
@@ -211,42 +213,42 @@
                         {required: true, message: '请输入操作标志', trigger: 'blur'}
                     ],
                     reportState: [
-                      {required: true, message: '请输入报表状态', trigger: 'blur'}
+                        {required: true, message: '请输入报表状态', trigger: 'blur'}
                     ]
                 },
                 projectOptions: [],
                 operationFlagOptions: [{
                     operationFlag: 'A',
                     label: '新增',
-                    text:'新增',
-                    value:'A'
+                    text: '新增',
+                    value: 'A'
                 }, {
                     operationFlag: 'U',
                     label: '修改',
-                    text:'修改',
-                    value:'U'
+                    text: '修改',
+                    value: 'U'
                 }],
                 reportStateOptions: [{
-                  reportState: '0',
-                  label: '未上线',
-                  text:'未上线',
-                  value:'0'
+                    reportState: '0',
+                    label: '未上线',
+                    text: '未上线',
+                    value: '0'
                 }, {
-                  reportState: '1',
-                  label: '已上线',
-                  text:'已上线',
-                  value:'1'
+                    reportState: '1',
+                    label: '已上线',
+                    text: '已上线',
+                    value: '1'
                 }, {
-                  reportState: '2',
-                  label: '已下线',
-                  text:'已下线',
-                  value:'2'
+                    reportState: '2',
+                    label: '已下线',
+                    text: '已下线',
+                    value: '2'
                 }],
                 form: {
                     projectId: '',
                     reportCode: '',
                     reportName: '',
-                    reportState:'',
+                    reportState: '',
                     operationFlag: '',
                 },
                 fileForm: {},
@@ -288,23 +290,23 @@
                     this.total = data.total;
                 });
             },
-            reportStateFormat(row){
-              if (row.reportState === "2") {
-                return '已下线';
-              } else if(row.reportState === "1"){
-                return '已上线';
-              }else{
-                return '未上线';
-              }
+            reportStateFormat(row) {
+                if (row.reportState === "2") {
+                    return '已下线';
+                } else if (row.reportState === "1") {
+                    return '已上线';
+                } else {
+                    return '未上线';
+                }
             },
-            filterReportState(value, row){
-              return row.reportState === value;
+            filterReportState(value, row) {
+                return row.reportState === value;
             },
-            operationFlagFormat(row){
-              return row.operationFlag == 'A' ? '新增' : '修改';
+            operationFlagFormat(row) {
+                return row.operationFlag == 'A' ? '新增' : '修改';
             },
-            filterOperationFlag(value, row){
-              return row.operationFlag === value;
+            filterOperationFlag(value, row) {
+                return row.operationFlag === value;
             },
             //重置
             reset() {
@@ -340,8 +342,9 @@
                             } else {
                                 this.$message.error("保存失败");
                             }
-                            this.load()
+                            this.load();
                         });
+                        this.load();
                         this.reportDialogAdd = false;
                     } else {
                         alert('信息填写不完整!');
@@ -350,30 +353,31 @@
             },
             //编辑
             handleEdit(row) {
-              this.form = row;
-              axios.get("/projectDetail/findAll").then(data => {
-                this.projectOptions = data;
-              });
-              this.reportDialogEdit = true;
+                this.form = row;
+                axios.get("/projectDetail/findAll").then(data => {
+                    this.projectOptions = data;
+                });
+                this.reportDialogEdit = true;
             },
             //修改
             edit() {
-              this.$refs['reportForm'].validate((valid) =>{
-                if (valid) {
-                  axios.post("/reportDetail/edit", this.form).then(data => {
-                    console.log(data);
-                    if (data) {
-                      this.$message.success("修改成功");
+                this.$refs['reportForm'].validate((valid) => {
+                    if (valid) {
+                        axios.post("/reportDetail/edit", this.form).then(data => {
+                            console.log(data);
+                            if (data) {
+                                this.$message.success("修改成功");
+                            } else {
+                                this.$message.error("修改失败");
+                            }
+                            this.load();
+                        });
+                        this.load();
+                        this.reportDialogEdit = false;
                     } else {
-                      this.$message.error("修改失败");
+                        alert('信息填写不完整!');
                     }
-                    this.load()
-                  });
-                  this.reportDialogEdit = false;
-                } else {
-                    alert('信息填写不完整!');
-                }
-              });
+                });
             },
             //退出
             quit() {
